@@ -1,0 +1,12 @@
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\OUNet Management Application.exe.config
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\OUNet Management Application.exe
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\OUNet Management Application.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.csproj.AssemblyReference.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.csproj.SuggestedBindingRedirects.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.FrmOUNet.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Properties.Resources.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.csproj.GenerateResource.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.csproj.CoreCompileInputs.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.exe
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmSensor.resources
