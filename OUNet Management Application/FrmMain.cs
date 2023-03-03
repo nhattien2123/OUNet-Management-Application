@@ -46,5 +46,37 @@ namespace OUNet_Management_Application
         {
             OpenChildForm(new Forms.FrmSensor(), sender);
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmAccount(), sender);
+        }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmServices(), sender);
+        }
+
+        private void btnMessage_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmMessage(), sender);
+        }
+
+        private void btnStatistical_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmStatistical(), sender);
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmHistory(), sender);
+        }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+                this.WindowState = FormWindowState.Normal;
+            else this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

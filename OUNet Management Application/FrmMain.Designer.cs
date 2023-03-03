@@ -32,20 +32,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnMenuBottom = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pnForm = new System.Windows.Forms.Panel();
+            this.btnHistory = new System.Windows.Forms.Button();
             this.btnStatistical = new System.Windows.Forms.Button();
             this.btnMessage = new System.Windows.Forms.Button();
             this.btnServices = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnSensor = new System.Windows.Forms.Button();
-            this.pnForm = new System.Windows.Forms.Panel();
+            this.btnMaximize = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnHeader.SuspendLayout();
             this.pnMenuBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnHeader
             // 
             this.pnHeader.BackColor = System.Drawing.Color.Brown;
+            this.pnHeader.Controls.Add(this.btnMaximize);
+            this.pnHeader.Controls.Add(this.pbLogo);
             this.pnHeader.Controls.Add(this.label1);
             this.pnHeader.Controls.Add(this.btnClose);
             this.pnHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -67,10 +72,12 @@
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1453, 3);
+            this.btnClose.Location = new System.Drawing.Point(1454, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(35, 30);
             this.btnClose.TabIndex = 1;
@@ -80,7 +87,7 @@
             // 
             // pnMenuBottom
             // 
-            this.pnMenuBottom.Controls.Add(this.button1);
+            this.pnMenuBottom.Controls.Add(this.btnHistory);
             this.pnMenuBottom.Controls.Add(this.btnStatistical);
             this.pnMenuBottom.Controls.Add(this.btnMessage);
             this.pnMenuBottom.Controls.Add(this.btnServices);
@@ -92,19 +99,28 @@
             this.pnMenuBottom.Size = new System.Drawing.Size(1500, 59);
             this.pnMenuBottom.TabIndex = 3;
             // 
-            // button1
+            // pnForm
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::OUNet_Management_Application.Properties.Resources.History_Icon;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(656, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 59);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Nhật ký, lịch sử";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pnForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnForm.Location = new System.Drawing.Point(0, 98);
+            this.pnForm.Name = "pnForm";
+            this.pnForm.Size = new System.Drawing.Size(1500, 882);
+            this.pnForm.TabIndex = 4;
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnHistory.FlatAppearance.BorderSize = 0;
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistory.Image = global::OUNet_Management_Application.Properties.Resources.History_Icon;
+            this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistory.Location = new System.Drawing.Point(656, 0);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(176, 59);
+            this.btnHistory.TabIndex = 10;
+            this.btnHistory.Text = "Nhật ký, lịch sử";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // btnStatistical
             // 
@@ -119,6 +135,7 @@
             this.btnStatistical.TabIndex = 9;
             this.btnStatistical.Text = "Thống kê";
             this.btnStatistical.UseVisualStyleBackColor = true;
+            this.btnStatistical.Click += new System.EventHandler(this.btnStatistical_Click);
             // 
             // btnMessage
             // 
@@ -133,6 +150,7 @@
             this.btnMessage.TabIndex = 8;
             this.btnMessage.Text = "Tin nhắn";
             this.btnMessage.UseVisualStyleBackColor = true;
+            this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
             // 
             // btnServices
             // 
@@ -147,6 +165,7 @@
             this.btnServices.TabIndex = 7;
             this.btnServices.Text = "Dịch vụ";
             this.btnServices.UseVisualStyleBackColor = true;
+            this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
             // 
             // btnAccount
             // 
@@ -161,6 +180,7 @@
             this.btnAccount.TabIndex = 6;
             this.btnAccount.Text = "Tài khoản";
             this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnSensor
             // 
@@ -177,13 +197,30 @@
             this.btnSensor.UseVisualStyleBackColor = true;
             this.btnSensor.Click += new System.EventHandler(this.btnSensor_Click);
             // 
-            // pnForm
+            // btnMaximize
             // 
-            this.pnForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnForm.Location = new System.Drawing.Point(0, 98);
-            this.pnForm.Name = "pnForm";
-            this.pnForm.Size = new System.Drawing.Size(1500, 882);
-            this.pnForm.TabIndex = 4;
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.ForeColor = System.Drawing.Color.White;
+            this.btnMaximize.Image = global::OUNet_Management_Application.Properties.Resources.Rectangle_Icon;
+            this.btnMaximize.Location = new System.Drawing.Point(1412, 3);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(35, 30);
+            this.btnMaximize.TabIndex = 3;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = global::OUNet_Management_Application.Properties.Resources.OU_Icon;
+            this.pbLogo.Location = new System.Drawing.Point(3, 1);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(35, 35);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // FrmOUNET
             // 
@@ -202,6 +239,7 @@
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
             this.pnMenuBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,8 +255,10 @@
         private System.Windows.Forms.Button btnServices;
         private System.Windows.Forms.Button btnMessage;
         private System.Windows.Forms.Button btnStatistical;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Panel pnForm;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnMaximize;
     }
 }
 

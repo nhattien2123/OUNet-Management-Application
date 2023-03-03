@@ -10,3 +10,8 @@ D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Appl
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.exe
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.pdb
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmSensor.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmAccount.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmHistory.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmMessage.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmServices.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.FrmLogin.resources

@@ -63,6 +63,16 @@ namespace OUNet_Management_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cash_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Cash-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Computer_Icon {
             get {
                 object obj = ResourceManager.GetObject("Computer-Icon", resourceCulture);
@@ -136,6 +146,66 @@ namespace OUNet_Management_Application.Properties {
         internal static System.Drawing.Bitmap Message_Icon {
             get {
                 object obj = ResourceManager.GetObject("Message-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OU_Icon {
+            get {
+                object obj = ResourceManager.GetObject("OU-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refresh_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Refresh-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sensor_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Sensor-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shopping_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Shopping-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shopping_White_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Shopping-White-Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
