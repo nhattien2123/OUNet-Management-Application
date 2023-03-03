@@ -82,6 +82,12 @@
     <Compile Include="Forms\FrmStatistical.Designer.cs">
       <DependentUpon>FrmStatistical.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoading.Designer.cs">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmServices.resx">
       <DependentUpon>FrmServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoading.resx">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -184,6 +193,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Images\Rectangle-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\OU-Noword-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\OU-white-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\User-Form-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Add-User-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Delete-User-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Search-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Second Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,25 +29,27 @@
         private void InitializeComponent()
         {
             this.pnSensors = new System.Windows.Forms.Panel();
-            this.pnWaitingService = new System.Windows.Forms.Panel();
-            this.pnRecharge = new System.Windows.Forms.Panel();
-            this.listViewSensors = new System.Windows.Forms.ListView();
-            this.lbSensor = new System.Windows.Forms.Label();
             this.cbSensor = new System.Windows.Forms.ComboBox();
+            this.lbSensor = new System.Windows.Forms.Label();
+            this.listViewSensors = new System.Windows.Forms.ListView();
             this.colSensorImage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIDSensor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colNameSensor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colUseTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colRemainTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colHistory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lbWaitingService = new System.Windows.Forms.Label();
-            this.lbWaitingServiceCount = new System.Windows.Forms.Label();
-            this.lbRecharge = new System.Windows.Forms.Label();
-            this.lbRechargeCount = new System.Windows.Forms.Label();
+            this.pnWaitingService = new System.Windows.Forms.Panel();
             this.listViewWaitingService = new System.Windows.Forms.ListView();
+            this.lbWaitingServiceCount = new System.Windows.Forms.Label();
+            this.lbWaitingService = new System.Windows.Forms.Label();
+            this.pnRecharge = new System.Windows.Forms.Panel();
             this.listViewRecharge = new System.Windows.Forms.ListView();
+            this.lbRechargeCount = new System.Windows.Forms.Label();
+            this.lbRecharge = new System.Windows.Forms.Label();
             this.pbRecharge = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -76,31 +78,25 @@
             this.pnSensors.Size = new System.Drawing.Size(1008, 759);
             this.pnSensors.TabIndex = 1;
             // 
-            // pnWaitingService
+            // cbSensor
             // 
-            this.pnWaitingService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnWaitingService.BackColor = System.Drawing.Color.White;
-            this.pnWaitingService.Controls.Add(this.listViewWaitingService);
-            this.pnWaitingService.Controls.Add(this.lbWaitingServiceCount);
-            this.pnWaitingService.Controls.Add(this.pictureBox1);
-            this.pnWaitingService.Controls.Add(this.lbWaitingService);
-            this.pnWaitingService.Location = new System.Drawing.Point(1043, 12);
-            this.pnWaitingService.Name = "pnWaitingService";
-            this.pnWaitingService.Size = new System.Drawing.Size(438, 370);
-            this.pnWaitingService.TabIndex = 2;
+            this.cbSensor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSensor.FormattingEnabled = true;
+            this.cbSensor.Location = new System.Drawing.Point(800, 28);
+            this.cbSensor.Name = "cbSensor";
+            this.cbSensor.Size = new System.Drawing.Size(121, 24);
+            this.cbSensor.TabIndex = 5;
             // 
-            // pnRecharge
+            // lbSensor
             // 
-            this.pnRecharge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnRecharge.BackColor = System.Drawing.Color.White;
-            this.pnRecharge.Controls.Add(this.listViewRecharge);
-            this.pnRecharge.Controls.Add(this.lbRechargeCount);
-            this.pnRecharge.Controls.Add(this.lbRecharge);
-            this.pnRecharge.Controls.Add(this.pbRecharge);
-            this.pnRecharge.Location = new System.Drawing.Point(1043, 401);
-            this.pnRecharge.Name = "pnRecharge";
-            this.pnRecharge.Size = new System.Drawing.Size(438, 370);
-            this.pnRecharge.TabIndex = 3;
+            this.lbSensor.AutoSize = true;
+            this.lbSensor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSensor.ForeColor = System.Drawing.Color.Red;
+            this.lbSensor.Location = new System.Drawing.Point(80, 29);
+            this.lbSensor.Name = "lbSensor";
+            this.lbSensor.Size = new System.Drawing.Size(118, 29);
+            this.lbSensor.TabIndex = 2;
+            this.lbSensor.Text = "Máy trạm";
             // 
             // listViewSensors
             // 
@@ -109,7 +105,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewSensors.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colSensorImage,
+            this.colIDSensor,
             this.colNameSensor,
+            this.colIP,
             this.colStatus,
             this.colUser,
             this.colStartTime,
@@ -124,35 +122,24 @@
             this.listViewSensors.UseCompatibleStateImageBehavior = false;
             this.listViewSensors.View = System.Windows.Forms.View.Details;
             // 
-            // lbSensor
-            // 
-            this.lbSensor.AutoSize = true;
-            this.lbSensor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSensor.ForeColor = System.Drawing.Color.Red;
-            this.lbSensor.Location = new System.Drawing.Point(80, 29);
-            this.lbSensor.Name = "lbSensor";
-            this.lbSensor.Size = new System.Drawing.Size(118, 29);
-            this.lbSensor.TabIndex = 2;
-            this.lbSensor.Text = "Máy trạm";
-            // 
-            // cbSensor
-            // 
-            this.cbSensor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSensor.FormattingEnabled = true;
-            this.cbSensor.Location = new System.Drawing.Point(800, 28);
-            this.cbSensor.Name = "cbSensor";
-            this.cbSensor.Size = new System.Drawing.Size(121, 24);
-            this.cbSensor.TabIndex = 5;
-            // 
             // colSensorImage
             // 
             this.colSensorImage.Text = "#";
-            this.colSensorImage.Width = 50;
+            this.colSensorImage.Width = 20;
+            // 
+            // colIDSensor
+            // 
+            this.colIDSensor.Text = "Mã máy";
             // 
             // colNameSensor
             // 
             this.colNameSensor.Text = "Tên máy";
             this.colNameSensor.Width = 100;
+            // 
+            // colIP
+            // 
+            this.colIP.Text = "IP";
+            this.colIP.Width = 100;
             // 
             // colStatus
             // 
@@ -172,27 +159,39 @@
             // colUseTime
             // 
             this.colUseTime.Text = "Đã sử dụng";
-            this.colUseTime.Width = 100;
+            this.colUseTime.Width = 80;
             // 
             // colRemainTime
             // 
             this.colRemainTime.Text = "Còn lại";
-            this.colRemainTime.Width = 100;
+            this.colRemainTime.Width = 80;
             // 
             // colHistory
             // 
             this.colHistory.Text = "";
             // 
-            // lbWaitingService
+            // pnWaitingService
             // 
-            this.lbWaitingService.AutoSize = true;
-            this.lbWaitingService.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWaitingService.ForeColor = System.Drawing.Color.Red;
-            this.lbWaitingService.Location = new System.Drawing.Point(61, 33);
-            this.lbWaitingService.Name = "lbWaitingService";
-            this.lbWaitingService.Size = new System.Drawing.Size(115, 22);
-            this.lbWaitingService.TabIndex = 6;
-            this.lbWaitingService.Text = "Dịch vụ chờ";
+            this.pnWaitingService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnWaitingService.BackColor = System.Drawing.Color.White;
+            this.pnWaitingService.Controls.Add(this.listViewWaitingService);
+            this.pnWaitingService.Controls.Add(this.lbWaitingServiceCount);
+            this.pnWaitingService.Controls.Add(this.pictureBox1);
+            this.pnWaitingService.Controls.Add(this.lbWaitingService);
+            this.pnWaitingService.Location = new System.Drawing.Point(1043, 12);
+            this.pnWaitingService.Name = "pnWaitingService";
+            this.pnWaitingService.Size = new System.Drawing.Size(438, 370);
+            this.pnWaitingService.TabIndex = 2;
+            // 
+            // listViewWaitingService
+            // 
+            this.listViewWaitingService.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listViewWaitingService.HideSelection = false;
+            this.listViewWaitingService.Location = new System.Drawing.Point(24, 74);
+            this.listViewWaitingService.Name = "listViewWaitingService";
+            this.listViewWaitingService.Size = new System.Drawing.Size(387, 274);
+            this.listViewWaitingService.TabIndex = 9;
+            this.listViewWaitingService.UseCompatibleStateImageBehavior = false;
             // 
             // lbWaitingServiceCount
             // 
@@ -205,16 +204,39 @@
             this.lbWaitingServiceCount.TabIndex = 8;
             this.lbWaitingServiceCount.Text = "(4)";
             // 
-            // lbRecharge
+            // lbWaitingService
             // 
-            this.lbRecharge.AutoSize = true;
-            this.lbRecharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRecharge.ForeColor = System.Drawing.Color.Red;
-            this.lbRecharge.Location = new System.Drawing.Point(61, 19);
-            this.lbRecharge.Name = "lbRecharge";
-            this.lbRecharge.Size = new System.Drawing.Size(85, 22);
-            this.lbRecharge.TabIndex = 9;
-            this.lbRecharge.Text = "Nạp tiền";
+            this.lbWaitingService.AutoSize = true;
+            this.lbWaitingService.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWaitingService.ForeColor = System.Drawing.Color.Red;
+            this.lbWaitingService.Location = new System.Drawing.Point(61, 33);
+            this.lbWaitingService.Name = "lbWaitingService";
+            this.lbWaitingService.Size = new System.Drawing.Size(115, 22);
+            this.lbWaitingService.TabIndex = 6;
+            this.lbWaitingService.Text = "Dịch vụ chờ";
+            // 
+            // pnRecharge
+            // 
+            this.pnRecharge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnRecharge.BackColor = System.Drawing.Color.White;
+            this.pnRecharge.Controls.Add(this.listViewRecharge);
+            this.pnRecharge.Controls.Add(this.lbRechargeCount);
+            this.pnRecharge.Controls.Add(this.lbRecharge);
+            this.pnRecharge.Controls.Add(this.pbRecharge);
+            this.pnRecharge.Location = new System.Drawing.Point(1043, 401);
+            this.pnRecharge.Name = "pnRecharge";
+            this.pnRecharge.Size = new System.Drawing.Size(438, 370);
+            this.pnRecharge.TabIndex = 3;
+            // 
+            // listViewRecharge
+            // 
+            this.listViewRecharge.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listViewRecharge.HideSelection = false;
+            this.listViewRecharge.Location = new System.Drawing.Point(24, 68);
+            this.listViewRecharge.Name = "listViewRecharge";
+            this.listViewRecharge.Size = new System.Drawing.Size(387, 274);
+            this.listViewRecharge.TabIndex = 10;
+            this.listViewRecharge.UseCompatibleStateImageBehavior = false;
             // 
             // lbRechargeCount
             // 
@@ -227,25 +249,16 @@
             this.lbRechargeCount.TabIndex = 9;
             this.lbRechargeCount.Text = "(1)";
             // 
-            // listViewWaitingService
+            // lbRecharge
             // 
-            this.listViewWaitingService.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listViewWaitingService.HideSelection = false;
-            this.listViewWaitingService.Location = new System.Drawing.Point(24, 74);
-            this.listViewWaitingService.Name = "listViewWaitingService";
-            this.listViewWaitingService.Size = new System.Drawing.Size(387, 274);
-            this.listViewWaitingService.TabIndex = 9;
-            this.listViewWaitingService.UseCompatibleStateImageBehavior = false;
-            // 
-            // listViewRecharge
-            // 
-            this.listViewRecharge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listViewRecharge.HideSelection = false;
-            this.listViewRecharge.Location = new System.Drawing.Point(24, 68);
-            this.listViewRecharge.Name = "listViewRecharge";
-            this.listViewRecharge.Size = new System.Drawing.Size(387, 274);
-            this.listViewRecharge.TabIndex = 10;
-            this.listViewRecharge.UseCompatibleStateImageBehavior = false;
+            this.lbRecharge.AutoSize = true;
+            this.lbRecharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRecharge.ForeColor = System.Drawing.Color.Red;
+            this.lbRecharge.Location = new System.Drawing.Point(61, 19);
+            this.lbRecharge.Name = "lbRecharge";
+            this.lbRecharge.Size = new System.Drawing.Size(85, 22);
+            this.lbRecharge.TabIndex = 9;
+            this.lbRecharge.Text = "Nạp tiền";
             // 
             // pbRecharge
             // 
@@ -273,8 +286,8 @@
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnRefresh.Image = global::OUNet_Management_Application.Properties.Resources.Refresh_Icon;
             this.btnRefresh.Location = new System.Drawing.Point(939, 20);
             this.btnRefresh.Name = "btnRefresh";
@@ -343,5 +356,7 @@
         private System.Windows.Forms.Label lbRecharge;
         private System.Windows.Forms.ListView listViewWaitingService;
         private System.Windows.Forms.ListView listViewRecharge;
+        private System.Windows.Forms.ColumnHeader colIDSensor;
+        private System.Windows.Forms.ColumnHeader colIP;
     }
 }

@@ -29,26 +29,28 @@
         private void InitializeComponent()
         {
             this.pnHeader = new System.Windows.Forms.Panel();
+            this.lbUsername = new System.Windows.Forms.Label();
+            this.btnMaximize = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnMenuBottom = new System.Windows.Forms.Panel();
-            this.pnForm = new System.Windows.Forms.Panel();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnStatistical = new System.Windows.Forms.Button();
             this.btnMessage = new System.Windows.Forms.Button();
             this.btnServices = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnSensor = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pnForm = new System.Windows.Forms.Panel();
             this.pnHeader.SuspendLayout();
-            this.pnMenuBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pnMenuBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnHeader
             // 
             this.pnHeader.BackColor = System.Drawing.Color.Brown;
+            this.pnHeader.Controls.Add(this.lbUsername);
             this.pnHeader.Controls.Add(this.btnMaximize);
             this.pnHeader.Controls.Add(this.pbLogo);
             this.pnHeader.Controls.Add(this.label1);
@@ -58,6 +60,41 @@
             this.pnHeader.Name = "pnHeader";
             this.pnHeader.Size = new System.Drawing.Size(1500, 39);
             this.pnHeader.TabIndex = 0;
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsername.ForeColor = System.Drawing.Color.White;
+            this.lbUsername.Location = new System.Drawing.Point(213, 10);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(48, 16);
+            this.lbUsername.TabIndex = 4;
+            this.lbUsername.Text = "Name";
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.ForeColor = System.Drawing.Color.White;
+            this.btnMaximize.Image = global::OUNet_Management_Application.Properties.Resources.Rectangle_Icon;
+            this.btnMaximize.Location = new System.Drawing.Point(1412, 3);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(35, 30);
+            this.btnMaximize.TabIndex = 3;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = global::OUNet_Management_Application.Properties.Resources.OU_white_logo;
+            this.pbLogo.Location = new System.Drawing.Point(3, 1);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(35, 35);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // label1
             // 
@@ -74,7 +111,6 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.Red;
-            this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(1454, 4);
@@ -98,14 +134,6 @@
             this.pnMenuBottom.Name = "pnMenuBottom";
             this.pnMenuBottom.Size = new System.Drawing.Size(1500, 59);
             this.pnMenuBottom.TabIndex = 3;
-            // 
-            // pnForm
-            // 
-            this.pnForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnForm.Location = new System.Drawing.Point(0, 98);
-            this.pnForm.Name = "pnForm";
-            this.pnForm.Size = new System.Drawing.Size(1500, 882);
-            this.pnForm.TabIndex = 4;
             // 
             // btnHistory
             // 
@@ -187,7 +215,7 @@
             this.btnSensor.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSensor.FlatAppearance.BorderSize = 0;
             this.btnSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSensor.Image = global::OUNet_Management_Application.Properties.Resources.Computer_Icon1;
+            this.btnSensor.Image = global::OUNet_Management_Application.Properties.Resources.Computer_Icon;
             this.btnSensor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSensor.Location = new System.Drawing.Point(0, 0);
             this.btnSensor.Name = "btnSensor";
@@ -197,30 +225,13 @@
             this.btnSensor.UseVisualStyleBackColor = true;
             this.btnSensor.Click += new System.EventHandler(this.btnSensor_Click);
             // 
-            // btnMaximize
+            // pnForm
             // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Image = global::OUNet_Management_Application.Properties.Resources.Rectangle_Icon;
-            this.btnMaximize.Location = new System.Drawing.Point(1412, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(35, 30);
-            this.btnMaximize.TabIndex = 3;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Image = global::OUNet_Management_Application.Properties.Resources.OU_Icon;
-            this.pbLogo.Location = new System.Drawing.Point(3, 1);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(35, 35);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
+            this.pnForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnForm.Location = new System.Drawing.Point(0, 98);
+            this.pnForm.Name = "pnForm";
+            this.pnForm.Size = new System.Drawing.Size(1500, 882);
+            this.pnForm.TabIndex = 4;
             // 
             // FrmOUNET
             // 
@@ -238,8 +249,8 @@
             this.Load += new System.EventHandler(this.FrmOUNET_Load);
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
-            this.pnMenuBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.pnMenuBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -259,6 +270,7 @@
         private System.Windows.Forms.Panel pnForm;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnMaximize;
+        private System.Windows.Forms.Label lbUsername;
     }
 }
 

@@ -13,8 +13,16 @@ namespace OUNet_Management_Application
     public partial class FrmOUNET : Form
     {
         private Form activeForm;
+        private FrmLogin frmLogin;
+        private FrmLoading frmLoading;
+        public static string username;
+
         public FrmOUNET()
         {
+            frmLogin = new FrmLogin();
+            frmLogin.ShowDialog();
+            frmLoading = new FrmLoading();
+            frmLoading.ShowDialog();
             InitializeComponent();
         }
 
@@ -25,7 +33,8 @@ namespace OUNet_Management_Application
 
         private void FrmOUNET_Load(object sender, EventArgs e)
         {
-
+            lbUsername.Text = "(" + username + ")";
+            OpenChildForm(new Forms.FrmSensor(), sender);
         }
 
         private void OpenChildForm(Form childForm, object btnSender)

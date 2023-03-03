@@ -63,6 +63,16 @@ namespace OUNet_Management_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_User_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Add-User-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cash_Icon {
             get {
                 object obj = ResourceManager.GetObject("Cash-Icon", resourceCulture);
@@ -83,19 +93,9 @@ namespace OUNet_Management_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Computer_Icon1 {
+        internal static System.Drawing.Bitmap Delete_User_Icon {
             get {
-                object obj = ResourceManager.GetObject("Computer-Icon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Computer_Icon2 {
-            get {
-                object obj = ResourceManager.GetObject("Computer-Icon2", resourceCulture);
+                object obj = ResourceManager.GetObject("Delete-User-Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace OUNet_Management_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OU_Icon {
+        internal static System.Drawing.Bitmap OU_white_logo {
             get {
-                object obj = ResourceManager.GetObject("OU-Icon", resourceCulture);
+                object obj = ResourceManager.GetObject("OU-white-logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +176,16 @@ namespace OUNet_Management_Application.Properties {
         internal static System.Drawing.Bitmap Refresh_Icon {
             get {
                 object obj = ResourceManager.GetObject("Refresh-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Search-Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +233,9 @@ namespace OUNet_Management_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap User_Plus_Icon {
+        internal static System.Drawing.Bitmap User_Form_Icon {
             get {
-                object obj = ResourceManager.GetObject("User-Plus-Icon", resourceCulture);
+                object obj = ResourceManager.GetObject("User-Form-Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

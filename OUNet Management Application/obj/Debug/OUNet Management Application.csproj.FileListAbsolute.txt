@@ -15,3 +15,4 @@ D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Appl
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmMessage.resources
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmServices.resources
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.FrmLogin.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.FrmLoading.resources
