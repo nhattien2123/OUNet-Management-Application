@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OUNet_Management_Application.Forms
+namespace OUNet_Management_Application.Forms.Second_Forms
 {
-    public partial class FrmSensor : Form
+    public partial class FrmAddAccount : Form
     {
-        public FrmSensor()
+        public FrmAddAccount()
         {
             InitializeComponent();
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

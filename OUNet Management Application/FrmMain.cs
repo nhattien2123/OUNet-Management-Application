@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace OUNet_Management_Application
 {
-    public partial class FrmOUNET : Form
+    public partial class FrmMain : Form
     {
         private Form activeForm;
         private FrmLogin frmLogin;
         private FrmLoading frmLoading;
         public static string username;
 
-        public FrmOUNET()
+        public FrmMain()
         {
             frmLogin = new FrmLogin();
             frmLogin.ShowDialog();

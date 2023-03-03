@@ -180,7 +180,7 @@
             this.pnWaitingService.Controls.Add(this.lbWaitingService);
             this.pnWaitingService.Location = new System.Drawing.Point(1043, 12);
             this.pnWaitingService.Name = "pnWaitingService";
-            this.pnWaitingService.Size = new System.Drawing.Size(438, 370);
+            this.pnWaitingService.Size = new System.Drawing.Size(447, 370);
             this.pnWaitingService.TabIndex = 2;
             // 
             // listViewWaitingService
@@ -189,7 +189,7 @@
             this.listViewWaitingService.HideSelection = false;
             this.listViewWaitingService.Location = new System.Drawing.Point(24, 74);
             this.listViewWaitingService.Name = "listViewWaitingService";
-            this.listViewWaitingService.Size = new System.Drawing.Size(387, 274);
+            this.listViewWaitingService.Size = new System.Drawing.Size(399, 274);
             this.listViewWaitingService.TabIndex = 9;
             this.listViewWaitingService.UseCompatibleStateImageBehavior = false;
             // 
@@ -202,7 +202,7 @@
             this.lbWaitingServiceCount.Name = "lbWaitingServiceCount";
             this.lbWaitingServiceCount.Size = new System.Drawing.Size(35, 22);
             this.lbWaitingServiceCount.TabIndex = 8;
-            this.lbWaitingServiceCount.Text = "(4)";
+            this.lbWaitingServiceCount.Text = "(?)";
             // 
             // lbWaitingService
             // 
@@ -225,7 +225,7 @@
             this.pnRecharge.Controls.Add(this.pbRecharge);
             this.pnRecharge.Location = new System.Drawing.Point(1043, 401);
             this.pnRecharge.Name = "pnRecharge";
-            this.pnRecharge.Size = new System.Drawing.Size(438, 370);
+            this.pnRecharge.Size = new System.Drawing.Size(447, 370);
             this.pnRecharge.TabIndex = 3;
             // 
             // listViewRecharge
@@ -234,7 +234,7 @@
             this.listViewRecharge.HideSelection = false;
             this.listViewRecharge.Location = new System.Drawing.Point(24, 68);
             this.listViewRecharge.Name = "listViewRecharge";
-            this.listViewRecharge.Size = new System.Drawing.Size(387, 274);
+            this.listViewRecharge.Size = new System.Drawing.Size(399, 274);
             this.listViewRecharge.TabIndex = 10;
             this.listViewRecharge.UseCompatibleStateImageBehavior = false;
             // 
@@ -247,7 +247,7 @@
             this.lbRechargeCount.Name = "lbRechargeCount";
             this.lbRechargeCount.Size = new System.Drawing.Size(35, 22);
             this.lbRechargeCount.TabIndex = 9;
-            this.lbRechargeCount.Text = "(1)";
+            this.lbRechargeCount.Text = "(?)";
             // 
             // lbRecharge
             // 
@@ -294,6 +294,7 @@
             this.btnRefresh.Size = new System.Drawing.Size(42, 38);
             this.btnRefresh.TabIndex = 4;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // pbSensor
             // 

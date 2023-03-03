@@ -1,6 +1,6 @@
-﻿namespace OUNet_Management_Application.Forms
+﻿namespace OUNet_Management_Application.Forms.Second_Forms
 {
-    partial class FrmServices
+    partial class FrmAddAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // FrmServices
+            // FrmAddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1502, 783);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmServices";
-            this.Text = "FrmServices";
+            this.Name = "FrmAddAccount";
+            this.Text = "FrmAddAccount";
             this.ResumeLayout(false);
 
         }

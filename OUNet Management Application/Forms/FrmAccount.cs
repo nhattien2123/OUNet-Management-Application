@@ -12,9 +12,15 @@ namespace OUNet_Management_Application.Forms
 {
     public partial class FrmAccount : Form
     {
+        private FrmMain frmMain;
         public FrmAccount()
         {
             InitializeComponent();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,7 +28,7 @@ namespace OUNet_Management_Application
                 Application.Exit();
             else
             {
-                FrmOUNET.username = txtUsername.Text;
+                FrmMain.username = txtUsername.Text;
                 this.Close();
             }
         }
@@ -65,7 +65,7 @@ namespace OUNet_Management_Application
 
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (FrmOUNET.username == "")
+            if (FrmMain.username == "")
                 Application.Exit();
         }
     }

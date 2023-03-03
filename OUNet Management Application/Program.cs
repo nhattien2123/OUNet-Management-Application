@@ -16,7 +16,7 @@ namespace OUNet_Management_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmOUNET());
+            Application.Run(new FrmMain());
         }
     }
 }

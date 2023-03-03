@@ -1,6 +1,6 @@
 ﻿namespace OUNet_Management_Application
 {
-    partial class FrmOUNET
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.

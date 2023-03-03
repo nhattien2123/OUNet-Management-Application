@@ -33,10 +33,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbListUser = new System.Windows.Forms.Label();
             this.listViewAccounts = new System.Windows.Forms.ListView();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnAddUser = new System.Windows.Forms.Button();
-            this.pbUser = new System.Windows.Forms.PictureBox();
             this.colImageUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colIDUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTelephone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,6 +42,10 @@
             this.colMainAccount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSecondAccount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDetail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
+            this.pbUser = new System.Windows.Forms.PictureBox();
             this.pnAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
@@ -71,7 +71,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(1135, 32);
             this.textBox1.Name = "textBox1";
@@ -111,53 +111,6 @@
             this.listViewAccounts.TabIndex = 0;
             this.listViewAccounts.UseCompatibleStateImageBehavior = false;
             this.listViewAccounts.View = System.Windows.Forms.View.Details;
-            // 
-            // pbSearch
-            // 
-            this.pbSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbSearch.Image = global::OUNet_Management_Application.Properties.Resources.Search_Icon;
-            this.pbSearch.Location = new System.Drawing.Point(1104, 34);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(25, 25);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSearch.TabIndex = 6;
-            this.pbSearch.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Tomato;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Image = global::OUNet_Management_Application.Properties.Resources.Delete_User_Icon;
-            this.button1.Location = new System.Drawing.Point(1359, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 38);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnAddUser
-            // 
-            this.btnAddUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddUser.BackColor = System.Drawing.Color.LightGreen;
-            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUser.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnAddUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUser.Image")));
-            this.btnAddUser.Location = new System.Drawing.Point(1407, 27);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(42, 38);
-            this.btnAddUser.TabIndex = 3;
-            this.btnAddUser.UseVisualStyleBackColor = false;
-            // 
-            // pbUser
-            // 
-            this.pbUser.Image = global::OUNet_Management_Application.Properties.Resources.User_Form_Icon;
-            this.pbUser.Location = new System.Drawing.Point(27, 18);
-            this.pbUser.Name = "pbUser";
-            this.pbUser.Size = new System.Drawing.Size(50, 50);
-            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUser.TabIndex = 1;
-            this.pbUser.TabStop = false;
             // 
             // colImageUser
             // 
@@ -201,6 +154,54 @@
             // colDetail
             // 
             this.colDetail.Text = "Chi tiết";
+            // 
+            // pbSearch
+            // 
+            this.pbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbSearch.Image = global::OUNet_Management_Application.Properties.Resources.Search_Icon;
+            this.pbSearch.Location = new System.Drawing.Point(1104, 34);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(25, 25);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSearch.TabIndex = 6;
+            this.pbSearch.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Tomato;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Image = global::OUNet_Management_Application.Properties.Resources.Delete_User_Icon;
+            this.button1.Location = new System.Drawing.Point(1359, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 38);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddUser.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUser.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnAddUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUser.Image")));
+            this.btnAddUser.Location = new System.Drawing.Point(1407, 27);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(42, 38);
+            this.btnAddUser.TabIndex = 3;
+            this.btnAddUser.UseVisualStyleBackColor = false;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            // 
+            // pbUser
+            // 
+            this.pbUser.Image = global::OUNet_Management_Application.Properties.Resources.User_Form_Icon;
+            this.pbUser.Location = new System.Drawing.Point(27, 18);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(50, 50);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUser.TabIndex = 1;
+            this.pbUser.TabStop = false;
             // 
             // FrmAccount
             // 

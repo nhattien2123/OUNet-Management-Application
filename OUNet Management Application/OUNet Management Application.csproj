@@ -82,6 +82,12 @@
     <Compile Include="Forms\FrmStatistical.Designer.cs">
       <DependentUpon>FrmStatistical.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Second Forms\FrmAddAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Second Forms\FrmAddAccount.Designer.cs">
+      <DependentUpon>FrmAddAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmServices.resx">
       <DependentUpon>FrmServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmStatistical.resx">
+      <DependentUpon>FrmStatistical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Second Forms\FrmAddAccount.resx">
+      <DependentUpon>FrmAddAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
@@ -212,8 +224,6 @@
   <ItemGroup>
     <None Include="bin\Debug\Images\Search-Icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Second Forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
