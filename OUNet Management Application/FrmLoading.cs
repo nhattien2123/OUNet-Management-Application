@@ -19,7 +19,7 @@ namespace OUNet_Management_Application
 
         private void timerComplete_Tick(object sender, EventArgs e)
         {
-            pnComplete.Width += 3;
+            pnComplete.Width += 50;
             
             if (pnComplete.Width >= pnFullComplete.Width)
             {

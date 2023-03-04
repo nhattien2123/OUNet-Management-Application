@@ -193,6 +193,16 @@ namespace OUNet_Management_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Search_Icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Search-Icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sensor_Icon {
             get {
                 object obj = ResourceManager.GetObject("Sensor-Icon", resourceCulture);
