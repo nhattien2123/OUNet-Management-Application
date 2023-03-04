@@ -22,5 +22,10 @@ namespace OUNet_Management_Application.Forms
         {
 
         }
+
+        private void FrmAccount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

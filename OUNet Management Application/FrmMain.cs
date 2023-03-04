@@ -19,10 +19,10 @@ namespace OUNet_Management_Application
 
         public FrmMain()
         {
-            frmLogin = new FrmLogin();
-            frmLogin.ShowDialog();
-            frmLoading = new FrmLoading();
-            frmLoading.ShowDialog();
+            //frmLogin = new FrmLogin();
+            //frmLogin.ShowDialog();
+            //frmLoading = new FrmLoading();
+            //frmLoading.ShowDialog();
             InitializeComponent();
         }
 
