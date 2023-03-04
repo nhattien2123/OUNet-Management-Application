@@ -39,3 +39,4 @@ D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\o
 D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Debug\OUNet Management Application.pdb
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.Second_Forms.FrmDetailAccount.resources
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmConfirm.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.Second_Forms.FrmDetailOrder.resources

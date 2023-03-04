@@ -95,6 +95,12 @@
     <Compile Include="Forms\Second Forms\FrmDetailAccount.Designer.cs">
       <DependentUpon>FrmDetailAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Second Forms\FrmDetailOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Second Forms\FrmDetailOrder.Designer.cs">
+      <DependentUpon>FrmDetailOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Second Forms\FrmDetailAccount.resx">
       <DependentUpon>FrmDetailAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Second Forms\FrmDetailOrder.resx">
+      <DependentUpon>FrmDetailOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
