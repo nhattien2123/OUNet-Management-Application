@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OUNet_Management_Application.Forms.Second_Forms
+namespace OUNet_Management_Application.Forms
 {
-    public partial class FrmAddAccount : Form
+    public partial class FrmConfirm : Form
     {
-        public FrmAddAccount()
+        public FrmConfirm()
         {
             InitializeComponent();
         }

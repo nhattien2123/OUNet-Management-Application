@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,12 @@
     </Compile>
     <Compile Include="Forms\FrmAccount.Designer.cs">
       <DependentUpon>FrmAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmConfirm.Designer.cs">
+      <DependentUpon>FrmConfirm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmHistory.cs">
       <SubType>Form</SubType>
@@ -82,11 +89,11 @@
     <Compile Include="Forms\FrmStatistical.Designer.cs">
       <DependentUpon>FrmStatistical.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Second Forms\FrmAddAccount.cs">
+    <Compile Include="Forms\Second Forms\FrmDetailAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Second Forms\FrmAddAccount.Designer.cs">
-      <DependentUpon>FrmAddAccount.cs</DependentUpon>
+    <Compile Include="Forms\Second Forms\FrmDetailAccount.Designer.cs">
+      <DependentUpon>FrmDetailAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLoading.cs">
       <SubType>Form</SubType>
@@ -111,6 +118,9 @@
     <EmbeddedResource Include="Forms\FrmAccount.resx">
       <DependentUpon>FrmAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmConfirm.resx">
+      <DependentUpon>FrmConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmHistory.resx">
       <DependentUpon>FrmHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,8 +136,8 @@
     <EmbeddedResource Include="Forms\FrmStatistical.resx">
       <DependentUpon>FrmStatistical.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Second Forms\FrmAddAccount.resx">
-      <DependentUpon>FrmAddAccount.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Second Forms\FrmDetailAccount.resx">
+      <DependentUpon>FrmDetailAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
