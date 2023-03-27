@@ -41,6 +41,7 @@
             this.lbLoginTitle = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblHelp = new System.Windows.Forms.LinkLabel();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.pnSideback.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -194,12 +195,27 @@
             this.lblHelp.TabStop = true;
             this.lblHelp.Text = "Help?";
             // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Location = new System.Drawing.Point(969, 12);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(35, 30);
+            this.btnMinimize.TabIndex = 12;
+            this.btnMinimize.Text = "_";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1057, 578);
+            this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lbLoginTitle);
@@ -238,5 +254,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lbCopyright;
         private System.Windows.Forms.LinkLabel lblHelp;
+        private System.Windows.Forms.Button btnMinimize;
     }
 }

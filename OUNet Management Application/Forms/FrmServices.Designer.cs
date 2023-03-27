@@ -33,9 +33,9 @@
             this.btnFood = new System.Windows.Forms.Button();
             this.btnDrink = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbServices = new System.Windows.Forms.Label();
             this.pnBackgroundOrder = new System.Windows.Forms.Panel();
@@ -43,25 +43,25 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNote = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
             this.pnServices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnBackgroundOrder.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // pnServices
@@ -71,9 +71,9 @@
             this.pnServices.Controls.Add(this.btnFood);
             this.pnServices.Controls.Add(this.btnDrink);
             this.pnServices.Controls.Add(this.panel1);
-            this.pnServices.Controls.Add(this.textBox1);
+            this.pnServices.Controls.Add(this.txtSearch);
             this.pnServices.Controls.Add(this.btnRefresh);
-            this.pnServices.Controls.Add(this.button1);
+            this.pnServices.Controls.Add(this.btnSearch);
             this.pnServices.Controls.Add(this.pictureBox1);
             this.pnServices.Controls.Add(this.lbServices);
             this.pnServices.Location = new System.Drawing.Point(12, 12);
@@ -119,13 +119,13 @@
             this.panel1.Size = new System.Drawing.Size(931, 591);
             this.panel1.TabIndex = 7;
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(651, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 30);
-            this.textBox1.TabIndex = 6;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(665, 31);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(170, 30);
+            this.txtSearch.TabIndex = 6;
             // 
             // btnRefresh
             // 
@@ -140,18 +140,18 @@
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::OUNet_Management_Application.Properties.Resources.Search_Icon_White;
-            this.button1.Location = new System.Drawing.Point(855, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 39);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.Red;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::OUNet_Management_Application.Properties.Resources.Search_Icon_White;
+            this.btnSearch.Location = new System.Drawing.Point(855, 22);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(40, 39);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -179,7 +179,7 @@
             this.pnBackgroundOrder.BackColor = System.Drawing.Color.White;
             this.pnBackgroundOrder.Controls.Add(this.panel2);
             this.pnBackgroundOrder.Controls.Add(this.panel3);
-            this.pnBackgroundOrder.Controls.Add(this.dataGridView1);
+            this.pnBackgroundOrder.Controls.Add(this.dataGridViewOrder);
             this.pnBackgroundOrder.Location = new System.Drawing.Point(981, 12);
             this.pnBackgroundOrder.Name = "pnBackgroundOrder";
             this.pnBackgroundOrder.Size = new System.Drawing.Size(509, 759);
@@ -230,7 +230,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.btnPay);
             this.panel3.Controls.Add(this.btnCancel);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txtNote);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -238,6 +238,47 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(509, 245);
             this.panel3.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(470, 150);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(21, 22);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(17, 150);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 22);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Thanh toán:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(470, 124);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(19, 20);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(470, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "0";
             // 
             // label5
             // 
@@ -283,14 +324,14 @@
             this.btnCancel.Text = "HUỶ (ESC)";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // txtNote
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(21, 48);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(467, 44);
-            this.textBox2.TabIndex = 2;
+            this.txtNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNote.Location = new System.Drawing.Point(21, 48);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(467, 44);
+            this.txtNote.TabIndex = 2;
             // 
             // label3
             // 
@@ -313,58 +354,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ghi chú";
             // 
-            // dataGridView1
+            // dataGridViewOrder
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(509, 759);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(470, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(470, 124);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 20);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(470, 150);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 22);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "0";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(17, 150);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 22);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Thanh toán:";
+            this.dataGridViewOrder.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewOrder.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewOrder.Name = "dataGridViewOrder";
+            this.dataGridViewOrder.RowHeadersWidth = 51;
+            this.dataGridViewOrder.RowTemplate.Height = 24;
+            this.dataGridViewOrder.Size = new System.Drawing.Size(509, 759);
+            this.dataGridViewOrder.TabIndex = 0;
             // 
             // FrmServices
             // 
@@ -386,7 +386,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,8 +397,8 @@
         private System.Windows.Forms.Panel pnBackgroundOrder;
         private System.Windows.Forms.Label lbServices;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnSnack;
         private System.Windows.Forms.Button btnFood;
@@ -407,13 +407,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewOrder;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;

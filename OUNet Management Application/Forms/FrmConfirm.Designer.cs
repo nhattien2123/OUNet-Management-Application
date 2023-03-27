@@ -57,6 +57,7 @@
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Xác nhận";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnReject
             // 
@@ -70,6 +71,7 @@
             this.btnReject.TabIndex = 2;
             this.btnReject.Text = "Không";
             this.btnReject.UseVisualStyleBackColor = false;
+            this.btnReject.Click += new System.EventHandler(this.btnReject_Click);
             // 
             // btnClose
             // 
@@ -84,6 +86,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmConfirm
             // 
@@ -97,6 +100,7 @@
             this.Controls.Add(this.lbQuestionConfirm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmConfirm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConfirm";
             this.ResumeLayout(false);
             this.PerformLayout();

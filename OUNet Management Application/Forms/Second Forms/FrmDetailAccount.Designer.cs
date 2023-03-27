@@ -29,61 +29,69 @@
         private void InitializeComponent()
         {
             this.pnBackground = new System.Windows.Forms.Panel();
-            this.lbDetail = new System.Windows.Forms.Label();
-            this.lbIDUser = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.lbTelephone = new System.Windows.Forms.Label();
-            this.lbAddress = new System.Windows.Forms.Label();
-            this.lbRole = new System.Windows.Forms.Label();
-            this.lbMainAccount = new System.Windows.Forms.Label();
-            this.lbSecondAccount = new System.Windows.Forms.Label();
-            this.lbStatus = new System.Windows.Forms.Label();
-            this.txtIDUser = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtTelephone = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.lbStatusDetail = new System.Windows.Forms.Label();
-            this.lbMainAccountDetail = new System.Windows.Forms.Label();
-            this.lbSecondAccountDetail = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.lbSex = new System.Windows.Forms.Label();
-            this.lbCountry = new System.Windows.Forms.Label();
-            this.lbBirthDay = new System.Windows.Forms.Label();
-            this.lbHomeTown = new System.Windows.Forms.Label();
-            this.txtSex = new System.Windows.Forms.TextBox();
-            this.txtCountry = new System.Windows.Forms.TextBox();
-            this.txtHomeTown = new System.Windows.Forms.TextBox();
-            this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
-            this.pbBackground2 = new System.Windows.Forms.Panel();
+            this.rdFemale = new System.Windows.Forms.RadioButton();
+            this.rdMale = new System.Windows.Forms.RadioButton();
+            this.lbLastAccessVal = new System.Windows.Forms.Label();
+            this.lbLastAccess = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lbRoleVal = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.pbImageUser = new System.Windows.Forms.PictureBox();
-            this.lbRoleDetail = new System.Windows.Forms.Label();
+            this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
+            this.txtHomeTown = new System.Windows.Forms.TextBox();
+            this.txtNation = new System.Windows.Forms.TextBox();
+            this.lbHomeTown = new System.Windows.Forms.Label();
+            this.lbBirthDay = new System.Windows.Forms.Label();
+            this.lbCountry = new System.Windows.Forms.Label();
+            this.lbSex = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.lbSecondAccountVal = new System.Windows.Forms.Label();
+            this.lbMainAccountVal = new System.Windows.Forms.Label();
+            this.lbStatusVal = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtTelephone = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtIDUser = new System.Windows.Forms.TextBox();
+            this.lbStatus = new System.Windows.Forms.Label();
+            this.lbSecondAccount = new System.Windows.Forms.Label();
+            this.lbMainAccount = new System.Windows.Forms.Label();
+            this.lbRole = new System.Windows.Forms.Label();
+            this.lbAddress = new System.Windows.Forms.Label();
+            this.lbTelephone = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbIDUser = new System.Windows.Forms.Label();
+            this.lbDetail = new System.Windows.Forms.Label();
+            this.pbBackground2 = new System.Windows.Forms.Panel();
+            this.btnResetPassword = new System.Windows.Forms.Button();
             this.pnBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImageUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pnBackground
             // 
             this.pnBackground.BackColor = System.Drawing.Color.White;
-            this.pnBackground.Controls.Add(this.lbRoleDetail);
+            this.pnBackground.Controls.Add(this.btnResetPassword);
+            this.pnBackground.Controls.Add(this.rdFemale);
+            this.pnBackground.Controls.Add(this.rdMale);
+            this.pnBackground.Controls.Add(this.lbLastAccessVal);
+            this.pnBackground.Controls.Add(this.lbLastAccess);
+            this.pnBackground.Controls.Add(this.btnClose);
+            this.pnBackground.Controls.Add(this.lbRoleVal);
             this.pnBackground.Controls.Add(this.btnConfirm);
             this.pnBackground.Controls.Add(this.dtpBirthDay);
             this.pnBackground.Controls.Add(this.txtHomeTown);
-            this.pnBackground.Controls.Add(this.txtCountry);
-            this.pnBackground.Controls.Add(this.txtSex);
+            this.pnBackground.Controls.Add(this.txtNation);
             this.pnBackground.Controls.Add(this.lbHomeTown);
             this.pnBackground.Controls.Add(this.lbBirthDay);
             this.pnBackground.Controls.Add(this.lbCountry);
             this.pnBackground.Controls.Add(this.lbSex);
             this.pnBackground.Controls.Add(this.btnDelete);
             this.pnBackground.Controls.Add(this.btnEdit);
-            this.pnBackground.Controls.Add(this.lbSecondAccountDetail);
-            this.pnBackground.Controls.Add(this.lbMainAccountDetail);
-            this.pnBackground.Controls.Add(this.lbStatusDetail);
+            this.pnBackground.Controls.Add(this.lbSecondAccountVal);
+            this.pnBackground.Controls.Add(this.lbMainAccountVal);
+            this.pnBackground.Controls.Add(this.lbStatusVal);
             this.pnBackground.Controls.Add(this.txtAddress);
             this.pnBackground.Controls.Add(this.txtTelephone);
-            this.pnBackground.Controls.Add(this.txtName);
+            this.pnBackground.Controls.Add(this.txtUsername);
             this.pnBackground.Controls.Add(this.txtIDUser);
             this.pnBackground.Controls.Add(this.lbStatus);
             this.pnBackground.Controls.Add(this.lbSecondAccount);
@@ -94,273 +102,83 @@
             this.pnBackground.Controls.Add(this.lbName);
             this.pnBackground.Controls.Add(this.lbIDUser);
             this.pnBackground.Controls.Add(this.lbDetail);
-            this.pnBackground.Controls.Add(this.pbImageUser);
             this.pnBackground.Controls.Add(this.pbBackground2);
             this.pnBackground.Location = new System.Drawing.Point(12, 12);
             this.pnBackground.Name = "pnBackground";
             this.pnBackground.Size = new System.Drawing.Size(1478, 759);
             this.pnBackground.TabIndex = 0;
             // 
-            // lbDetail
+            // rdFemale
             // 
-            this.lbDetail.AutoSize = true;
-            this.lbDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDetail.ForeColor = System.Drawing.Color.Red;
-            this.lbDetail.Location = new System.Drawing.Point(818, 34);
-            this.lbDetail.Name = "lbDetail";
-            this.lbDetail.Size = new System.Drawing.Size(241, 32);
-            this.lbDetail.TabIndex = 1;
-            this.lbDetail.Text = "Thông tin chi tiết";
+            this.rdFemale.AutoSize = true;
+            this.rdFemale.Enabled = false;
+            this.rdFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdFemale.Location = new System.Drawing.Point(905, 395);
+            this.rdFemale.Name = "rdFemale";
+            this.rdFemale.Size = new System.Drawing.Size(58, 29);
+            this.rdFemale.TabIndex = 39;
+            this.rdFemale.Text = "Nữ";
+            this.rdFemale.UseVisualStyleBackColor = true;
             // 
-            // lbIDUser
+            // rdMale
             // 
-            this.lbIDUser.AutoSize = true;
-            this.lbIDUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDUser.Location = new System.Drawing.Point(606, 109);
-            this.lbIDUser.Name = "lbIDUser";
-            this.lbIDUser.Size = new System.Drawing.Size(148, 25);
-            this.lbIDUser.TabIndex = 2;
-            this.lbIDUser.Text = "Mã người dùng:";
+            this.rdMale.AutoSize = true;
+            this.rdMale.Checked = true;
+            this.rdMale.Enabled = false;
+            this.rdMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdMale.Location = new System.Drawing.Point(776, 397);
+            this.rdMale.Name = "rdMale";
+            this.rdMale.Size = new System.Drawing.Size(74, 29);
+            this.rdMale.TabIndex = 38;
+            this.rdMale.TabStop = true;
+            this.rdMale.Text = "Nam";
+            this.rdMale.UseVisualStyleBackColor = true;
             // 
-            // lbName
+            // lbLastAccessVal
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(606, 156);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(101, 25);
-            this.lbName.TabIndex = 3;
-            this.lbName.Text = "Họ và tên:";
+            this.lbLastAccessVal.AutoSize = true;
+            this.lbLastAccessVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLastAccessVal.ForeColor = System.Drawing.Color.Lime;
+            this.lbLastAccessVal.Location = new System.Drawing.Point(1217, 506);
+            this.lbLastAccessVal.Name = "lbLastAccessVal";
+            this.lbLastAccessVal.Size = new System.Drawing.Size(37, 25);
+            this.lbLastAccessVal.TabIndex = 34;
+            this.lbLastAccessVal.Text = "(?)";
             // 
-            // lbTelephone
+            // lbLastAccess
             // 
-            this.lbTelephone.AutoSize = true;
-            this.lbTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelephone.Location = new System.Drawing.Point(606, 253);
-            this.lbTelephone.Name = "lbTelephone";
-            this.lbTelephone.Size = new System.Drawing.Size(132, 25);
-            this.lbTelephone.TabIndex = 4;
-            this.lbTelephone.Text = "Số điện thoại:";
+            this.lbLastAccess.AutoSize = true;
+            this.lbLastAccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLastAccess.Location = new System.Drawing.Point(954, 506);
+            this.lbLastAccess.Name = "lbLastAccess";
+            this.lbLastAccess.Size = new System.Drawing.Size(238, 25);
+            this.lbLastAccess.TabIndex = 33;
+            this.lbLastAccess.Text = "Lần đăng nhập cuối cùng:";
             // 
-            // lbAddress
+            // btnClose
             // 
-            this.lbAddress.AutoSize = true;
-            this.lbAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddress.Location = new System.Drawing.Point(606, 302);
-            this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(77, 25);
-            this.lbAddress.TabIndex = 5;
-            this.lbAddress.Text = "Địa chỉ:";
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(1431, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(35, 30);
+            this.btnClose.TabIndex = 32;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lbRole
+            // lbRoleVal
             // 
-            this.lbRole.AutoSize = true;
-            this.lbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRole.Location = new System.Drawing.Point(606, 350);
-            this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(74, 25);
-            this.lbRole.TabIndex = 6;
-            this.lbRole.Text = "Vai trò:";
-            // 
-            // lbMainAccount
-            // 
-            this.lbMainAccount.AutoSize = true;
-            this.lbMainAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMainAccount.Location = new System.Drawing.Point(607, 455);
-            this.lbMainAccount.Name = "lbMainAccount";
-            this.lbMainAccount.Size = new System.Drawing.Size(157, 25);
-            this.lbMainAccount.TabIndex = 7;
-            this.lbMainAccount.Text = "Tài khoản chính:";
-            // 
-            // lbSecondAccount
-            // 
-            this.lbSecondAccount.AutoSize = true;
-            this.lbSecondAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSecondAccount.Location = new System.Drawing.Point(954, 455);
-            this.lbSecondAccount.Name = "lbSecondAccount";
-            this.lbSecondAccount.Size = new System.Drawing.Size(143, 25);
-            this.lbSecondAccount.TabIndex = 8;
-            this.lbSecondAccount.Text = "Tài khoản phụ:";
-            // 
-            // lbStatus
-            // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatus.Location = new System.Drawing.Point(607, 507);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(106, 25);
-            this.lbStatus.TabIndex = 9;
-            this.lbStatus.Text = "Trạng thái:";
-            // 
-            // txtIDUser
-            // 
-            this.txtIDUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDUser.Location = new System.Drawing.Point(775, 106);
-            this.txtIDUser.Name = "txtIDUser";
-            this.txtIDUser.Size = new System.Drawing.Size(490, 30);
-            this.txtIDUser.TabIndex = 10;
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(775, 153);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(490, 30);
-            this.txtName.TabIndex = 11;
-            // 
-            // txtTelephone
-            // 
-            this.txtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelephone.Location = new System.Drawing.Point(775, 250);
-            this.txtTelephone.Name = "txtTelephone";
-            this.txtTelephone.Size = new System.Drawing.Size(490, 30);
-            this.txtTelephone.TabIndex = 12;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(775, 299);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(490, 30);
-            this.txtAddress.TabIndex = 13;
-            // 
-            // lbStatusDetail
-            // 
-            this.lbStatusDetail.AutoSize = true;
-            this.lbStatusDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatusDetail.ForeColor = System.Drawing.Color.Lime;
-            this.lbStatusDetail.Location = new System.Drawing.Point(770, 507);
-            this.lbStatusDetail.Name = "lbStatusDetail";
-            this.lbStatusDetail.Size = new System.Drawing.Size(37, 25);
-            this.lbStatusDetail.TabIndex = 15;
-            this.lbStatusDetail.Text = "(?)";
-            // 
-            // lbMainAccountDetail
-            // 
-            this.lbMainAccountDetail.AutoSize = true;
-            this.lbMainAccountDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMainAccountDetail.ForeColor = System.Drawing.Color.Lime;
-            this.lbMainAccountDetail.Location = new System.Drawing.Point(770, 455);
-            this.lbMainAccountDetail.Name = "lbMainAccountDetail";
-            this.lbMainAccountDetail.Size = new System.Drawing.Size(37, 25);
-            this.lbMainAccountDetail.TabIndex = 16;
-            this.lbMainAccountDetail.Text = "(?)";
-            // 
-            // lbSecondAccountDetail
-            // 
-            this.lbSecondAccountDetail.AutoSize = true;
-            this.lbSecondAccountDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSecondAccountDetail.ForeColor = System.Drawing.Color.Lime;
-            this.lbSecondAccountDetail.Location = new System.Drawing.Point(1103, 455);
-            this.lbSecondAccountDetail.Name = "lbSecondAccountDetail";
-            this.lbSecondAccountDetail.Size = new System.Drawing.Size(37, 25);
-            this.lbSecondAccountDetail.TabIndex = 17;
-            this.lbSecondAccountDetail.Text = "(?)";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Yellow;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(1042, 659);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(180, 59);
-            this.btnEdit.TabIndex = 18;
-            this.btnEdit.Text = "Sửa thông tin";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(831, 659);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(180, 59);
-            this.btnDelete.TabIndex = 19;
-            this.btnDelete.Text = "Xoá thông tin";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // lbSex
-            // 
-            this.lbSex.AutoSize = true;
-            this.lbSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSex.Location = new System.Drawing.Point(607, 400);
-            this.lbSex.Name = "lbSex";
-            this.lbSex.Size = new System.Drawing.Size(88, 25);
-            this.lbSex.TabIndex = 20;
-            this.lbSex.Text = "Giới tính:";
-            // 
-            // lbCountry
-            // 
-            this.lbCountry.AutoSize = true;
-            this.lbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCountry.Location = new System.Drawing.Point(968, 350);
-            this.lbCountry.Name = "lbCountry";
-            this.lbCountry.Size = new System.Drawing.Size(101, 25);
-            this.lbCountry.TabIndex = 21;
-            this.lbCountry.Text = "Quốc tịch:";
-            // 
-            // lbBirthDay
-            // 
-            this.lbBirthDay.AutoSize = true;
-            this.lbBirthDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBirthDay.Location = new System.Drawing.Point(606, 208);
-            this.lbBirthDay.Name = "lbBirthDay";
-            this.lbBirthDay.Size = new System.Drawing.Size(105, 25);
-            this.lbBirthDay.TabIndex = 22;
-            this.lbBirthDay.Text = "Ngày sinh:";
-            // 
-            // lbHomeTown
-            // 
-            this.lbHomeTown.AutoSize = true;
-            this.lbHomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHomeTown.Location = new System.Drawing.Point(969, 400);
-            this.lbHomeTown.Name = "lbHomeTown";
-            this.lbHomeTown.Size = new System.Drawing.Size(105, 25);
-            this.lbHomeTown.TabIndex = 23;
-            this.lbHomeTown.Text = "Quê quán:";
-            // 
-            // txtSex
-            // 
-            this.txtSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSex.Location = new System.Drawing.Point(775, 397);
-            this.txtSex.Name = "txtSex";
-            this.txtSex.Size = new System.Drawing.Size(187, 30);
-            this.txtSex.TabIndex = 24;
-            // 
-            // txtCountry
-            // 
-            this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCountry.Location = new System.Drawing.Point(1078, 347);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(187, 30);
-            this.txtCountry.TabIndex = 25;
-            // 
-            // txtHomeTown
-            // 
-            this.txtHomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHomeTown.Location = new System.Drawing.Point(1078, 397);
-            this.txtHomeTown.Name = "txtHomeTown";
-            this.txtHomeTown.Size = new System.Drawing.Size(187, 30);
-            this.txtHomeTown.TabIndex = 27;
-            // 
-            // dtpBirthDay
-            // 
-            this.dtpBirthDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBirthDay.Location = new System.Drawing.Point(775, 203);
-            this.dtpBirthDay.Name = "dtpBirthDay";
-            this.dtpBirthDay.Size = new System.Drawing.Size(490, 30);
-            this.dtpBirthDay.TabIndex = 28;
-            // 
-            // pbBackground2
-            // 
-            this.pbBackground2.BackColor = System.Drawing.Color.Tomato;
-            this.pbBackground2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbBackground2.Location = new System.Drawing.Point(0, 0);
-            this.pbBackground2.Name = "pbBackground2";
-            this.pbBackground2.Size = new System.Drawing.Size(441, 759);
-            this.pbBackground2.TabIndex = 29;
+            this.lbRoleVal.AutoSize = true;
+            this.lbRoleVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRoleVal.ForeColor = System.Drawing.Color.Red;
+            this.lbRoleVal.Location = new System.Drawing.Point(770, 349);
+            this.lbRoleVal.Name = "lbRoleVal";
+            this.lbRoleVal.Size = new System.Drawing.Size(37, 25);
+            this.lbRoleVal.TabIndex = 31;
+            this.lbRoleVal.Text = "(?)";
             // 
             // btnConfirm
             // 
@@ -373,25 +191,283 @@
             this.btnConfirm.TabIndex = 30;
             this.btnConfirm.Text = "Xác nhận";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // pbImageUser
+            // dtpBirthDay
             // 
-            this.pbImageUser.Location = new System.Drawing.Point(108, 32);
-            this.pbImageUser.Name = "pbImageUser";
-            this.pbImageUser.Size = new System.Drawing.Size(225, 275);
-            this.pbImageUser.TabIndex = 0;
-            this.pbImageUser.TabStop = false;
+            this.dtpBirthDay.Enabled = false;
+            this.dtpBirthDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBirthDay.Location = new System.Drawing.Point(775, 203);
+            this.dtpBirthDay.Name = "dtpBirthDay";
+            this.dtpBirthDay.Size = new System.Drawing.Size(490, 30);
+            this.dtpBirthDay.TabIndex = 28;
             // 
-            // lbRoleDetail
+            // txtHomeTown
             // 
-            this.lbRoleDetail.AutoSize = true;
-            this.lbRoleDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRoleDetail.ForeColor = System.Drawing.Color.Lime;
-            this.lbRoleDetail.Location = new System.Drawing.Point(770, 350);
-            this.lbRoleDetail.Name = "lbRoleDetail";
-            this.lbRoleDetail.Size = new System.Drawing.Size(37, 25);
-            this.lbRoleDetail.TabIndex = 31;
-            this.lbRoleDetail.Text = "(?)";
+            this.txtHomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHomeTown.Location = new System.Drawing.Point(1078, 396);
+            this.txtHomeTown.Name = "txtHomeTown";
+            this.txtHomeTown.ReadOnly = true;
+            this.txtHomeTown.Size = new System.Drawing.Size(187, 30);
+            this.txtHomeTown.TabIndex = 27;
+            // 
+            // txtNation
+            // 
+            this.txtNation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNation.Location = new System.Drawing.Point(1078, 346);
+            this.txtNation.Name = "txtNation";
+            this.txtNation.ReadOnly = true;
+            this.txtNation.Size = new System.Drawing.Size(187, 30);
+            this.txtNation.TabIndex = 25;
+            // 
+            // lbHomeTown
+            // 
+            this.lbHomeTown.AutoSize = true;
+            this.lbHomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHomeTown.Location = new System.Drawing.Point(969, 399);
+            this.lbHomeTown.Name = "lbHomeTown";
+            this.lbHomeTown.Size = new System.Drawing.Size(105, 25);
+            this.lbHomeTown.TabIndex = 23;
+            this.lbHomeTown.Text = "Quê quán:";
+            // 
+            // lbBirthDay
+            // 
+            this.lbBirthDay.AutoSize = true;
+            this.lbBirthDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBirthDay.Location = new System.Drawing.Point(606, 208);
+            this.lbBirthDay.Name = "lbBirthDay";
+            this.lbBirthDay.Size = new System.Drawing.Size(105, 25);
+            this.lbBirthDay.TabIndex = 22;
+            this.lbBirthDay.Text = "Ngày sinh:";
+            // 
+            // lbCountry
+            // 
+            this.lbCountry.AutoSize = true;
+            this.lbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCountry.Location = new System.Drawing.Point(968, 349);
+            this.lbCountry.Name = "lbCountry";
+            this.lbCountry.Size = new System.Drawing.Size(101, 25);
+            this.lbCountry.TabIndex = 21;
+            this.lbCountry.Text = "Quốc tịch:";
+            // 
+            // lbSex
+            // 
+            this.lbSex.AutoSize = true;
+            this.lbSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSex.Location = new System.Drawing.Point(607, 399);
+            this.lbSex.Name = "lbSex";
+            this.lbSex.Size = new System.Drawing.Size(88, 25);
+            this.lbSex.TabIndex = 20;
+            this.lbSex.Text = "Giới tính:";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(831, 659);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(180, 59);
+            this.btnDelete.TabIndex = 19;
+            this.btnDelete.Text = "Xoá thông tin";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.Yellow;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(1042, 659);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(180, 59);
+            this.btnEdit.TabIndex = 18;
+            this.btnEdit.Text = "Sửa thông tin";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lbSecondAccountVal
+            // 
+            this.lbSecondAccountVal.AutoSize = true;
+            this.lbSecondAccountVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSecondAccountVal.ForeColor = System.Drawing.Color.Lime;
+            this.lbSecondAccountVal.Location = new System.Drawing.Point(1103, 454);
+            this.lbSecondAccountVal.Name = "lbSecondAccountVal";
+            this.lbSecondAccountVal.Size = new System.Drawing.Size(37, 25);
+            this.lbSecondAccountVal.TabIndex = 17;
+            this.lbSecondAccountVal.Text = "(?)";
+            // 
+            // lbMainAccountVal
+            // 
+            this.lbMainAccountVal.AutoSize = true;
+            this.lbMainAccountVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMainAccountVal.ForeColor = System.Drawing.Color.Lime;
+            this.lbMainAccountVal.Location = new System.Drawing.Point(770, 454);
+            this.lbMainAccountVal.Name = "lbMainAccountVal";
+            this.lbMainAccountVal.Size = new System.Drawing.Size(37, 25);
+            this.lbMainAccountVal.TabIndex = 16;
+            this.lbMainAccountVal.Text = "(?)";
+            // 
+            // lbStatusVal
+            // 
+            this.lbStatusVal.AutoSize = true;
+            this.lbStatusVal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatusVal.ForeColor = System.Drawing.Color.Lime;
+            this.lbStatusVal.Location = new System.Drawing.Point(770, 506);
+            this.lbStatusVal.Name = "lbStatusVal";
+            this.lbStatusVal.Size = new System.Drawing.Size(37, 25);
+            this.lbStatusVal.TabIndex = 15;
+            this.lbStatusVal.Text = "(?)";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(775, 298);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(490, 30);
+            this.txtAddress.TabIndex = 13;
+            // 
+            // txtTelephone
+            // 
+            this.txtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelephone.Location = new System.Drawing.Point(775, 250);
+            this.txtTelephone.Name = "txtTelephone";
+            this.txtTelephone.ReadOnly = true;
+            this.txtTelephone.Size = new System.Drawing.Size(490, 30);
+            this.txtTelephone.TabIndex = 12;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(775, 153);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.ReadOnly = true;
+            this.txtUsername.Size = new System.Drawing.Size(490, 30);
+            this.txtUsername.TabIndex = 11;
+            // 
+            // txtIDUser
+            // 
+            this.txtIDUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDUser.Location = new System.Drawing.Point(775, 106);
+            this.txtIDUser.Name = "txtIDUser";
+            this.txtIDUser.ReadOnly = true;
+            this.txtIDUser.Size = new System.Drawing.Size(490, 30);
+            this.txtIDUser.TabIndex = 10;
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.Location = new System.Drawing.Point(607, 506);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(106, 25);
+            this.lbStatus.TabIndex = 9;
+            this.lbStatus.Text = "Trạng thái:";
+            // 
+            // lbSecondAccount
+            // 
+            this.lbSecondAccount.AutoSize = true;
+            this.lbSecondAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSecondAccount.Location = new System.Drawing.Point(954, 454);
+            this.lbSecondAccount.Name = "lbSecondAccount";
+            this.lbSecondAccount.Size = new System.Drawing.Size(143, 25);
+            this.lbSecondAccount.TabIndex = 8;
+            this.lbSecondAccount.Text = "Tài khoản phụ:";
+            // 
+            // lbMainAccount
+            // 
+            this.lbMainAccount.AutoSize = true;
+            this.lbMainAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMainAccount.Location = new System.Drawing.Point(607, 454);
+            this.lbMainAccount.Name = "lbMainAccount";
+            this.lbMainAccount.Size = new System.Drawing.Size(157, 25);
+            this.lbMainAccount.TabIndex = 7;
+            this.lbMainAccount.Text = "Tài khoản chính:";
+            // 
+            // lbRole
+            // 
+            this.lbRole.AutoSize = true;
+            this.lbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRole.Location = new System.Drawing.Point(606, 349);
+            this.lbRole.Name = "lbRole";
+            this.lbRole.Size = new System.Drawing.Size(74, 25);
+            this.lbRole.TabIndex = 6;
+            this.lbRole.Text = "Vai trò:";
+            // 
+            // lbAddress
+            // 
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAddress.Location = new System.Drawing.Point(606, 301);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(77, 25);
+            this.lbAddress.TabIndex = 5;
+            this.lbAddress.Text = "Địa chỉ:";
+            // 
+            // lbTelephone
+            // 
+            this.lbTelephone.AutoSize = true;
+            this.lbTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTelephone.Location = new System.Drawing.Point(606, 253);
+            this.lbTelephone.Name = "lbTelephone";
+            this.lbTelephone.Size = new System.Drawing.Size(132, 25);
+            this.lbTelephone.TabIndex = 4;
+            this.lbTelephone.Text = "Số điện thoại:";
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(606, 156);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(101, 25);
+            this.lbName.TabIndex = 3;
+            this.lbName.Text = "Họ và tên:";
+            // 
+            // lbIDUser
+            // 
+            this.lbIDUser.AutoSize = true;
+            this.lbIDUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIDUser.Location = new System.Drawing.Point(606, 109);
+            this.lbIDUser.Name = "lbIDUser";
+            this.lbIDUser.Size = new System.Drawing.Size(148, 25);
+            this.lbIDUser.TabIndex = 2;
+            this.lbIDUser.Text = "Mã người dùng:";
+            // 
+            // lbDetail
+            // 
+            this.lbDetail.AutoSize = true;
+            this.lbDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDetail.ForeColor = System.Drawing.Color.Red;
+            this.lbDetail.Location = new System.Drawing.Point(818, 34);
+            this.lbDetail.Name = "lbDetail";
+            this.lbDetail.Size = new System.Drawing.Size(241, 32);
+            this.lbDetail.TabIndex = 1;
+            this.lbDetail.Text = "Thông tin chi tiết";
+            // 
+            // pbBackground2
+            // 
+            this.pbBackground2.BackColor = System.Drawing.Color.Tomato;
+            this.pbBackground2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbBackground2.Location = new System.Drawing.Point(0, 0);
+            this.pbBackground2.Name = "pbBackground2";
+            this.pbBackground2.Size = new System.Drawing.Size(441, 759);
+            this.pbBackground2.TabIndex = 29;
+            // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.BackColor = System.Drawing.Color.Turquoise;
+            this.btnResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPassword.Location = new System.Drawing.Point(618, 659);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(180, 59);
+            this.btnResetPassword.TabIndex = 40;
+            this.btnResetPassword.Text = "Reset mật khẩu";
+            this.btnResetPassword.UseVisualStyleBackColor = false;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // FrmDetailAccount
             // 
@@ -402,10 +478,11 @@
             this.Controls.Add(this.pnBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDetailAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDetailAccount";
+            this.Load += new System.EventHandler(this.FrmDetailAccount_Load);
             this.pnBackground.ResumeLayout(false);
             this.pnBackground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImageUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,12 +492,12 @@
         private System.Windows.Forms.Panel pnBackground;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label lbSecondAccountDetail;
-        private System.Windows.Forms.Label lbMainAccountDetail;
-        private System.Windows.Forms.Label lbStatusDetail;
+        private System.Windows.Forms.Label lbSecondAccountVal;
+        private System.Windows.Forms.Label lbMainAccountVal;
+        private System.Windows.Forms.Label lbStatusVal;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtTelephone;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtIDUser;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Label lbSecondAccount;
@@ -431,17 +508,21 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbIDUser;
         private System.Windows.Forms.Label lbDetail;
-        private System.Windows.Forms.PictureBox pbImageUser;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.DateTimePicker dtpBirthDay;
         private System.Windows.Forms.TextBox txtHomeTown;
-        private System.Windows.Forms.TextBox txtCountry;
-        private System.Windows.Forms.TextBox txtSex;
+        private System.Windows.Forms.TextBox txtNation;
         private System.Windows.Forms.Label lbHomeTown;
         private System.Windows.Forms.Label lbBirthDay;
         private System.Windows.Forms.Label lbCountry;
         private System.Windows.Forms.Label lbSex;
         private System.Windows.Forms.Panel pbBackground2;
-        private System.Windows.Forms.Label lbRoleDetail;
+        private System.Windows.Forms.Label lbRoleVal;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lbLastAccess;
+        private System.Windows.Forms.Label lbLastAccessVal;
+        private System.Windows.Forms.RadioButton rdFemale;
+        private System.Windows.Forms.RadioButton rdMale;
+        private System.Windows.Forms.Button btnResetPassword;
     }
 }

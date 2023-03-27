@@ -92,5 +92,12 @@ namespace OUNet_Management_Application
         {
 
         }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+                this.WindowState = FormWindowState.Normal;
+            else this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

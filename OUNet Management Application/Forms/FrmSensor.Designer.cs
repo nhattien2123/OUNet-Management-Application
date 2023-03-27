@@ -29,21 +29,11 @@
         private void InitializeComponent()
         {
             this.pnSensors = new System.Windows.Forms.Panel();
+            this.dgvSensors = new System.Windows.Forms.DataGridView();
             this.cbSensor = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.lbSensor = new System.Windows.Forms.Label();
             this.pbSensor = new System.Windows.Forms.PictureBox();
-            this.listViewSensors = new System.Windows.Forms.ListView();
-            this.colSensorImage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colIDSensor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colNameSensor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colIP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colUser = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colUseTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colRemainTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colHistory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnWaitingService = new System.Windows.Forms.Panel();
             this.listViewWaitingService = new System.Windows.Forms.ListView();
             this.lbWaitingServiceCount = new System.Windows.Forms.Label();
@@ -55,6 +45,7 @@
             this.lbRecharge = new System.Windows.Forms.Label();
             this.pbRecharge = new System.Windows.Forms.PictureBox();
             this.pnSensors.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSensors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSensor)).BeginInit();
             this.pnWaitingService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,15 +59,29 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnSensors.BackColor = System.Drawing.Color.White;
+            this.pnSensors.Controls.Add(this.dgvSensors);
             this.pnSensors.Controls.Add(this.cbSensor);
             this.pnSensors.Controls.Add(this.btnRefresh);
             this.pnSensors.Controls.Add(this.lbSensor);
             this.pnSensors.Controls.Add(this.pbSensor);
-            this.pnSensors.Controls.Add(this.listViewSensors);
             this.pnSensors.Location = new System.Drawing.Point(12, 12);
             this.pnSensors.Name = "pnSensors";
             this.pnSensors.Size = new System.Drawing.Size(1025, 759);
             this.pnSensors.TabIndex = 1;
+            // 
+            // dgvSensors
+            // 
+            this.dgvSensors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSensors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSensors.Location = new System.Drawing.Point(24, 74);
+            this.dgvSensors.Name = "dgvSensors";
+            this.dgvSensors.ReadOnly = true;
+            this.dgvSensors.RowHeadersWidth = 51;
+            this.dgvSensors.RowTemplate.Height = 24;
+            this.dgvSensors.Size = new System.Drawing.Size(974, 666);
+            this.dgvSensors.TabIndex = 6;
             // 
             // cbSensor
             // 
@@ -121,78 +126,6 @@
             this.pbSensor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSensor.TabIndex = 1;
             this.pbSensor.TabStop = false;
-            // 
-            // listViewSensors
-            // 
-            this.listViewSensors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewSensors.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colSensorImage,
-            this.colIDSensor,
-            this.colNameSensor,
-            this.colIP,
-            this.colStatus,
-            this.colUser,
-            this.colStartTime,
-            this.colUseTime,
-            this.colRemainTime,
-            this.colHistory});
-            this.listViewSensors.HideSelection = false;
-            this.listViewSensors.Location = new System.Drawing.Point(24, 74);
-            this.listViewSensors.Name = "listViewSensors";
-            this.listViewSensors.Size = new System.Drawing.Size(974, 657);
-            this.listViewSensors.TabIndex = 0;
-            this.listViewSensors.UseCompatibleStateImageBehavior = false;
-            this.listViewSensors.View = System.Windows.Forms.View.Details;
-            // 
-            // colSensorImage
-            // 
-            this.colSensorImage.Text = "#";
-            this.colSensorImage.Width = 20;
-            // 
-            // colIDSensor
-            // 
-            this.colIDSensor.Text = "Mã máy";
-            // 
-            // colNameSensor
-            // 
-            this.colNameSensor.Text = "Tên máy";
-            this.colNameSensor.Width = 100;
-            // 
-            // colIP
-            // 
-            this.colIP.Text = "IP";
-            this.colIP.Width = 100;
-            // 
-            // colStatus
-            // 
-            this.colStatus.Text = "Trạng thái";
-            this.colStatus.Width = 100;
-            // 
-            // colUser
-            // 
-            this.colUser.Text = "Người dùng";
-            this.colUser.Width = 100;
-            // 
-            // colStartTime
-            // 
-            this.colStartTime.Text = "Bắt đầu";
-            this.colStartTime.Width = 100;
-            // 
-            // colUseTime
-            // 
-            this.colUseTime.Text = "Đã sử dụng";
-            this.colUseTime.Width = 80;
-            // 
-            // colRemainTime
-            // 
-            this.colRemainTime.Text = "Còn lại";
-            this.colRemainTime.Width = 80;
-            // 
-            // colHistory
-            // 
-            this.colHistory.Text = "";
             // 
             // pnWaitingService
             // 
@@ -318,8 +251,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSensor";
             this.Text = "FrmSensor";
+            this.Load += new System.EventHandler(this.FrmSensor_Load);
             this.pnSensors.ResumeLayout(false);
             this.pnSensors.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSensors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSensor)).EndInit();
             this.pnWaitingService.ResumeLayout(false);
             this.pnWaitingService.PerformLayout();
@@ -336,19 +271,10 @@
         private System.Windows.Forms.Panel pnSensors;
         private System.Windows.Forms.Panel pnWaitingService;
         private System.Windows.Forms.Panel pnRecharge;
-        private System.Windows.Forms.ListView listViewSensors;
         private System.Windows.Forms.PictureBox pbSensor;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lbSensor;
         private System.Windows.Forms.ComboBox cbSensor;
-        private System.Windows.Forms.ColumnHeader colSensorImage;
-        private System.Windows.Forms.ColumnHeader colNameSensor;
-        private System.Windows.Forms.ColumnHeader colStatus;
-        private System.Windows.Forms.ColumnHeader colUser;
-        private System.Windows.Forms.ColumnHeader colStartTime;
-        private System.Windows.Forms.ColumnHeader colUseTime;
-        private System.Windows.Forms.ColumnHeader colRemainTime;
-        private System.Windows.Forms.ColumnHeader colHistory;
         private System.Windows.Forms.Label lbWaitingService;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbWaitingServiceCount;
@@ -357,7 +283,6 @@
         private System.Windows.Forms.Label lbRecharge;
         private System.Windows.Forms.ListView listViewWaitingService;
         private System.Windows.Forms.ListView listViewRecharge;
-        private System.Windows.Forms.ColumnHeader colIDSensor;
-        private System.Windows.Forms.ColumnHeader colIP;
+        private System.Windows.Forms.DataGridView dgvSensors;
     }
 }
