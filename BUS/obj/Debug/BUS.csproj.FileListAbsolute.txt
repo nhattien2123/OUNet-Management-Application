@@ -1,0 +1,12 @@
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\bin\Debug\BUS.dll
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\bin\Debug\BUS.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\bin\Debug\DAO.dll
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\bin\Debug\DTO.dll
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\bin\Debug\DAO.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\bin\Debug\DAO.dll.config
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\bin\Debug\DTO.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\obj\Debug\BUS.dll
+D:\Working\C++\source-file-C#\OUNet Management Application\BUS\obj\Debug\BUS.pdb

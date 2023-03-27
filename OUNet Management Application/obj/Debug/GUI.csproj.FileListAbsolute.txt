@@ -1,0 +1,31 @@
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\OUNet Management Application.exe.config
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\OUNet Management Application.exe
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\OUNet Management Application.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\BUS.dll
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\DAO.dll
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\DTO.dll
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\BUS.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\DAO.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\DAO.dll.config
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\DTO.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmAccount.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmConfirm.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmHistory.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmMessage.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmSensor.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmServices.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmStatistical.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.Second_Forms.FrmDetailAccount.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.Second_Forms.FrmDetailOrder.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.FrmLoading.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.FrmLogin.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.FrmMain.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Properties.Resources.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\GUI.csproj.CopyComplete
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.exe
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet Management Application.pdb
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.Second_Forms.FrmAddUser.resources

@@ -19,10 +19,10 @@ namespace OUNet_Management_Application
 
         public FrmMain()
         {
-            //frmLogin = new FrmLogin();
-            //frmLogin.ShowDialog();
-            //frmLoading = new FrmLoading();
-            //frmLoading.ShowDialog();
+            frmLogin = new FrmLogin();
+            frmLogin.ShowDialog();
+            frmLoading = new FrmLoading();
+            frmLoading.ShowDialog();
             InitializeComponent();
         }
 
@@ -86,6 +86,18 @@ namespace OUNet_Management_Application
             if (this.WindowState == FormWindowState.Maximized)
                 this.WindowState = FormWindowState.Normal;
             else this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void pnForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+                this.WindowState = FormWindowState.Normal;
+            else this.WindowState = FormWindowState.Minimized;
         }
     }
 }

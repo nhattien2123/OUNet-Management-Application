@@ -193,6 +193,16 @@ namespace OUNet_Management_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Search_Icon_White {
+            get {
+                object obj = ResourceManager.GetObject("Search-Icon-White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Search_Icon1 {
             get {
                 object obj = ResourceManager.GetObject("Search-Icon1", resourceCulture);
@@ -206,6 +216,16 @@ namespace OUNet_Management_Application.Properties {
         internal static System.Drawing.Bitmap Sensor_Icon {
             get {
                 object obj = ResourceManager.GetObject("Sensor-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Services {
+            get {
+                object obj = ResourceManager.GetObject("Services", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +266,16 @@ namespace OUNet_Management_Application.Properties {
         internal static System.Drawing.Bitmap User_Form_Icon {
             get {
                 object obj = ResourceManager.GetObject("User-Form-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visible_Eye_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Visible-Eye-Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

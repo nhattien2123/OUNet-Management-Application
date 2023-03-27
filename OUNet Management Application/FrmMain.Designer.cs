@@ -42,6 +42,7 @@
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnSensor = new System.Windows.Forms.Button();
             this.pnForm = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnMenuBottom.SuspendLayout();
@@ -50,6 +51,7 @@
             // pnHeader
             // 
             this.pnHeader.BackColor = System.Drawing.Color.Brown;
+            this.pnHeader.Controls.Add(this.btnMinimize);
             this.pnHeader.Controls.Add(this.lbUsername);
             this.pnHeader.Controls.Add(this.btnMaximize);
             this.pnHeader.Controls.Add(this.pbLogo);
@@ -75,7 +77,7 @@
             // btnMaximize
             // 
             this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnMaximize.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
             this.btnMaximize.Image = global::OUNet_Management_Application.Properties.Resources.Rectangle_Icon;
@@ -232,8 +234,23 @@
             this.pnForm.Name = "pnForm";
             this.pnForm.Size = new System.Drawing.Size(1500, 882);
             this.pnForm.TabIndex = 4;
+            this.pnForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnForm_Paint);
             // 
-            // FrmOUNET
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Location = new System.Drawing.Point(1371, 4);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(35, 30);
+            this.btnMinimize.TabIndex = 5;
+            this.btnMinimize.Text = "_";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -242,10 +259,9 @@
             this.Controls.Add(this.pnMenuBottom);
             this.Controls.Add(this.pnHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmOUNET";
+            this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOUNET";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmOUNET_Load);
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
@@ -271,6 +287,7 @@
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Label lbUsername;
+        private System.Windows.Forms.Button btnMinimize;
     }
 }
 

@@ -68,5 +68,12 @@ namespace OUNet_Management_Application
             if (FrmMain.username == "")
                 Application.Exit();
         }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+                this.WindowState = FormWindowState.Normal;
+            else this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
