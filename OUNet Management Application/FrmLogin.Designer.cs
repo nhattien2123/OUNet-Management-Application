@@ -188,7 +188,7 @@
             this.lblHelp.AutoSize = true;
             this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHelp.LinkColor = System.Drawing.Color.Blue;
-            this.lblHelp.Location = new System.Drawing.Point(673, 415);
+            this.lblHelp.Location = new System.Drawing.Point(656, 415);
             this.lblHelp.Name = "lblHelp";
             this.lblHelp.Size = new System.Drawing.Size(53, 20);
             this.lblHelp.TabIndex = 11;

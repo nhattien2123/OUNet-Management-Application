@@ -13,16 +13,16 @@ namespace OUNet_Management_Application
     public partial class FrmMain : Form
     {
         private Form activeForm;
-        private FrmLogin frmLogin;
-        private FrmLoading frmLoading;
+        //private FrmLogin frmLogin;
+        //private FrmLoading frmLoading;
         public static string username;
 
         public FrmMain()
         {
-            frmLogin = new FrmLogin();
-            frmLogin.ShowDialog();
-            frmLoading = new FrmLoading();
-            frmLoading.ShowDialog();
+            //frmLogin = new FrmLogin();
+            //frmLogin.ShowDialog();
+            //frmLoading = new FrmLoading();
+            //frmLoading.ShowDialog();
             InitializeComponent();
         }
 
@@ -35,6 +35,7 @@ namespace OUNet_Management_Application
         {
             lbUsername.Text = "(" + username + ")";
             OpenChildForm(new Forms.FrmSensor(), sender);
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void OpenChildForm(Form childForm, object btnSender)

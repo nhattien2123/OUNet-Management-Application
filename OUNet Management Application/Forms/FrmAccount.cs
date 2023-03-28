@@ -28,16 +28,27 @@ namespace OUNet_Management_Application.Forms
             frmAddUser.ShowDialog();
         }
 
+        private void PersonalizeDataGridView()
+        {
+            dgvUsers.Columns[3].Visible = false;
+            dgvUsers.Columns[10].Visible = false;
+            dgvUsers.Columns[11].Visible = false;
+            dgvUsers.Columns[12].Visible = false;
+            dgvUsers.Columns[13].Visible = false;
+            dgvUsers.Columns[4].Width = 200;
+        }
+
         public void LoadData()
         {
             dgvUsers.DataSource = Users_BUS.ListUsers_BUS();
-            dgvUsers.Columns[3].Visible = false;
-            dgvUsers.Columns[4].Width = 200;
         }
 
         private void FrmAccount_Load(object sender, EventArgs e)
         {
+            cbColName.SelectedIndex = 0;
+            cbStatus.SelectedIndex = 0;
             LoadData();
+            PersonalizeDataGridView();
         }
 
         private void dgvUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -70,9 +81,29 @@ namespace OUNet_Management_Application.Forms
             LoadData();
         }
 
+        private void SearchData()
+        {
+            string searchValue = txtSearch.Text.Trim();
+            string colName, status;
+
+            if (cbColName.Text == "Họ và tên")
+                colName = "Username";
+            else if (cbColName.Text == "Địa chỉ")
+                colName = "Address";
+            else if (cbColName.Text == "Số điện thoại")
+                colName = "Tel";
+            else colName = "Role";
+
+            if (cbStatus.Text == "Đã kích hoạt")
+                status = "1";
+            else status = "0";
+
+            dgvUsers.DataSource = Users_BUS.SearchUser_BUS(searchValue, colName, status);
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            SearchData();
         }
     }
 }
