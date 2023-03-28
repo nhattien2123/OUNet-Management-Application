@@ -66,10 +66,17 @@
             // 
             // cbColName
             // 
+            this.cbColName.AllowDrop = true;
             this.cbColName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbColName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbColName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbColName.FormattingEnabled = true;
-            this.cbColName.Location = new System.Drawing.Point(845, 32);
+            this.cbColName.Items.AddRange(new object[] {
+            "Họ và tên",
+            "Địa chỉ",
+            "Số điện thoại",
+            "Vai trò"});
+            this.cbColName.Location = new System.Drawing.Point(818, 33);
             this.cbColName.Name = "cbColName";
             this.cbColName.Size = new System.Drawing.Size(121, 28);
             this.cbColName.TabIndex = 11;
@@ -77,11 +84,15 @@
             // cbStatus
             // 
             this.cbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(1184, 32);
+            this.cbStatus.Items.AddRange(new object[] {
+            "Đã kích hoạt",
+            "Chưa kích hoạt"});
+            this.cbStatus.Location = new System.Drawing.Point(1157, 32);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(121, 28);
+            this.cbStatus.Size = new System.Drawing.Size(148, 28);
             this.cbStatus.TabIndex = 10;
             // 
             // btnSearch
@@ -131,7 +142,7 @@
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(972, 32);
+            this.txtSearch.Location = new System.Drawing.Point(945, 33);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(206, 27);
             this.txtSearch.TabIndex = 4;

@@ -33,5 +33,10 @@ namespace BUS
         {
             return DAO.Users_DAO.ChangePassword(user);
         }
+        
+        public static List<Users_DTO> SearchUser_BUS(string search, string colName, string status)
+        {
+            return DAO.Users_DAO.SearchUser(search, colName, status);
+        }
     }
 }

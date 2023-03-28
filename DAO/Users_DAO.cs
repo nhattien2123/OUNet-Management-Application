@@ -77,5 +77,34 @@ namespace DAO
             string sqlcmd = string.Format("UPDATE dbo.Users SET Password = N'{0}' WHERE UserID = '{1}';", user.Password, user.UserID);
             return ProcessingDAO.RunNonQuerySQL(sqlcmd);
         }
+
+        // Hàm tìm kiếm người dùng
+        public static List<Users_DTO> SearchUser(string search, string colName, string status)
+        {
+
+            string sqlcmd = string.Format("SELECT UserID, Username, Tel, Address, Role, M_Account, S_Account, LastAccess, Status, Nation, Sex, HomeTown, BirthDay FROM dbo.Users WHERE {0} LIKE N'%{1}%' AND Status = N'{2}'", colName, search, status);
+            List<Users_DTO> listUsers = new List<Users_DTO>();
+            DataTable dt = ProcessingDAO.RunQuerySQL(sqlcmd);
+            Users_DTO user;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                user = new Users_DTO();
+                user.UserID = dt.Rows[i]["UserID"].ToString();
+                user.Username = dt.Rows[i]["Username"].ToString();
+                user.Tel = dt.Rows[i]["Tel"].ToString();
+                user.Address = dt.Rows[i]["Address"].ToString();
+                user.Role = dt.Rows[i]["Role"].ToString();
+                user.M_Account = float.Parse(dt.Rows[i]["M_Account"].ToString());
+                user.S_Account = float.Parse(dt.Rows[i]["S_Account"].ToString());
+                user.LastAccess = DateTime.Parse(dt.Rows[i]["LastAccess"].ToString());
+                user.Status = bool.Parse(dt.Rows[i]["Status"].ToString());
+                user.Nation = dt.Rows[i]["Nation"].ToString();
+                user.Sex = dt.Rows[i]["Sex"].ToString();
+                user.HomeTown = dt.Rows[i]["HomeTown"].ToString();
+                user.BirthDay = DateTime.Parse(dt.Rows[i]["BirthDay"].ToString());
+                listUsers.Add(user);
+            }
+            return listUsers;
+        }
     }
 }

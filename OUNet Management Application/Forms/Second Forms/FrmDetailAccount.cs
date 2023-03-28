@@ -77,14 +77,18 @@ namespace OUNet_Management_Application.Forms.Second_Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            txtUsername.ReadOnly = !txtUsername.ReadOnly;
-            txtTelephone.ReadOnly = !txtTelephone.ReadOnly;
-            txtAddress.ReadOnly = !txtAddress.ReadOnly;
-            rdMale.Enabled = !rdMale.Enabled;
-            rdFemale.Enabled = !rdFemale.Enabled;
-            txtNation.ReadOnly = !txtNation.ReadOnly;
-            txtHomeTown.ReadOnly = !txtHomeTown.ReadOnly;
-            dtpBirthDay.Enabled = !dtpBirthDay.Enabled;
+            if (lbRoleVal.Text != "Admin")
+            {
+                txtUsername.ReadOnly = !txtUsername.ReadOnly;
+                txtTelephone.ReadOnly = !txtTelephone.ReadOnly;
+                txtAddress.ReadOnly = !txtAddress.ReadOnly;
+                rdMale.Enabled = !rdMale.Enabled;
+                rdFemale.Enabled = !rdFemale.Enabled;
+                txtNation.ReadOnly = !txtNation.ReadOnly;
+                txtHomeTown.ReadOnly = !txtHomeTown.ReadOnly;
+                dtpBirthDay.Enabled = !dtpBirthDay.Enabled;
+            }
+            else MessageBox.Show("Bạn không được phép chỉnh sửa Admin!");
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -122,35 +126,41 @@ namespace OUNet_Management_Application.Forms.Second_Forms
 
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            Users_DTO user = new Users_DTO();
-            user.UserID = txtIDUser.Text;
-            user.Password = BUS.MD5Hash.Hash("ounetuser");
-            BUS.Users_BUS.ChangePassword_BUS(user);
-            MessageBox.Show("Reset mật khẩu thành công\nMật khẩu của bạn là: ounetuser");
-            Close();
+            if (lbRoleVal.Text != "Admin") {
+                Users_DTO user = new Users_DTO();
+                user.UserID = txtIDUser.Text;
+                user.Password = BUS.MD5Hash.Hash("ounetuser");
+                BUS.Users_BUS.ChangePassword_BUS(user);
+                MessageBox.Show("Reset mật khẩu thành công\nMật khẩu của bạn là: ounetuser");
+                Close();
+            }
+            else MessageBox.Show("Bạn không được phép reset mật khẩu Admin!");
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Users_DTO user = new Users_DTO();
-            user.UserID = UserID;
-            user.Username = Username;
-            user.Tel = Tel;
-            user.Address = Address;
-            user.Role = Role;
-            user.M_Account = M_Account;
-            user.S_Account = S_Account;
-            user.LastAccess = LastAccess;
-            user.Status = Status;
-            user.Sex = Sex;
-            user.Nation = Nation;
-            user.HomeTown = HomeTown;
-            user.BirthDay = BirthDay;
+            if (lbRoleVal.Text != "Admin")
+            {
+                Users_DTO user = new Users_DTO();
+                user.UserID = UserID;
+                user.Username = Username;
+                user.Tel = Tel;
+                user.Address = Address;
+                user.Role = Role;
+                user.M_Account = M_Account;
+                user.S_Account = S_Account;
+                user.LastAccess = LastAccess;
+                user.Status = Status;
+                user.Sex = Sex;
+                user.Nation = Nation;
+                user.HomeTown = HomeTown;
+                user.BirthDay = BirthDay;
 
-            BUS.Users_BUS.DeleteUser_BUS(user);
-            MessageBox.Show("Đã xoá thành công!");
-            
-            Close();
+                BUS.Users_BUS.DeleteUser_BUS(user);
+                MessageBox.Show("Đã xoá thành công!");
+                Close();
+            }
+            else MessageBox.Show("Bạn không được phép xoá Admin!");
         }
     }
 }
