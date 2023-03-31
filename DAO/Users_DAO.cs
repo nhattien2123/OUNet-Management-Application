@@ -106,5 +106,32 @@ namespace DAO
             }
             return listUsers;
         }
+
+        public static Users_DTO CheckAccount(string tel, string password)
+        {
+            DataTable dt = ProcessingDAO.RunQuerySQL("SELECT * FROM dbo.Users");
+            Users_DTO user = new Users_DTO(); ;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i]["Tel"].ToString() == tel && dt.Rows[i]["Password"].ToString() == password)
+                {
+                    user.UserID = dt.Rows[i]["UserID"].ToString();
+                    user.Username = dt.Rows[i]["Username"].ToString();
+                    user.Tel = dt.Rows[i]["Tel"].ToString();
+                    user.Address = dt.Rows[i]["Address"].ToString();
+                    user.Role = dt.Rows[i]["Role"].ToString();
+                    user.M_Account = float.Parse(dt.Rows[i]["M_Account"].ToString());
+                    user.S_Account = float.Parse(dt.Rows[i]["S_Account"].ToString());
+                    user.LastAccess = DateTime.Parse(dt.Rows[i]["LastAccess"].ToString());
+                    user.Status = bool.Parse(dt.Rows[i]["Status"].ToString());
+                    user.Nation = dt.Rows[i]["Nation"].ToString();
+                    user.Sex = dt.Rows[i]["Sex"].ToString();
+                    user.HomeTown = dt.Rows[i]["HomeTown"].ToString();
+                    user.BirthDay = DateTime.Parse(dt.Rows[i]["BirthDay"].ToString());
+                    return user;
+                }
+            }
+            return user;
+        }
     }
 }

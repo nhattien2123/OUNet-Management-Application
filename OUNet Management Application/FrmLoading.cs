@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,12 @@ namespace OUNet_Management_Application
 {
     public partial class FrmLoading : Form
     {
-        public FrmLoading()
+        Users_DTO user;
+        FrmMain frmMain;
+        FrmMainUser frmMainUser;
+        public FrmLoading(Users_DTO user)
         {
+            this.user = user;
             InitializeComponent();
         }
 
@@ -24,6 +29,16 @@ namespace OUNet_Management_Application
             if (pnComplete.Width >= pnFullComplete.Width)
             {
                 timerComplete.Stop();
+                if (user.Role == "Admin")
+                {
+                    frmMain = new FrmMain(user);
+                    frmMain.Show();
+                }
+                else if (user.Role == "User")
+                {
+                    frmMainUser = new FrmMainUser(user);
+                    frmMainUser.Show();
+                }
                 this.Close();
             }
         }

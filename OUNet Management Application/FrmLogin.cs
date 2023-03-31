@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace OUNet_Management_Application
 {
     public partial class FrmLogin : Form
     {
+        FrmLoading frmLoading;
         public FrmLogin()
         {
             InitializeComponent();
@@ -24,13 +26,22 @@ namespace OUNet_Management_Application
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "" || txtPassword.Text != "admin")
-                Application.Exit();
-            else
+            string username, password;
+            username = txtUsername.Text;
+            password = BUS.MD5Hash.Hash(txtPassword.Text);
+            Users_DTO user = BUS.Users_BUS.CheckAccount_BUS(username, password);
+
+            try
             {
-                FrmMain.username = txtUsername.Text;
-                this.Close();
+                if (!String.IsNullOrEmpty(user.Tel))
+                {
+                    frmLoading = new FrmLoading(user);
+                    frmLoading.Show();
+                    this.Hide();
+                }
+                else MessageBox.Show("Không tìm thấy tài khoản hoặc mật khẩu!");
             }
+            catch { }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -63,17 +74,16 @@ namespace OUNet_Management_Application
             }
         }
 
-        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (FrmMain.username == "")
-                Application.Exit();
-        }
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
                 this.WindowState = FormWindowState.Normal;
             else this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

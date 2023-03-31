@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,16 +14,9 @@ namespace OUNet_Management_Application
     public partial class FrmMain : Form
     {
         private Form activeForm;
-        //private FrmLogin frmLogin;
-        //private FrmLoading frmLoading;
-        public static string username;
 
-        public FrmMain()
+        public FrmMain(Users_DTO user)
         {
-            //frmLogin = new FrmLogin();
-            //frmLogin.ShowDialog();
-            //frmLoading = new FrmLoading();
-            //frmLoading.ShowDialog();
             InitializeComponent();
         }
 
@@ -33,7 +27,7 @@ namespace OUNet_Management_Application
 
         private void FrmOUNET_Load(object sender, EventArgs e)
         {
-            lbUsername.Text = "(" + username + ")";
+            lbUsername.Text = "";
             OpenChildForm(new Forms.FrmSensor(), sender);
             this.WindowState = FormWindowState.Maximized;
         }
