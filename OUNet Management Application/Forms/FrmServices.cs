@@ -16,5 +16,10 @@ namespace OUNet_Management_Application.Forms
         {
             InitializeComponent();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

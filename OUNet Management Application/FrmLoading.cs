@@ -16,6 +16,7 @@ namespace OUNet_Management_Application
         Users_DTO user;
         FrmMain frmMain;
         FrmMainUser frmMainUser;
+
         public FrmLoading(Users_DTO user)
         {
             this.user = user;

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SuperSimpleTcp, Version=3.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SuperSimpleTcp.3.0.10\lib\net461\SuperSimpleTcp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -72,6 +75,12 @@
     <Compile Include="Forms\FrmMessage.Designer.cs">
       <DependentUpon>FrmMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmMessageUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMessageUser.Designer.cs">
+      <DependentUpon>FrmMessageUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmSensor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +104,12 @@
     </Compile>
     <Compile Include="Forms\Second Forms\FrmAddUser.Designer.cs">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Second Forms\FrmChangePasswordUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Second Forms\FrmChangePasswordUser.Designer.cs">
+      <DependentUpon>FrmChangePasswordUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Second Forms\FrmDetailAccount.cs">
       <SubType>Form</SubType>
@@ -146,6 +161,9 @@
     <EmbeddedResource Include="Forms\FrmMessage.resx">
       <DependentUpon>FrmMessage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMessageUser.resx">
+      <DependentUpon>FrmMessageUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSensor.resx">
       <DependentUpon>FrmSensor.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Second Forms\FrmAddUser.resx">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Second Forms\FrmChangePasswordUser.resx">
+      <DependentUpon>FrmChangePasswordUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Second Forms\FrmDetailAccount.resx">
       <DependentUpon>FrmDetailAccount.cs</DependentUpon>
@@ -186,6 +207,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -284,6 +306,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Images\Visible-Eye-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Message-Color-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Admin-Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Admin-Male-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Log-Out-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Log-Out-Icon-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Sign-Out-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Change-Password-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Deposit-Money-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Combo-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Lock-PC-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Lock-Icon-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Messager-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Food-Hamburger-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\Time-Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

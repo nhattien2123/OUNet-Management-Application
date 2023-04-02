@@ -195,6 +195,7 @@
             this.lblHelp.TabIndex = 11;
             this.lblHelp.TabStop = true;
             this.lblHelp.Text = "Help?";
+            this.lblHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblHelp_LinkClicked);
             // 
             // btnMinimize
             // 

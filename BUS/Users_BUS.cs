@@ -43,5 +43,10 @@ namespace BUS
         {
             return DAO.Users_DAO.CheckAccount(tel, password);
         }
+
+        public static bool CheckPassword_BUS(string tel, string password)
+        {
+            return DAO.Users_DAO.CheckPassword(tel, password);
+        }
     }
 }

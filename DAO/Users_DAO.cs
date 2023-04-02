@@ -107,31 +107,37 @@ namespace DAO
             return listUsers;
         }
 
+        // Hàm kiểm tra và trả về khi người dùng đăng nhập
         public static Users_DTO CheckAccount(string tel, string password)
         {
-            DataTable dt = ProcessingDAO.RunQuerySQL("SELECT * FROM dbo.Users");
-            Users_DTO user = new Users_DTO(); ;
-            for (int i = 0; i < dt.Rows.Count; i++)
+            DataTable dt = ProcessingDAO.RunQuerySQL(String.Format("SELECT UserID, Username, Tel, Address, Role, M_Account, S_Account, LastAccess, Status, Nation, Sex, HomeTown, BirthDay FROM dbo.Users WHERE Tel = N'{0}' AND Password = N'{1}'", tel, password));
+            Users_DTO user = new Users_DTO();
+            if (dt.Rows.Count > 0)
             {
-                if (dt.Rows[i]["Tel"].ToString() == tel && dt.Rows[i]["Password"].ToString() == password)
-                {
-                    user.UserID = dt.Rows[i]["UserID"].ToString();
-                    user.Username = dt.Rows[i]["Username"].ToString();
-                    user.Tel = dt.Rows[i]["Tel"].ToString();
-                    user.Address = dt.Rows[i]["Address"].ToString();
-                    user.Role = dt.Rows[i]["Role"].ToString();
-                    user.M_Account = float.Parse(dt.Rows[i]["M_Account"].ToString());
-                    user.S_Account = float.Parse(dt.Rows[i]["S_Account"].ToString());
-                    user.LastAccess = DateTime.Parse(dt.Rows[i]["LastAccess"].ToString());
-                    user.Status = bool.Parse(dt.Rows[i]["Status"].ToString());
-                    user.Nation = dt.Rows[i]["Nation"].ToString();
-                    user.Sex = dt.Rows[i]["Sex"].ToString();
-                    user.HomeTown = dt.Rows[i]["HomeTown"].ToString();
-                    user.BirthDay = DateTime.Parse(dt.Rows[i]["BirthDay"].ToString());
-                    return user;
-                }
+                user.UserID = dt.Rows[0]["UserID"].ToString();
+                user.Username = dt.Rows[0]["Username"].ToString();
+                user.Tel = dt.Rows[0]["Tel"].ToString();
+                user.Address = dt.Rows[0]["Address"].ToString();
+                user.Role = dt.Rows[0]["Role"].ToString();
+                user.M_Account = float.Parse(dt.Rows[0]["M_Account"].ToString());
+                user.S_Account = float.Parse(dt.Rows[0]["S_Account"].ToString());
+                user.LastAccess = DateTime.Parse(dt.Rows[0]["LastAccess"].ToString());
+                user.Status = bool.Parse(dt.Rows[0]["Status"].ToString());
+                user.Nation = dt.Rows[0]["Nation"].ToString();
+                user.Sex = dt.Rows[0]["Sex"].ToString();
+                user.HomeTown = dt.Rows[0]["HomeTown"].ToString();
+                user.BirthDay = DateTime.Parse(dt.Rows[0]["BirthDay"].ToString());
             }
             return user;
+        }
+
+        // Hàm kiểm tra mật khẩu
+        public static bool CheckPassword(string tel, string password)
+        {
+            DataTable dt = ProcessingDAO.RunQuerySQL(String.Format("SELECT UserID FROM dbo.Users WHERE Tel = N'{0}' AND Password = N'{1}'", tel, password));
+            if (dt.Rows.Count > 0)
+                return true;
+            return false;
         }
     }
 }
