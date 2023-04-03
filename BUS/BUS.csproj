@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DetailService_BUS.cs" />
     <Compile Include="MD5Hash.cs" />
+    <Compile Include="Messages_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sensors_BUS.cs" />
     <Compile Include="Services_BUS.cs" />

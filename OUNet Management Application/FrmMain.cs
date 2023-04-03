@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO;
+using SuperSimpleTcp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,23 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace OUNet_Management_Application
 {
     public partial class FrmMain : Form
     {
         private Form activeForm;
-        //private FrmLogin frmLogin;
-        //private FrmLoading frmLoading;
-        public static string username;
+        Users_DTO user;
+        private bool isDragging = false;
+        private Point lastCursor;
+        private Point lastForm;
 
-        public FrmMain()
+        public FrmMain(Users_DTO user)
         {
-            //frmLogin = new FrmLogin();
-            //frmLogin.ShowDialog();
-            //frmLoading = new FrmLoading();
-            //frmLoading.ShowDialog();
+            this.user = user;
             InitializeComponent();
+            pnHeader.MouseDown += pnHeader_MouseDown;
+            pnHeader.MouseUp += pnHeader_MouseUp;
+            pnHeader.MouseMove += pnHeader_MouseMove;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -33,7 +37,7 @@ namespace OUNet_Management_Application
 
         private void FrmOUNET_Load(object sender, EventArgs e)
         {
-            lbUsername.Text = "(" + username + ")";
+            lbUsername.Text = "(" + user.Username + ")";
             OpenChildForm(new Forms.FrmSensor(), sender);
             this.WindowState = FormWindowState.Maximized;
         }
@@ -69,7 +73,7 @@ namespace OUNet_Management_Application
 
         private void btnMessage_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FrmMessage(), sender);
+            OpenChildForm(new Forms.FrmMessage(user), sender);
         }
 
         private void btnStatistical_Click(object sender, EventArgs e)
@@ -99,6 +103,40 @@ namespace OUNet_Management_Application
             if (this.WindowState == FormWindowState.Minimized)
                 this.WindowState = FormWindowState.Normal;
             else this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pnHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDragging = true;
+            lastCursor = Cursor.Position;
+            lastForm = this.Location;
+        }
+
+        private void pnHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
+        }
+
+        private void pnHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                int xDiff = Cursor.Position.X - lastCursor.X;
+                int yDiff = Cursor.Position.Y - lastCursor.Y;
+                this.Location = new Point(lastForm.X + xDiff, lastForm.Y + yDiff);
+            }
+        }
+
+        private void pnHeader_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+                this.WindowState = FormWindowState.Normal;
+            else this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void timerTimeNow_Tick(object sender, EventArgs e)
+        {
+            lbTime.Text = DateTime.Now.ToString();
         }
     }
 }
