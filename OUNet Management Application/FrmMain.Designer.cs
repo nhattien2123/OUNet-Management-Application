@@ -32,25 +32,25 @@
             this.pnHeader = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.lbUsername = new System.Windows.Forms.Label();
+            this.btnMaximize = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnMenuBottom = new System.Windows.Forms.Panel();
-            this.pnForm = new System.Windows.Forms.Panel();
-            this.timerTimeNow = new System.Windows.Forms.Timer(this.components);
-            this.lbTime = new System.Windows.Forms.Label();
             this.pbClock = new System.Windows.Forms.PictureBox();
+            this.lbTime = new System.Windows.Forms.Label();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnStatistical = new System.Windows.Forms.Button();
             this.btnMessage = new System.Windows.Forms.Button();
             this.btnServices = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnSensor = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pnForm = new System.Windows.Forms.Panel();
+            this.timerTimeNow = new System.Windows.Forms.Timer(this.components);
             this.pnHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnMenuBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbClock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnHeader
@@ -97,6 +97,30 @@
             this.lbUsername.TabIndex = 4;
             this.lbUsername.Text = "Name";
             // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.ForeColor = System.Drawing.Color.White;
+            this.btnMaximize.Image = global::OUNet_Management_Application.Properties.Resources.Rectangle_Icon;
+            this.btnMaximize.Location = new System.Drawing.Point(1412, 3);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(35, 30);
+            this.btnMaximize.TabIndex = 3;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = global::OUNet_Management_Application.Properties.Resources.OU_white_logo;
+            this.pbLogo.Location = new System.Drawing.Point(3, 1);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(35, 35);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -138,19 +162,16 @@
             this.pnMenuBottom.Size = new System.Drawing.Size(1500, 59);
             this.pnMenuBottom.TabIndex = 3;
             // 
-            // pnForm
+            // pbClock
             // 
-            this.pnForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnForm.Location = new System.Drawing.Point(0, 98);
-            this.pnForm.Name = "pnForm";
-            this.pnForm.Size = new System.Drawing.Size(1500, 882);
-            this.pnForm.TabIndex = 4;
-            this.pnForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnForm_Paint);
-            // 
-            // timerTimeNow
-            // 
-            this.timerTimeNow.Enabled = true;
-            this.timerTimeNow.Tick += new System.EventHandler(this.timerTimeNow_Tick);
+            this.pbClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbClock.Image = global::OUNet_Management_Application.Properties.Resources.Time_Icon;
+            this.pbClock.Location = new System.Drawing.Point(1246, 28);
+            this.pbClock.Name = "pbClock";
+            this.pbClock.Size = new System.Drawing.Size(25, 25);
+            this.pbClock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbClock.TabIndex = 12;
+            this.pbClock.TabStop = false;
             // 
             // lbTime
             // 
@@ -162,17 +183,6 @@
             this.lbTime.Size = new System.Drawing.Size(58, 20);
             this.lbTime.TabIndex = 11;
             this.lbTime.Text = "(Time)";
-            // 
-            // pbClock
-            // 
-            this.pbClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbClock.Image = global::OUNet_Management_Application.Properties.Resources.Time_Icon;
-            this.pbClock.Location = new System.Drawing.Point(1246, 28);
-            this.pbClock.Name = "pbClock";
-            this.pbClock.Size = new System.Drawing.Size(25, 25);
-            this.pbClock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbClock.TabIndex = 12;
-            this.pbClock.TabStop = false;
             // 
             // btnHistory
             // 
@@ -264,29 +274,19 @@
             this.btnSensor.UseVisualStyleBackColor = true;
             this.btnSensor.Click += new System.EventHandler(this.btnSensor_Click);
             // 
-            // btnMaximize
+            // pnForm
             // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Image = global::OUNet_Management_Application.Properties.Resources.Rectangle_Icon;
-            this.btnMaximize.Location = new System.Drawing.Point(1412, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(35, 30);
-            this.btnMaximize.TabIndex = 3;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            this.pnForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnForm.Location = new System.Drawing.Point(0, 98);
+            this.pnForm.Name = "pnForm";
+            this.pnForm.Size = new System.Drawing.Size(1500, 882);
+            this.pnForm.TabIndex = 4;
+            this.pnForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnForm_Paint);
             // 
-            // pbLogo
+            // timerTimeNow
             // 
-            this.pbLogo.Image = global::OUNet_Management_Application.Properties.Resources.OU_white_logo;
-            this.pbLogo.Location = new System.Drawing.Point(3, 1);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(35, 35);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
+            this.timerTimeNow.Enabled = true;
+            this.timerTimeNow.Tick += new System.EventHandler(this.timerTimeNow_Tick);
             // 
             // FrmMain
             // 
@@ -300,13 +300,14 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOUNET";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmOUNET_Load);
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnMenuBottom.ResumeLayout(false);
             this.pnMenuBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbClock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

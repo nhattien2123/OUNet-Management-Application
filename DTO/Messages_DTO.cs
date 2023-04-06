@@ -14,6 +14,7 @@ namespace DTO
         DateTime _Time;
         string _UserID;
         string _AdminID;
+        string _UserSend;
         #endregion
 
         #region CacProperty
@@ -45,6 +46,12 @@ namespace DTO
         {
             get { return _AdminID; }
             set { _AdminID = value; }
+        }
+
+        public string UserSend
+        {
+            get { return _UserSend; }
+            set { _UserSend = value; }
         }
         #endregion
     }

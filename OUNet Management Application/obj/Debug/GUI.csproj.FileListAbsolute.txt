@@ -33,3 +33,6 @@ D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Appl
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmMessageUser.resources
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\bin\Debug\SuperSimpleTcp.dll
 D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.Second_Forms.FrmChangePasswordUser.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.UserControlMessage.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.MessageControl.resources
+D:\Working\C++\source-file-C#\OUNet Management Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.SecondMessageControl.resources

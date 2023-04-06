@@ -1,4 +1,5 @@
 ﻿using DTO;
+using OUNet_Management_Application.Forms;
 using SuperSimpleTcp;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace OUNet_Management_Application
         private bool isDragging = false;
         private Point lastCursor;
         private Point lastForm;
+        FrmMessage frmMessage;
 
         public FrmMain(Users_DTO user)
         {
@@ -28,6 +30,7 @@ namespace OUNet_Management_Application
             pnHeader.MouseDown += pnHeader_MouseDown;
             pnHeader.MouseUp += pnHeader_MouseUp;
             pnHeader.MouseMove += pnHeader_MouseMove;
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -40,6 +43,9 @@ namespace OUNet_Management_Application
             lbUsername.Text = "(" + user.Username + ")";
             OpenChildForm(new Forms.FrmSensor(), sender);
             this.WindowState = FormWindowState.Maximized;
+            frmMessage = new FrmMessage(user);
+            frmMessage.Show();
+            frmMessage.Hide();
         }
 
         private void OpenChildForm(Form childForm, object btnSender)
@@ -73,7 +79,8 @@ namespace OUNet_Management_Application
 
         private void btnMessage_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FrmMessage(user), sender);
+            //OpenChildForm(new Forms.FrmMessage(user), sender);
+            frmMessage.Show();
         }
 
         private void btnStatistical_Click(object sender, EventArgs e)
@@ -137,6 +144,11 @@ namespace OUNet_Management_Application
         private void timerTimeNow_Tick(object sender, EventArgs e)
         {
             lbTime.Text = DateTime.Now.ToString();
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

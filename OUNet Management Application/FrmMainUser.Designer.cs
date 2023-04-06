@@ -30,6 +30,7 @@
         {
             this.pnHeader = new System.Windows.Forms.Panel();
             this.lbUsername = new System.Windows.Forms.Label();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnDetailUser = new System.Windows.Forms.Panel();
@@ -46,6 +47,12 @@
             this.txtMainAccount = new System.Windows.Forms.TextBox();
             this.lbMainAccount = new System.Windows.Forms.Label();
             this.pnFunction = new System.Windows.Forms.Panel();
+            this.pbLogOut = new System.Windows.Forms.PictureBox();
+            this.pbLockComputer = new System.Windows.Forms.PictureBox();
+            this.pbMessage = new System.Windows.Forms.PictureBox();
+            this.pbRecharge = new System.Windows.Forms.PictureBox();
+            this.pbCombo = new System.Windows.Forms.PictureBox();
+            this.pbServices = new System.Windows.Forms.PictureBox();
             this.lbLogOut = new System.Windows.Forms.Label();
             this.lbLockComputer = new System.Windows.Forms.Label();
             this.lbMessage = new System.Windows.Forms.Label();
@@ -55,24 +62,17 @@
             this.lbChangePassword = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
             this.pbChangePassword = new System.Windows.Forms.PictureBox();
-            this.pbLogOut = new System.Windows.Forms.PictureBox();
-            this.pbLockComputer = new System.Windows.Forms.PictureBox();
-            this.pbMessage = new System.Windows.Forms.PictureBox();
-            this.pbRecharge = new System.Windows.Forms.PictureBox();
-            this.pbCombo = new System.Windows.Forms.PictureBox();
-            this.pbServices = new System.Windows.Forms.PictureBox();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnDetailUser.SuspendLayout();
             this.pnFunction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbChangePassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLockComputer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecharge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbServices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChangePassword)).BeginInit();
             this.SuspendLayout();
             // 
             // pnHeader
@@ -101,6 +101,16 @@
             this.lbUsername.Size = new System.Drawing.Size(48, 16);
             this.lbUsername.TabIndex = 4;
             this.lbUsername.Text = "Name";
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = global::OUNet_Management_Application.Properties.Resources.OU_white_logo;
+            this.pbLogo.Location = new System.Drawing.Point(3, 1);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(35, 35);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // label1
             // 
@@ -287,6 +297,74 @@
             this.pnFunction.Size = new System.Drawing.Size(472, 246);
             this.pnFunction.TabIndex = 3;
             // 
+            // pbLogOut
+            // 
+            this.pbLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLogOut.Image = global::OUNet_Management_Application.Properties.Resources.Sign_Out_3;
+            this.pbLogOut.Location = new System.Drawing.Point(374, 131);
+            this.pbLogOut.Name = "pbLogOut";
+            this.pbLogOut.Size = new System.Drawing.Size(70, 70);
+            this.pbLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogOut.TabIndex = 21;
+            this.pbLogOut.TabStop = false;
+            this.pbLogOut.Click += new System.EventHandler(this.pbLogOut_Click);
+            // 
+            // pbLockComputer
+            // 
+            this.pbLockComputer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLockComputer.Image = global::OUNet_Management_Application.Properties.Resources.Lock_Icon_2;
+            this.pbLockComputer.Location = new System.Drawing.Point(200, 132);
+            this.pbLockComputer.Name = "pbLockComputer";
+            this.pbLockComputer.Size = new System.Drawing.Size(70, 70);
+            this.pbLockComputer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLockComputer.TabIndex = 20;
+            this.pbLockComputer.TabStop = false;
+            // 
+            // pbMessage
+            // 
+            this.pbMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMessage.Image = global::OUNet_Management_Application.Properties.Resources.Messager_Icon;
+            this.pbMessage.Location = new System.Drawing.Point(26, 131);
+            this.pbMessage.Name = "pbMessage";
+            this.pbMessage.Size = new System.Drawing.Size(70, 70);
+            this.pbMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMessage.TabIndex = 19;
+            this.pbMessage.TabStop = false;
+            this.pbMessage.Click += new System.EventHandler(this.pbMessage_Click);
+            // 
+            // pbRecharge
+            // 
+            this.pbRecharge.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRecharge.Image = global::OUNet_Management_Application.Properties.Resources.Deposit_Money_Icon;
+            this.pbRecharge.Location = new System.Drawing.Point(374, 19);
+            this.pbRecharge.Name = "pbRecharge";
+            this.pbRecharge.Size = new System.Drawing.Size(70, 70);
+            this.pbRecharge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRecharge.TabIndex = 18;
+            this.pbRecharge.TabStop = false;
+            // 
+            // pbCombo
+            // 
+            this.pbCombo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCombo.Image = global::OUNet_Management_Application.Properties.Resources.Combo_Icon;
+            this.pbCombo.Location = new System.Drawing.Point(200, 20);
+            this.pbCombo.Name = "pbCombo";
+            this.pbCombo.Size = new System.Drawing.Size(70, 70);
+            this.pbCombo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCombo.TabIndex = 17;
+            this.pbCombo.TabStop = false;
+            // 
+            // pbServices
+            // 
+            this.pbServices.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbServices.Image = global::OUNet_Management_Application.Properties.Resources.Food_Hamburger_Icon;
+            this.pbServices.Location = new System.Drawing.Point(27, 19);
+            this.pbServices.Name = "pbServices";
+            this.pbServices.Size = new System.Drawing.Size(70, 70);
+            this.pbServices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbServices.TabIndex = 16;
+            this.pbServices.TabStop = false;
+            // 
             // lbLogOut
             // 
             this.lbLogOut.AutoSize = true;
@@ -381,84 +459,6 @@
             this.pbChangePassword.TabStop = false;
             this.pbChangePassword.Click += new System.EventHandler(this.pbChangePassword_Click);
             // 
-            // pbLogOut
-            // 
-            this.pbLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLogOut.Image = global::OUNet_Management_Application.Properties.Resources.Sign_Out_3;
-            this.pbLogOut.Location = new System.Drawing.Point(374, 131);
-            this.pbLogOut.Name = "pbLogOut";
-            this.pbLogOut.Size = new System.Drawing.Size(70, 70);
-            this.pbLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogOut.TabIndex = 21;
-            this.pbLogOut.TabStop = false;
-            this.pbLogOut.Click += new System.EventHandler(this.pbLogOut_Click);
-            // 
-            // pbLockComputer
-            // 
-            this.pbLockComputer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLockComputer.Image = global::OUNet_Management_Application.Properties.Resources.Lock_Icon_2;
-            this.pbLockComputer.Location = new System.Drawing.Point(200, 132);
-            this.pbLockComputer.Name = "pbLockComputer";
-            this.pbLockComputer.Size = new System.Drawing.Size(70, 70);
-            this.pbLockComputer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLockComputer.TabIndex = 20;
-            this.pbLockComputer.TabStop = false;
-            // 
-            // pbMessage
-            // 
-            this.pbMessage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMessage.Image = global::OUNet_Management_Application.Properties.Resources.Messager_Icon;
-            this.pbMessage.Location = new System.Drawing.Point(26, 131);
-            this.pbMessage.Name = "pbMessage";
-            this.pbMessage.Size = new System.Drawing.Size(70, 70);
-            this.pbMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMessage.TabIndex = 19;
-            this.pbMessage.TabStop = false;
-            this.pbMessage.Click += new System.EventHandler(this.pbMessage_Click);
-            // 
-            // pbRecharge
-            // 
-            this.pbRecharge.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbRecharge.Image = global::OUNet_Management_Application.Properties.Resources.Deposit_Money_Icon;
-            this.pbRecharge.Location = new System.Drawing.Point(374, 19);
-            this.pbRecharge.Name = "pbRecharge";
-            this.pbRecharge.Size = new System.Drawing.Size(70, 70);
-            this.pbRecharge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRecharge.TabIndex = 18;
-            this.pbRecharge.TabStop = false;
-            // 
-            // pbCombo
-            // 
-            this.pbCombo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCombo.Image = global::OUNet_Management_Application.Properties.Resources.Combo_Icon;
-            this.pbCombo.Location = new System.Drawing.Point(200, 20);
-            this.pbCombo.Name = "pbCombo";
-            this.pbCombo.Size = new System.Drawing.Size(70, 70);
-            this.pbCombo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCombo.TabIndex = 17;
-            this.pbCombo.TabStop = false;
-            // 
-            // pbServices
-            // 
-            this.pbServices.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbServices.Image = global::OUNet_Management_Application.Properties.Resources.Food_Hamburger_Icon;
-            this.pbServices.Location = new System.Drawing.Point(27, 19);
-            this.pbServices.Name = "pbServices";
-            this.pbServices.Size = new System.Drawing.Size(70, 70);
-            this.pbServices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbServices.TabIndex = 16;
-            this.pbServices.TabStop = false;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Image = global::OUNet_Management_Application.Properties.Resources.OU_white_logo;
-            this.pbLogo.Location = new System.Drawing.Point(3, 1);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(35, 35);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
-            // 
             // FrmMainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -475,21 +475,22 @@
             this.Name = "FrmMainUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMainUser";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMainUser_FormClosed);
             this.Load += new System.EventHandler(this.FrmMainUser_Load);
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnDetailUser.ResumeLayout(false);
             this.pnDetailUser.PerformLayout();
             this.pnFunction.ResumeLayout(false);
             this.pnFunction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbChangePassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLockComputer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecharge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCombo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbServices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChangePassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,6 +12,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace OUNet_Management_Application.Forms
@@ -26,6 +27,10 @@ namespace OUNet_Management_Application.Forms
         private string _localComputerName;
 
         Users_DTO user;
+        Users_DTO s_user;
+        private string nameserver;
+
+        private static bool isExecuted = false;
 
         public FrmMessageUser(Users_DTO user)
         {
@@ -38,7 +43,7 @@ namespace OUNet_Management_Application.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
         }
 
         private void pnHeader_MouseUp(object sender, MouseEventArgs e)
@@ -65,13 +70,16 @@ namespace OUNet_Management_Application.Forms
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (_client.IsConnected)
+            if (!String.IsNullOrEmpty(txtMessage.Text))
             {
-                if (!string.IsNullOrEmpty(txtMessage.Text))
+                if (_client.IsConnected)
                 {
-                    _client.Send(txtMessage.Text);
-                    txtInfo.Text += $@"Me: {txtMessage.Text}{Environment.NewLine}";
-                    txtMessage.Text = string.Empty;
+                    if (!string.IsNullOrEmpty(txtMessage.Text))
+                    {
+                        _client.Send(user.Tel + "+" + txtMessage.Text);
+                        txtInfo.Text += $@"Me: {txtMessage.Text}{Environment.NewLine}";
+                        txtMessage.Text = string.Empty;
+                    }
                 }
             }
         }
@@ -102,25 +110,61 @@ namespace OUNet_Management_Application.Forms
         private void Events_DataReceived(object sender, DataReceivedEventArgs e)
         {
             var messageReceived = Encoding.UTF8.GetString(e.Data.ToArray());
-
             // REQUESTNAME
             if (messageReceived.Contains("REQUESTNAME"))
             {
                 _client.Send("NAMEREQUEST+" + _localComputerName);
+
+                nameserver = string.Empty;
+                char[] splitter = { '+' };
+                string[] messageSplit = messageReceived.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var item in messageSplit)
+                {
+                    if (item.Equals("REQUESTNAME"))
+                    {
+                        continue;
+                    }
+                    nameserver = item;
+                }
             }
             else
             {
                 this.Invoke((MethodInvoker)delegate
                 {
-                    txtInfo.Text +=
-                        $@"{e.IpPort}: {messageReceived}{Environment.NewLine}";
+                    txtInfo.Text += $@"{BUS.Users_BUS.CheckAccount_BUS(nameserver).Username}: {messageReceived}{Environment.NewLine}";
                 });
+
+                Messages_DTO message = new Messages_DTO();
+                message.MessageID = "M" + Guid.NewGuid().ToString();
+                message.Content = messageReceived;
+                message.Time = DateTime.Now;
+                message.UserID = user.UserID;
+                message.AdminID = BUS.Users_BUS.CheckAccount_BUS(nameserver).UserID;
+                message.UserSend = message.AdminID;
+                BUS.Messages_BUS.AddMessage_BUS(message);
+            }
+
+            
+            if (!isExecuted)
+            {
+                s_user = BUS.Users_BUS.CheckAccount_BUS(nameserver);
+                List<Messages_DTO> messages = BUS.Messages_BUS.TwoUsersListMessages_BUS(s_user, user);
+
+                foreach (Messages_DTO message in messages)
+                {
+                    if (message.UserSend == user.UserID)
+                        txtInfo.Text += $@"Me: {message.Content}{Environment.NewLine}";
+                    else txtInfo.Text += $@"{s_user.Username}: {message.Content}{Environment.NewLine}";
+                }
+                isExecuted = true;
             }
         }
 
         private void Events_Disconnected(object sender, ConnectionEventArgs e)
         {
-            this.Invoke((MethodInvoker)delegate {
+            this.Invoke((MethodInvoker)delegate
+            {
 
                 txtInfo.Text += $@"Server disconnected.{Environment.NewLine}";
                 btnSend.Enabled = false;
@@ -129,7 +173,8 @@ namespace OUNet_Management_Application.Forms
 
         private void Events_Connected(object sender, ConnectionEventArgs e)
         {
-            this.Invoke((MethodInvoker)delegate {
+            this.Invoke((MethodInvoker)delegate
+            {
                 txtInfo.Text += $@"Server connected.{Environment.NewLine}";
             });
         }

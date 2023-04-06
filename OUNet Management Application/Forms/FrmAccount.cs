@@ -105,5 +105,10 @@ namespace OUNet_Management_Application.Forms
         {
             SearchData();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchData();
+        }
     }
 }

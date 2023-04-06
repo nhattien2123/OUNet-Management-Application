@@ -38,8 +38,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -147,8 +151,27 @@
     <Compile Include="FrmMainUser.Designer.cs">
       <DependentUpon>FrmMainUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MessageControl.Designer.cs">
+      <DependentUpon>MessageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecondMessageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SecondMessageControl.Designer.cs">
+      <DependentUpon>SecondMessageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uilist.cs" />
+    <Compile Include="UserControlMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMessage.Designer.cs">
+      <DependentUpon>UserControlMessage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\FrmAccount.resx">
       <DependentUpon>FrmAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +220,9 @@
     <EmbeddedResource Include="FrmMainUser.resx">
       <DependentUpon>FrmMainUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageControl.resx">
+      <DependentUpon>MessageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -207,6 +233,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SecondMessageControl.resx">
+      <DependentUpon>SecondMessageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMessage.resx">
+      <DependentUpon>UserControlMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -348,6 +380,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Images\Time-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\User-Message-Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

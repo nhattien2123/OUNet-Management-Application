@@ -42,6 +42,10 @@ namespace OUNet_Management_Application
             int y = 0;
             this.Location = new Point(x, y);
 
+            frmMessageUser = new FrmMessageUser(user);
+            frmMessageUser.Show();
+            frmMessageUser.Hide();
+
             txtMainAccount.Text = user.M_Account.ToString();
             txtSecondAccount.Text = user.S_Account.ToString();
             txtPrice.Text = "10,000";
@@ -50,8 +54,7 @@ namespace OUNet_Management_Application
 
         private void pbMessage_Click(object sender, EventArgs e)
         {
-            frmMessageUser = new FrmMessageUser(user);
-            frmMessageUser.ShowDialog();
+            frmMessageUser.Show();
         }
 
         private void pnHeader_MouseDown(object sender, MouseEventArgs e)
@@ -91,6 +94,11 @@ namespace OUNet_Management_Application
         {
             frmChangePasswordUser = new FrmChangePasswordUser(user);
             frmChangePasswordUser.ShowDialog();
+        }
+
+        private void FrmMainUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

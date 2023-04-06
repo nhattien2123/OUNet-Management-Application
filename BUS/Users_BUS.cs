@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,9 +45,19 @@ namespace BUS
             return DAO.Users_DAO.CheckAccount(tel, password);
         }
 
+        public static Users_DTO CheckAccount_BUS(string tel)
+        {
+            return DAO.Users_DAO.CheckAccount(tel);
+        }
+
         public static bool CheckPassword_BUS(string tel, string password)
         {
             return DAO.Users_DAO.CheckPassword(tel, password);
+        }
+
+        public static DataTable DataTableUsers_BUS()
+        {
+            return DAO.Users_DAO.DataTableUsers();
         }
     }
 }
