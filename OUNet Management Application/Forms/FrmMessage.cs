@@ -63,29 +63,40 @@ namespace OUNet_Management_Application.Forms
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtMessage.Text))
+            
+            string ipConnection = string.Empty;
+
+            if (_server.IsListening)
             {
-                string ipConnection = string.Empty;
-
-                if (_server.IsListening)
+                // check if message box is empty or if no client is selected
+                if (!string.IsNullOrEmpty(txtMessage.Text) && lstUsers.SelectedItem != null)
                 {
-                    // check if message box is empty or if no client is selected
-                    if (!string.IsNullOrEmpty(txtMessage.Text) && lstUsers.SelectedItem != null)
+                    foreach (var item in _table)
                     {
-                        foreach (var item in _table)
+                        // <socket> <computer name>
+                        if (item.Value == lstUsers.SelectedItem.ToString())
                         {
-                            // <socket> <computer name>
-                            if (item.Value == lstUsers.SelectedItem.ToString())
-                            {
-                                ipConnection = item.Key;
-                            }
+                            ipConnection = item.Key;
                         }
-
-
-                        _server.Send(ipConnection, txtMessage.Text);
-                        txtInfo.Text += $@"Me: {txtMessage.Text}{Environment.NewLine}";
-                        txtMessage.Text = string.Empty;
                     }
+
+                    Messages_DTO message = new Messages_DTO();
+                    message.MessageID = "M" + Guid.NewGuid().ToString();
+                    message.Content = txtMessage.Text;
+                    message.Time = DateTime.Now;
+                    message.UserID = BUS.Users_BUS.CheckAccount_BUS(lbTel.Text).UserID;
+                    message.AdminID = user.UserID;
+                    message.UserSend = message.UserID;
+
+                    BUS.Messages_BUS.AddMessage_BUS(message);
+
+                    txtInfo.Text += $@"Me: {txtMessage.Text}{Environment.NewLine}";
+                    try
+                    {
+                        _server.Send(ipConnection, txtMessage.Text);
+                    }
+                    catch { }
+                    txtMessage.Text = string.Empty;
                 }
             }
         }
@@ -147,10 +158,10 @@ namespace OUNet_Management_Application.Forms
 
                     _table.Add(e.IpPort, clientComputerName);
 
-                    this.Invoke((MethodInvoker)delegate
-                    {
-                        lstUsers.Items.Add(clientComputerName);
-                    });
+                    //this.Invoke((MethodInvoker)delegate
+                    //{
+                    //    lstUsers.Items.Add(clientComputerName);
+                    //});
                 }
             }
 
@@ -160,15 +171,15 @@ namespace OUNet_Management_Application.Forms
                 char[] splitter = { '+' };
                 string[] messageSplit = messageReceived.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
 
-                Messages_DTO message = new Messages_DTO();
-                message.MessageID = "M" + Guid.NewGuid().ToString();
-                message.Content = messageSplit[1];
-                message.Time = DateTime.Now;
-                message.UserID = BUS.Users_BUS.CheckAccount_BUS(messageSplit[0]).UserID;
-                message.AdminID = user.UserID;
-                message.UserSend = message.UserID;
+                //Messages_DTO message = new Messages_DTO();
+                //message.MessageID = "M" + Guid.NewGuid().ToString();
+                //message.Content = messageSplit[1];
+                //message.Time = DateTime.Now;
+                //message.UserID = BUS.Users_BUS.CheckAccount_BUS(messageSplit[0]).UserID;
+                //message.AdminID = user.UserID;
+                //message.UserSend = message.UserID;
 
-                BUS.Messages_BUS.AddMessage_BUS(message);
+                //BUS.Messages_BUS.AddMessage_BUS(message);
 
                 if (lstUsers.SelectedItem.ToString() == messageSplit[0])
                 {
@@ -194,6 +205,13 @@ namespace OUNet_Management_Application.Forms
 
             txtInfo.Text += $@"Starting...{Environment.NewLine}";
             btnSend.Enabled = true;
+
+            List<Users_DTO> lstusers_dto = BUS.Users_BUS.ListUsers_BUS();
+            foreach (Users_DTO user in lstusers_dto)
+            {
+                if (user.Role != "Admin")
+                    lstUsers.Items.Add(user.Tel);
+            }    
         }
 
         private void FrmMessage_FormClosed(object sender, FormClosedEventArgs e)
