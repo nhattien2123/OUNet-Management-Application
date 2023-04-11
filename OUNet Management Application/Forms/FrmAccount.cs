@@ -105,5 +105,10 @@ namespace OUNet_Management_Application.Forms
         {
             SearchData();
         }
+
+        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

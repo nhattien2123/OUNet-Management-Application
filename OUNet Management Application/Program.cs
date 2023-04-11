@@ -16,7 +16,7 @@ namespace OUNet_Management_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            Application.Run(new FrmMain(BUS.Users_BUS.CheckAccount_BUS("0774435339", "ounetadmin")));
         }
     }
 }

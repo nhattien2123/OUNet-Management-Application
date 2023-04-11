@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnServices = new System.Windows.Forms.Panel();
             this.btnSnack = new System.Windows.Forms.Button();
             this.btnFood = new System.Windows.Forms.Button();
             this.btnDrink = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvService = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbServices = new System.Windows.Forms.Label();
-            this.pnBackgroundOrder = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbPay = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
@@ -54,18 +54,28 @@
             this.txtNote = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
+            this.pnBackgroundOrder = new System.Windows.Forms.Panel();
+            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnServices.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnBackgroundOrder.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
+            this.pnBackgroundOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnServices
             // 
+            this.pnServices.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnServices.BackColor = System.Drawing.Color.White;
             this.pnServices.Controls.Add(this.btnSnack);
             this.pnServices.Controls.Add(this.btnFood);
@@ -73,7 +83,6 @@
             this.pnServices.Controls.Add(this.panel1);
             this.pnServices.Controls.Add(this.txtSearch);
             this.pnServices.Controls.Add(this.btnRefresh);
-            this.pnServices.Controls.Add(this.btnSearch);
             this.pnServices.Controls.Add(this.pictureBox1);
             this.pnServices.Controls.Add(this.lbServices);
             this.pnServices.Location = new System.Drawing.Point(12, 12);
@@ -83,6 +92,7 @@
             // 
             // btnSnack
             // 
+            this.btnSnack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSnack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSnack.Location = new System.Drawing.Point(224, 692);
             this.btnSnack.Name = "btnSnack";
@@ -93,6 +103,7 @@
             // 
             // btnFood
             // 
+            this.btnFood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFood.Location = new System.Drawing.Point(118, 692);
             this.btnFood.Name = "btnFood";
@@ -103,6 +114,7 @@
             // 
             // btnDrink
             // 
+            this.btnDrink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrink.Location = new System.Drawing.Point(12, 692);
             this.btnDrink.Name = "btnDrink";
@@ -113,19 +125,40 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.dgvService);
             this.panel1.Location = new System.Drawing.Point(12, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(931, 591);
             this.panel1.TabIndex = 7;
             // 
+            // dgvService
+            // 
+            this.dgvService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvService.Location = new System.Drawing.Point(3, 0);
+            this.dgvService.Name = "dgvService";
+            this.dgvService.RowHeadersWidth = 51;
+            this.dgvService.RowTemplate.Height = 24;
+            this.dgvService.Size = new System.Drawing.Size(925, 591);
+            this.dgvService.TabIndex = 0;
+            this.dgvService.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvService_CellDoubleClick);
+            this.dgvService.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvService_MouseClick);
+            // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(665, 31);
+            this.txtSearch.Location = new System.Drawing.Point(606, 30);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(170, 30);
+            this.txtSearch.Size = new System.Drawing.Size(279, 30);
             this.txtSearch.TabIndex = 6;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnRefresh
             // 
@@ -139,20 +172,7 @@
             this.btnRefresh.Size = new System.Drawing.Size(42, 38);
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Red;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = global::OUNet_Management_Application.Properties.Resources.Search_Icon_White;
-            this.btnSearch.Location = new System.Drawing.Point(855, 22);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(40, 39);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // pictureBox1
             // 
@@ -175,26 +195,15 @@
             this.lbServices.TabIndex = 0;
             this.lbServices.Text = "Dịch vụ";
             // 
-            // pnBackgroundOrder
-            // 
-            this.pnBackgroundOrder.BackColor = System.Drawing.Color.White;
-            this.pnBackgroundOrder.Controls.Add(this.panel2);
-            this.pnBackgroundOrder.Controls.Add(this.panel3);
-            this.pnBackgroundOrder.Controls.Add(this.dataGridViewOrder);
-            this.pnBackgroundOrder.Location = new System.Drawing.Point(981, 12);
-            this.pnBackgroundOrder.Name = "pnBackgroundOrder";
-            this.pnBackgroundOrder.Size = new System.Drawing.Size(509, 759);
-            this.pnBackgroundOrder.TabIndex = 1;
-            // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.RosyBrown;
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(981, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(509, 60);
+            this.panel2.Size = new System.Drawing.Size(509, 61);
             this.panel2.TabIndex = 12;
             // 
             // pictureBox2
@@ -222,11 +231,13 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.lbPay);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.lbTotal);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.btnPay);
@@ -234,22 +245,21 @@
             this.panel3.Controls.Add(this.txtNote);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 514);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(509, 245);
             this.panel3.TabIndex = 11;
             // 
-            // label8
+            // lbPay
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(470, 150);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 22);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "0";
+            this.lbPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPay.ForeColor = System.Drawing.Color.Red;
+            this.lbPay.Location = new System.Drawing.Point(351, 150);
+            this.lbPay.Name = "lbPay";
+            this.lbPay.Size = new System.Drawing.Size(140, 22);
+            this.lbPay.TabIndex = 16;
+            this.lbPay.Text = "0 đ";
+            this.lbPay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label9
             // 
@@ -263,23 +273,24 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(470, 124);
+            this.label7.Location = new System.Drawing.Point(351, 124);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 20);
+            this.label7.Size = new System.Drawing.Size(138, 20);
             this.label7.TabIndex = 14;
-            this.label7.Text = "0";
+            this.label7.Text = "0 đ";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label6
+            // lbTotal
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(470, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "0";
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(347, 95);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(142, 20);
+            this.lbTotal.TabIndex = 13;
+            this.lbTotal.Text = "0 đ";
+            this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTotal.Click += new System.EventHandler(this.lbTotal_Click);
             // 
             // label5
             // 
@@ -324,6 +335,7 @@
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "HUỶ (ESC)";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtNote
             // 
@@ -355,17 +367,53 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ghi chú";
             // 
-            // dataGridViewOrder
+            // pnBackgroundOrder
             // 
-            this.dataGridViewOrder.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewOrder.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewOrder.Name = "dataGridViewOrder";
-            this.dataGridViewOrder.RowHeadersWidth = 51;
-            this.dataGridViewOrder.RowTemplate.Height = 24;
-            this.dataGridViewOrder.Size = new System.Drawing.Size(509, 759);
-            this.dataGridViewOrder.TabIndex = 0;
+            this.pnBackgroundOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnBackgroundOrder.BackColor = System.Drawing.Color.White;
+            this.pnBackgroundOrder.Controls.Add(this.listView1);
+            this.pnBackgroundOrder.Controls.Add(this.panel3);
+            this.pnBackgroundOrder.Location = new System.Drawing.Point(981, 12);
+            this.pnBackgroundOrder.Name = "pnBackgroundOrder";
+            this.pnBackgroundOrder.Size = new System.Drawing.Size(509, 759);
+            this.pnBackgroundOrder.TabIndex = 1;
+            // 
+            // servicesBindingSource
+            // 
+            this.servicesBindingSource.DataMember = "Services";
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 67);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(503, 441);
+            this.listView1.TabIndex = 16;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên dịch vụ";
+            this.columnHeader1.Width = 200;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số lượng";
+            this.columnHeader2.Width = 87;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Tổng tiền";
+            this.columnHeader3.Width = 87;
             // 
             // FrmServices
             // 
@@ -373,21 +421,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1502, 783);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnBackgroundOrder);
             this.Controls.Add(this.pnServices);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmServices";
             this.Text = "FrmServices";
+            this.Load += new System.EventHandler(this.FrmServices_Load);
             this.pnServices.ResumeLayout(false);
             this.pnServices.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnBackgroundOrder.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
+            this.pnBackgroundOrder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,10 +447,8 @@
         #endregion
 
         private System.Windows.Forms.Panel pnServices;
-        private System.Windows.Forms.Panel pnBackgroundOrder;
         private System.Windows.Forms.Label lbServices;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnSnack;
@@ -408,7 +458,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridViewOrder;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -417,9 +466,17 @@
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbPay;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Panel pnBackgroundOrder;
+        
+        private System.Windows.Forms.BindingSource servicesBindingSource;
+        private System.Windows.Forms.DataGridView dgvService;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
