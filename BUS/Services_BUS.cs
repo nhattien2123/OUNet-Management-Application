@@ -18,5 +18,10 @@ namespace BUS
         {
             return DAO.Services_DAO.UpdateService(serviceID, quantity, price);
         }
+
+        public static string PayBillService(List<DTO.OrderService_DTO> orderList, string userID, string adminID, string description)
+        {
+            return DAO.Services_DAO.PayBillService(orderList, userID, adminID, description);
+        }
     }
 }

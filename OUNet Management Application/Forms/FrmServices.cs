@@ -8,18 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 using OUNet_Management_Application.Forms.Second_Forms;
 
 namespace OUNet_Management_Application.Forms
 {
     public partial class FrmServices : Form
     {
+        Users_DTO user;
         private List<DTO.Services_DTO> data;
         private List<DTO.Services_DTO> dataFilter = new List<DTO.Services_DTO>();
         private List<DTO.OrderService_DTO> orderList = new List<DTO.OrderService_DTO>();
 
-        public FrmServices()
+
+        public FrmServices(Users_DTO user)
         {
+            this.user = user;
             InitializeComponent();
         }
 
@@ -79,12 +83,16 @@ namespace OUNet_Management_Application.Forms
 
                 if (serviceQuantity <= 0)
                 {
-                    MessageBox.Show("Hiện loại dịch vụ này đã hết!");
+                    MessageBox.Show("Số lượng còn lại không đủ!");
                     return;
                 }
 
                 if (orderList.Count <= 0)
                 {
+                    if (serviceQuantity <= 0) 
+                    {
+                        MessageBox.Show("Số lượng còn lại không đủ!");
+                    }
                     DTO.OrderService_DTO orderService_DTO = new DTO.OrderService_DTO()
                     {
                         ServiceID = serviceID,
@@ -104,6 +112,11 @@ namespace OUNet_Management_Application.Forms
                     if (serviceID.Equals(item.ServiceID))
                     {
                         flag = true;
+                        if (item.ServiceQuantity >= serviceQuantity)
+                        {
+                            MessageBox.Show($"Số lượng còn lại không đủ!");
+                            return;
+                        }
                         item.ServiceQuantity += 1;
                         break;
                     }
@@ -207,6 +220,26 @@ namespace OUNet_Management_Application.Forms
         private void lbTotal_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (user.Role == "Admin")
+                {
+                    string res = BUS.Services_BUS.PayBillService(orderList, user.UserID, user.UserID, txtNote.Text.Trim());
+                    if (res == "True") {
+                        this.orderList.Clear();
+                        LoadListView();
+                        MessageBox.Show("Thanh toán thành công!");
+                    }
+            }
+            }
+            catch (Exception errr)
+            {
+                MessageBox.Show(errr.Message);
+            }
         }
     }
 }

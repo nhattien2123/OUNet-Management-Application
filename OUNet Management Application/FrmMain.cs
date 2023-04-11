@@ -68,7 +68,7 @@ namespace OUNet_Management_Application
 
         private void btnServices_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FrmServices(), sender);
+            OpenChildForm(new Forms.FrmServices(user), sender);
         }
 
         private void btnMessage_Click(object sender, EventArgs e)
@@ -137,6 +137,11 @@ namespace OUNet_Management_Application
         private void timerTimeNow_Tick(object sender, EventArgs e)
         {
             lbTime.Text = DateTime.Now.ToString();
+        }
+
+        private void pnHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

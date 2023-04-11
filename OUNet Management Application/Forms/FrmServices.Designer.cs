@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnServices = new System.Windows.Forms.Panel();
-            this.btnSnack = new System.Windows.Forms.Button();
             this.btnFood = new System.Windows.Forms.Button();
             this.btnDrink = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -77,7 +76,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnServices.BackColor = System.Drawing.Color.White;
-            this.pnServices.Controls.Add(this.btnSnack);
             this.pnServices.Controls.Add(this.btnFood);
             this.pnServices.Controls.Add(this.btnDrink);
             this.pnServices.Controls.Add(this.panel1);
@@ -89,17 +87,6 @@
             this.pnServices.Name = "pnServices";
             this.pnServices.Size = new System.Drawing.Size(963, 759);
             this.pnServices.TabIndex = 0;
-            // 
-            // btnSnack
-            // 
-            this.btnSnack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSnack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSnack.Location = new System.Drawing.Point(224, 692);
-            this.btnSnack.Name = "btnSnack";
-            this.btnSnack.Size = new System.Drawing.Size(100, 53);
-            this.btnSnack.TabIndex = 9;
-            this.btnSnack.Text = "Snack";
-            this.btnSnack.UseVisualStyleBackColor = true;
             // 
             // btnFood
             // 
@@ -323,6 +310,7 @@
             this.btnPay.TabIndex = 10;
             this.btnPay.Text = "THANH TOÁN (F3)";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnCancel
             // 
@@ -451,7 +439,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnSnack;
         private System.Windows.Forms.Button btnFood;
         private System.Windows.Forms.Button btnDrink;
         private System.Windows.Forms.Panel panel1;

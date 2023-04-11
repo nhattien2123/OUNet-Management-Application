@@ -35,9 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnMenuBottom = new System.Windows.Forms.Panel();
+            this.lbTime = new System.Windows.Forms.Label();
             this.pnForm = new System.Windows.Forms.Panel();
             this.timerTimeNow = new System.Windows.Forms.Timer(this.components);
-            this.lbTime = new System.Windows.Forms.Label();
             this.pbClock = new System.Windows.Forms.PictureBox();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnStatistical = new System.Windows.Forms.Button();
@@ -67,6 +67,7 @@
             this.pnHeader.Name = "pnHeader";
             this.pnHeader.Size = new System.Drawing.Size(1500, 39);
             this.pnHeader.TabIndex = 0;
+            this.pnHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnHeader_Paint);
             this.pnHeader.DoubleClick += new System.EventHandler(this.pnHeader_DoubleClick);
             this.pnHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnHeader_MouseDown);
             this.pnHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnHeader_MouseMove);
@@ -138,6 +139,17 @@
             this.pnMenuBottom.Size = new System.Drawing.Size(1500, 59);
             this.pnMenuBottom.TabIndex = 3;
             // 
+            // lbTime
+            // 
+            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(1277, 31);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(58, 20);
+            this.lbTime.TabIndex = 11;
+            this.lbTime.Text = "(Time)";
+            // 
             // pnForm
             // 
             this.pnForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -151,17 +163,6 @@
             // 
             this.timerTimeNow.Enabled = true;
             this.timerTimeNow.Tick += new System.EventHandler(this.timerTimeNow_Tick);
-            // 
-            // lbTime
-            // 
-            this.lbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(1277, 31);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(58, 20);
-            this.lbTime.TabIndex = 11;
-            this.lbTime.Text = "(Time)";
             // 
             // pbClock
             // 

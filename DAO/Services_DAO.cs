@@ -35,5 +35,19 @@ namespace DAO
             
             return ProcessingDAO.RunNonQuerySQL(sqlcmd);
         }
+
+        public static string PayBillService(List<DTO.OrderService_DTO> orderList, string userID, string adminID, string description)
+        {
+            string insert = "";
+            string update = "";
+            foreach (DTO.OrderService_DTO item in orderList)
+            {
+                insert += $"(N'{item.ServiceID}', {item.ServiceQuantity}, {item.ServiceTotal}, @@IDENTITY), ";
+                update += $"UPDATE DetailService set Quantity = Quantity - {item.ServiceQuantity} where ServiceId = N'{item.ServiceID}';";
+            }
+            insert = insert.Substring(0, insert.Length - 2);
+            string sqlcmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); INSERT INTO History(UserID, AdminID, Description, Time) VALUES(N'{userID}', N'{adminID}', N'{description}', @currDate); INSERT INTO Bill(ServiceID, Quantity, Total, HistoryID) VALUES{insert}; BEGIN TRANSACTION {update} COMMIT";
+            return ProcessingDAO.RunNonQuerySQL(sqlcmd);
+        }
     }
 }
