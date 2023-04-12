@@ -154,8 +154,8 @@ namespace OUNet_Management_Application.Forms
                 foreach (Messages_DTO message in messages)
                 {
                     if (message.UserSend == user.UserID)
-                        txtInfo.Text += $@"Me: {message.Content}{Environment.NewLine}";
-                    else txtInfo.Text += $@"{s_user.Username}: {message.Content}{Environment.NewLine}";
+                        txtInfo.Text += $@"{s_user.Username}: {message.Content}{Environment.NewLine}";
+                    else txtInfo.Text += $@"Me: {message.Content}{Environment.NewLine}";
                 }
                 isExecuted = true;
             }

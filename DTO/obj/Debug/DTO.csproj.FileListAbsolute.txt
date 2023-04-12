@@ -4,3 +4,9 @@ D:\Working\C++\source-file-C#\OUNet Management Application\DTO\obj\Debug\DTO.csp
 D:\Working\C++\source-file-C#\OUNet Management Application\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\Working\C++\source-file-C#\OUNet Management Application\DTO\obj\Debug\DTO.dll
 D:\Working\C++\source-file-C#\OUNet Management Application\DTO\obj\Debug\DTO.pdb
+D:\Working\C++\source-file-C#\OUNet-Management-Application\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\Working\C++\source-file-C#\OUNet-Management-Application\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\Working\C++\source-file-C#\OUNet-Management-Application\DTO\obj\Debug\DTO.dll
+D:\Working\C++\source-file-C#\OUNet-Management-Application\DTO\obj\Debug\DTO.pdb
+D:\Working\C++\source-file-C#\OUNet-Management-Application\DTO\bin\Debug\DTO.dll
+D:\Working\C++\source-file-C#\OUNet-Management-Application\DTO\bin\Debug\DTO.pdb

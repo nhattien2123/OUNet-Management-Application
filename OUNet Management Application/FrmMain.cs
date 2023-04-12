@@ -74,7 +74,7 @@ namespace OUNet_Management_Application
 
         private void btnServices_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FrmServices(), sender);
+            OpenChildForm(new Forms.FrmServices(user), sender);
         }
 
         private void btnMessage_Click(object sender, EventArgs e)
