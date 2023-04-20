@@ -9,9 +9,9 @@ namespace BUS
 {
     public class Services_BUS
     {
-        public static List<Services_DTO> ListServices_BUS()
+        public static List<Services_DTO> ListServices_BUS(string type)
         {
-            return DAO.Services_DAO.ListServices();
+            return DAO.Services_DAO.ListServices(type);
         }
 
         public static string UpdateService(string serviceID, int quantity, int price)

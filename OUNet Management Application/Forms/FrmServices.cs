@@ -15,10 +15,11 @@ namespace OUNet_Management_Application.Forms
 {
     public partial class FrmServices : Form
     {
-        Users_DTO user;
+        private Users_DTO user;
         private List<DTO.Services_DTO> data;
         private List<DTO.Services_DTO> dataFilter = new List<DTO.Services_DTO>();
         private List<DTO.OrderService_DTO> orderList = new List<DTO.OrderService_DTO>();
+        private string TYPE_SERVICE = "D";
 
 
         public FrmServices(Users_DTO user)
@@ -48,7 +49,7 @@ namespace OUNet_Management_Application.Forms
 
         private void LoadDataWithSearch()
         {
-            data = BUS.Services_BUS.ListServices_BUS();
+            data = BUS.Services_BUS.ListServices_BUS(TYPE_SERVICE);
             if (String.IsNullOrEmpty(txtSearch.Text.Trim().ToLower()))
             {
                 dataFilter = data;
@@ -239,6 +240,18 @@ namespace OUNet_Management_Application.Forms
             {
                 MessageBox.Show(errr.Message);
             }
+        }
+
+        private void btnFood_Click(object sender, EventArgs e)
+        {
+            this.TYPE_SERVICE = "F";
+            LoadDataWithSearch();
+        }
+
+        private void btnDrink_Click(object sender, EventArgs e)
+        {
+            this.TYPE_SERVICE = "D";
+            LoadDataWithSearch();
         }
     }
 }

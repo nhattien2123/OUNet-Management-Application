@@ -197,21 +197,28 @@ namespace OUNet_Management_Application.Forms
             _table = new Dictionary<string, string>();
             btnSend.Enabled = false;
 
-            _server = new SimpleTcpServer("127.0.0.1:9000");
-            _server.Events.ClientConnected += Events_ClientConnected;
-            _server.Events.ClientDisconnected += Events_ClientDisconnected;
-            _server.Events.DataReceived += Events_DataReceived;
-            _server.Start();
-
-            txtInfo.Text += $@"Starting...{Environment.NewLine}";
-            btnSend.Enabled = true;
-
-            List<Users_DTO> lstusers_dto = BUS.Users_BUS.ListUsers_BUS();
-            foreach (Users_DTO user in lstusers_dto)
+            try
             {
-                if (user.Role != "Admin")
-                    lstUsers.Items.Add(user.Tel);
-            }    
+                _server = new SimpleTcpServer("127.0.0.1:9000");
+                _server.Events.ClientConnected += Events_ClientConnected;
+                _server.Events.ClientDisconnected += Events_ClientDisconnected;
+                _server.Events.DataReceived += Events_DataReceived;
+                _server.Start();
+
+                txtInfo.Text += $@"Starting...{Environment.NewLine}";
+                btnSend.Enabled = true;
+
+                List<Users_DTO> lstusers_dto = BUS.Users_BUS.ListUsers_BUS();
+                foreach (Users_DTO user in lstusers_dto)
+                {
+                    if (user.Role != "Admin")
+                        lstUsers.Items.Add(user.Tel);
+                }
+            }
+            catch (Exception err) {
+                MessageBox.Show($"{err.Message}");
+            }
+
         }
 
         private void FrmMessage_FormClosed(object sender, FormClosedEventArgs e)

@@ -93,8 +93,9 @@
             this.btnFood.Name = "btnFood";
             this.btnFood.Size = new System.Drawing.Size(100, 53);
             this.btnFood.TabIndex = 8;
-            this.btnFood.Text = "Món mì";
+            this.btnFood.Text = "Thức ăn";
             this.btnFood.UseVisualStyleBackColor = true;
+            this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
             // 
             // btnDrink
             // 
@@ -106,6 +107,7 @@
             this.btnDrink.TabIndex = 0;
             this.btnDrink.Text = "Nước uống";
             this.btnDrink.UseVisualStyleBackColor = true;
+            this.btnDrink.Click += new System.EventHandler(this.btnDrink_Click);
             // 
             // panel1
             // 
@@ -121,6 +123,8 @@
             // 
             // dgvService
             // 
+            this.dgvService.AllowUserToAddRows = false;
+            this.dgvService.AllowUserToDeleteRows = false;
             this.dgvService.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -128,6 +132,7 @@
             this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvService.Location = new System.Drawing.Point(3, 0);
             this.dgvService.Name = "dgvService";
+            this.dgvService.ReadOnly = true;
             this.dgvService.RowHeadersWidth = 51;
             this.dgvService.RowTemplate.Height = 24;
             this.dgvService.Size = new System.Drawing.Size(925, 591);
