@@ -23,7 +23,7 @@ namespace DAO
                 services.ServiceID = dt.Rows[i]["ServiceID"].ToString();
                 services.ServiceImage = dt.Rows[i]["ImageName"].ToString();
                 services.ServiceName = dt.Rows[i]["ServiceName"].ToString();
-                services.Price = dt.Rows[i]["Price"].ToString();
+                services.Price = float.Parse(dt.Rows[i]["Price"].ToString());
                 services.ServiceQuantity = dt.Rows[i]["Quantity"].ToString();
                 ListServices.Add(services);
             }
@@ -33,7 +33,6 @@ namespace DAO
         public static string UpdateService(string serviceID, int quantity, int price)
         {
             string sqlcmd = $"BEGIN TRANSACTION UPDATE Services SET Price = {price} WHERE ServiceID = N'{serviceID}' UPDATE DetailService SET Quantity = {quantity} WHERE ServiceID = N'{serviceID}' COMMIT";
-
             return ProcessingDAO.RunNonQuerySQL(sqlcmd);
         }
 

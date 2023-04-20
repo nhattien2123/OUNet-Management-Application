@@ -19,10 +19,10 @@ namespace DAO
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 detailService = new DetailService_DTO();
-                detailService.DetailServiceID = dt.Rows[i]["DetailServiceID"].ToString();
+                detailService.DetailServiceId = dt.Rows[i]["DetailServiceId"].ToString();
                 detailService.Quantity = int.Parse(dt.Rows[i]["Quantity"].ToString());
                 detailService.Image = dt.Rows[i]["Image"].ToString();
-                detailService.ServiceID = dt.Rows[i]["ServiceID"].ToString();
+                detailService.ServiceId = dt.Rows[i]["ServiceId"].ToString();
                 listDetailService.Add(detailService);
             }
             return listDetailService;

@@ -178,5 +178,13 @@ namespace OUNet_Management_Application.Forms
                 txtInfo.Text += $@"Server connected.{Environment.NewLine}";
             });
         }
+
+        private void txtMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSend.PerformClick();
+            }
+        }
     }
 }

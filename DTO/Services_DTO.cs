@@ -14,7 +14,7 @@ namespace DTO
         #region CacBienCuaProperty
         string _ServiceID;
         string _ServiceName;
-        string _Price;
+        float _Price;
         [NotMapped]
         string _ServiceImage;
         string _ServiceQuantity;
@@ -34,7 +34,7 @@ namespace DTO
             set { _ServiceName = value; }
         }
 
-        public string Price
+        public float Price
         {
             get { return _Price; }
             set { _Price = value; }

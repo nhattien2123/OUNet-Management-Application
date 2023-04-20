@@ -75,3 +75,4 @@ D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Appl
 D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\bin\Debug\DAO.dll.config
 D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\bin\Debug\DTO.pdb
 D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\obj\Debug\GUI.csproj.CopyComplete
+D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.Second_Forms.FrmBill.resources

@@ -150,5 +150,10 @@ namespace OUNet_Management_Application
         {
             Application.Exit();
         }
+
+        private void pnHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

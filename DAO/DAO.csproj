@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill_DAO.cs" />
     <Compile Include="DetailService_DAO.cs" />
+    <Compile Include="History_DAO.cs" />
     <Compile Include="Messages_DAO.cs" />
     <Compile Include="ProcessingDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

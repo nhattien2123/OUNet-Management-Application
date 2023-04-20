@@ -109,6 +109,12 @@
     <Compile Include="Forms\Second Forms\FrmAddUser.Designer.cs">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Second Forms\FrmBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Second Forms\FrmBill.Designer.cs">
+      <DependentUpon>FrmBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Second Forms\FrmChangePasswordUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Second Forms\FrmAddUser.resx">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Second Forms\FrmBill.resx">
+      <DependentUpon>FrmBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Second Forms\FrmChangePasswordUser.resx">
       <DependentUpon>FrmChangePasswordUser.cs</DependentUpon>

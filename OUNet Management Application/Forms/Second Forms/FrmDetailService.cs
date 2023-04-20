@@ -18,6 +18,10 @@ namespace OUNet_Management_Application.Forms.Second_Forms
         private string price;
         private string fileName;
 
+        private bool isDragging = false;
+        private Point lastCursor;
+        private Point lastForm;
+
         public FrmDetailService(string fileName, string title, string quantity, string price, string id)
         {
             this.idService = id;
@@ -26,6 +30,9 @@ namespace OUNet_Management_Application.Forms.Second_Forms
             this.price = price;
             this.fileName = fileName;
             InitializeComponent();
+            pnHeader.MouseDown += pnHeader_MouseDown;
+            pnHeader.MouseUp += pnHeader_MouseUp;
+            pnHeader.MouseMove += pnHeader_MouseMove;
         }
 
         private void FrmDetailService_Load(object sender, EventArgs e)
@@ -71,6 +78,33 @@ namespace OUNet_Management_Application.Forms.Second_Forms
         private void FrmDetailService_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDragging = true;
+            lastCursor = Cursor.Position;
+            lastForm = this.Location;
+        }
+
+        private void pnHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
+        }
+
+        private void pnHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                int xDiff = Cursor.Position.X - lastCursor.X;
+                int yDiff = Cursor.Position.Y - lastCursor.Y;
+                this.Location = new Point(lastForm.X + xDiff, lastForm.Y + yDiff);
+            }
         }
     }
 }

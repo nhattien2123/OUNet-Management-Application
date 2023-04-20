@@ -86,7 +86,7 @@ namespace OUNet_Management_Application.Forms
                     message.Time = DateTime.Now;
                     message.UserID = BUS.Users_BUS.CheckAccount_BUS(lbTel.Text).UserID;
                     message.AdminID = user.UserID;
-                    message.UserSend = message.UserID;
+                    message.UserSend = message.AdminID;
 
                     BUS.Messages_BUS.AddMessage_BUS(message);
 
@@ -171,15 +171,15 @@ namespace OUNet_Management_Application.Forms
                 char[] splitter = { '+' };
                 string[] messageSplit = messageReceived.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
 
-                //Messages_DTO message = new Messages_DTO();
-                //message.MessageID = "M" + Guid.NewGuid().ToString();
-                //message.Content = messageSplit[1];
-                //message.Time = DateTime.Now;
-                //message.UserID = BUS.Users_BUS.CheckAccount_BUS(messageSplit[0]).UserID;
-                //message.AdminID = user.UserID;
-                //message.UserSend = message.UserID;
+                Messages_DTO message = new Messages_DTO();
+                message.MessageID = "M" + Guid.NewGuid().ToString();
+                message.Content = messageSplit[1];
+                message.Time = DateTime.Now;
+                message.UserID = BUS.Users_BUS.CheckAccount_BUS(messageSplit[0]).UserID;
+                message.AdminID = user.UserID;
+                message.UserSend = message.UserID;
 
-                //BUS.Messages_BUS.AddMessage_BUS(message);
+                BUS.Messages_BUS.AddMessage_BUS(message);
 
                 if (lstUsers.SelectedItem.ToString() == messageSplit[0])
                 {
@@ -271,6 +271,14 @@ namespace OUNet_Management_Application.Forms
                 if (message.UserSend == user.UserID)
                     txtInfo.Text += $@"Me: {message.Content}{Environment.NewLine}";
                 else txtInfo.Text += $@"{s_user.Username}: {message.Content}{Environment.NewLine}";
+            }
+        }
+
+        private void txtMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSend.PerformClick();
             }
         }
     }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnServices = new System.Windows.Forms.Panel();
             this.btnFood = new System.Windows.Forms.Button();
             this.btnDrink = new System.Windows.Forms.Button();
@@ -54,7 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnBackgroundOrder = new System.Windows.Forms.Panel();
-            this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.pnBackgroundOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnServices
@@ -367,10 +364,6 @@
             this.pnBackgroundOrder.Size = new System.Drawing.Size(509, 759);
             this.pnBackgroundOrder.TabIndex = 1;
             // 
-            // servicesBindingSource
-            // 
-            this.servicesBindingSource.DataMember = "Services";
-            // 
             // listView1
             // 
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -427,7 +420,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pnBackgroundOrder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,8 +450,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Panel pnBackgroundOrder;
-        
-        private System.Windows.Forms.BindingSource servicesBindingSource;
         private System.Windows.Forms.DataGridView dgvService;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;

@@ -9,17 +9,17 @@ namespace DTO
     public class DetailService_DTO
     {
         #region CacBienCuaProperty
-        string _DetailServiceID;
+        string _DetailServiceId;
         int _Quantity;
         string _Image;
-        string _ServiceID;
+        string _ServiceId;
         #endregion
 
         #region CacProperty
-        public string DetailServiceID
+        public string DetailServiceId
         {
-            get { return _DetailServiceID; }
-            set { _DetailServiceID = value; }
+            get { return _DetailServiceId; }
+            set { _DetailServiceId = value; }
         }
 
         public int Quantity
@@ -34,10 +34,10 @@ namespace DTO
             set { _Image = value; }
         }
 
-        public string ServiceID
+        public string ServiceId
         {
-            get { return _ServiceID; }
-            set { _ServiceID = value; }
+            get { return _ServiceId; }
+            set { _ServiceId = value; }
         }
         #endregion
     }

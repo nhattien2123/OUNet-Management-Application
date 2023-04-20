@@ -206,14 +206,10 @@ namespace OUNet_Management_Application.Forms
             }
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.orderList.Clear();
+            this.txtNote.Text = "";
             LoadListView();
         }
 
@@ -229,12 +225,15 @@ namespace OUNet_Management_Application.Forms
                 if (user.Role == "Admin")
                 {
                     string res = BUS.Services_BUS.PayBillService(orderList, user.UserID, user.UserID, txtNote.Text.Trim());
-                    if (res == "True") {
+                    if (res == "True")
+                    {
                         this.orderList.Clear();
+                        this.txtNote.Text = "";
                         LoadListView();
                         MessageBox.Show("Thanh toán thành công!");
                     }
-            }
+                    else MessageBox.Show("Thanh toán thất bại!");
+                }
             }
             catch (Exception errr)
             {
