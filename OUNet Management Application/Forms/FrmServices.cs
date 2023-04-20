@@ -32,7 +32,7 @@ namespace OUNet_Management_Application.Forms
         {
             try
             {
-                if (dataFilter.Count != 0)
+                if (dataFilter.Count != 0 || (dataFilter.Count == 0 && !String.IsNullOrEmpty(txtSearch.Text.Trim().ToLower())))
                     dgvService.DataSource = dataFilter;
                 else dgvService.DataSource = data;
                 dgvService.Columns["ServiceID"].Visible = false;
@@ -47,6 +47,20 @@ namespace OUNet_Management_Application.Forms
             }
         }
 
+        private List<DTO.Services_DTO> CreateDataFilter()
+        {
+            dataFilter = new List<DTO.Services_DTO>();
+            foreach (DTO.Services_DTO item in data)
+            {
+
+                if (item.ServiceName.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
+                { 
+                    dataFilter.Add(item);
+                }
+            }
+            return dataFilter;
+        }
+
         private void LoadDataWithSearch()
         {
             data = BUS.Services_BUS.ListServices_BUS(TYPE_SERVICE);
@@ -54,15 +68,9 @@ namespace OUNet_Management_Application.Forms
             {
                 dataFilter = data;
             }
-            else {
-                dataFilter = new List<DTO.Services_DTO>();
-                foreach (DTO.Services_DTO item in data)
-                {
-                    if (item.ServiceName.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
-                    {
-                        dataFilter.Add(item);
-                    }
-                }
+            else 
+            {
+                dataFilter = CreateDataFilter();
             }
             LoadData();
         }
@@ -144,14 +152,7 @@ namespace OUNet_Management_Application.Forms
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            dataFilter = new List<DTO.Services_DTO>();
-            foreach (DTO.Services_DTO item in data)
-            {
-                if (item.ServiceName.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
-                {
-                    dataFilter.Add(item);
-                }
-            }
+            dataFilter = CreateDataFilter();
             LoadData();
         }
 
