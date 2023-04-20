@@ -12,10 +12,10 @@ namespace DAO
     public class Services_DAO
     {
         // Hàm lấy danh sách dịch vụ
-        public static List<Services_DTO> ListServices()
+        public static List<Services_DTO> ListServices(string type)
         {
             List<Services_DTO> ListServices = new List<Services_DTO>();
-            DataTable dt = ProcessingDAO.RunQuerySQL("SELECT * FROM Services s, DetailService d Where d.ServiceID = s.ServiceID");
+            DataTable dt = ProcessingDAO.RunQuerySQL($"SELECT * FROM Services s, DetailService d Where d.ServiceID = s.ServiceID and s.ServiceID LIKE N'{type}%'");
             Services_DTO services;
             for (int i = 0; i < dt.Rows.Count; i++)
             {

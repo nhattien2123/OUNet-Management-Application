@@ -26,3 +26,17 @@ D:\Working\C++\source-file-C#\OUNet-Management-Application\DAO\bin\Debug\DTO.pdb
 D:\Working\C++\source-file-C#\OUNet-Management-Application\DAO\bin\Debug\EntityFramework.xml
 D:\Working\C++\source-file-C#\OUNet-Management-Application\DAO\bin\Debug\EntityFramework.SqlServer.xml
 D:\Working\C++\source-file-C#\OUNet-Management-Application\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Debug\DAO.dll.config
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Debug\DAO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Debug\DAO.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Debug\DTO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Debug\EntityFramework.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Debug\DTO.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Debug\EntityFramework.xml
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Debug\DAO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Debug\DAO.pdb
