@@ -31,7 +31,7 @@ namespace OUNet_Management_Application.Forms
         {
             try
             {
-                if (dataFilter.Count != 0)
+                if (dataFilter.Count != 0 || (dataFilter.Count == 0 && !String.IsNullOrEmpty(txtSearch.Text.Trim().ToLower())))
                     dgvHistory.DataSource = dataFilter;
                 else dgvHistory.DataSource = data;
                 dgvHistory.Columns[1].Visible = false;
@@ -154,15 +154,7 @@ namespace OUNet_Management_Application.Forms
 
         private void cbServiceType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //switch (cbServiceType.SelectedIndex)
-            //{
-            //    case 1:
-            //        foreach ()
-            //        BUS.Bill_BUS.SearchBills_BUS()
-            //        break;
-            //    case 2:
-            //        break;
-            //}
+           
         }
     }
 }
