@@ -35,7 +35,7 @@ namespace OUNet_Management_Application.Forms
             dgvUsers.Columns[11].Visible = false;
             dgvUsers.Columns[12].Visible = false;
             dgvUsers.Columns[13].Visible = false;
-            dgvUsers.Columns[4].Width = 200;
+            dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         public void LoadData()

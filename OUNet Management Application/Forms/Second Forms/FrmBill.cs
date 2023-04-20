@@ -51,9 +51,7 @@ namespace OUNet_Management_Application.Forms.Second_Forms
             dgvBill.DataSource = BUS.Bill_BUS.SearchBills_BUS(this.HistoryID);
             dgvBill.Columns[0].Visible = false;
             dgvBill.Columns[1].Visible = false;
-            dgvBill.Columns[2].Width = 150;
-            dgvBill.Columns[3].Width = 150;
-            dgvBill.Columns[4].Width = 150;
+            dgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             foreach (DataGridViewRow row in dgvBill.Rows)
             {

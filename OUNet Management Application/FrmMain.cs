@@ -22,6 +22,7 @@ namespace OUNet_Management_Application
         private Point lastCursor;
         private Point lastForm;
         FrmMessage frmMessage;
+        private bool isShowMessage = false;
 
         public FrmMain(Users_DTO user)
         {
@@ -46,6 +47,8 @@ namespace OUNet_Management_Application
             frmMessage = new FrmMessage(user);
             frmMessage.Show();
             frmMessage.Hide();
+            HiddenPanelButton();
+            pnSensors.Visible = true;
         }
 
         private void OpenChildForm(Form childForm, object btnSender)
@@ -62,35 +65,83 @@ namespace OUNet_Management_Application
             childForm.Show();
         }
 
+        private void HiddenPanelButton()
+        {
+            pnSensors.Visible = false;
+            pnUsers.Visible = false;
+            pnServices.Visible = false;
+            pnStatistical.Visible = false;
+            pnHistory.Visible = false;
+            pnMessages.Visible = false;
+        }
+
         private void btnSensor_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FrmSensor(), sender);
+            HiddenPanelButton();
+            pnSensors.Visible = true;
+            if (isShowMessage)
+            {
+                frmMessage.Hide();
+                isShowMessage = false;
+            }
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FrmAccount(), sender);
+            HiddenPanelButton();
+            pnUsers.Visible = true;
+            if (isShowMessage)
+            {
+                frmMessage.Hide();
+                isShowMessage = false;
+            }
         }
 
         private void btnServices_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FrmServices(user), sender);
+            HiddenPanelButton();
+            pnServices.Visible = true;
+            if (isShowMessage)
+            {
+                frmMessage.Hide();
+                isShowMessage = false;
+            }
         }
 
         private void btnMessage_Click(object sender, EventArgs e)
         {
             //OpenChildForm(new Forms.FrmMessage(user), sender);
             frmMessage.Show();
+            HiddenPanelButton();
+            pnMessages.Visible = true;
+            isShowMessage = true;
         }
 
         private void btnStatistical_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FrmStatistical(), sender);
+            HiddenPanelButton();
+            pnStatistical.Visible = true;
+            if (isShowMessage)
+            {
+                frmMessage.Hide();
+                isShowMessage = false;
+            }
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FrmHistory(), sender);
+            HiddenPanelButton();
+            pnHistory.Visible = true;
+            if (isShowMessage)
+            {
+                frmMessage.Hide();
+                isShowMessage = false;
+            }
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)

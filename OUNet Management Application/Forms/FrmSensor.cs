@@ -33,11 +33,11 @@ namespace OUNet_Management_Application.Forms
             DataGridViewColumn colUsed = new DataGridViewTextBoxColumn();
             DataGridViewColumn colRemain = new DataGridViewTextBoxColumn();
             
-            colStatus.HeaderText = "Trạng thái";
-            colUser.HeaderText = "Người dùng";
-            colStart.HeaderText = "Bắt đầu";
-            colUsed.HeaderText = "Đã dùng";
-            colRemain.HeaderText = "Còn lại";
+            colStatus.HeaderText = "Status";
+            colUser.HeaderText = "User";
+            colStart.HeaderText = "StartTime";
+            colUsed.HeaderText = "Used";
+            colRemain.HeaderText = "Remain";
 
             colStatus.Name = "Status";
             colUser.Name = "User";
@@ -50,6 +50,8 @@ namespace OUNet_Management_Application.Forms
             dgvSensors.Columns.Add(colStart);
             dgvSensors.Columns.Add(colUsed);
             dgvSensors.Columns.Add(colRemain);
+
+            dgvSensors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void FrmSensor_Load(object sender, EventArgs e)

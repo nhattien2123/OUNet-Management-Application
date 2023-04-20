@@ -47,6 +47,12 @@
             this.btnSensor = new System.Windows.Forms.Button();
             this.pnForm = new System.Windows.Forms.Panel();
             this.timerTimeNow = new System.Windows.Forms.Timer(this.components);
+            this.pnSensors = new System.Windows.Forms.Panel();
+            this.pnUsers = new System.Windows.Forms.Panel();
+            this.pnServices = new System.Windows.Forms.Panel();
+            this.pnMessages = new System.Windows.Forms.Panel();
+            this.pnStatistical = new System.Windows.Forms.Panel();
+            this.pnHistory = new System.Windows.Forms.Panel();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnMenuBottom.SuspendLayout();
@@ -149,6 +155,12 @@
             // 
             // pnMenuBottom
             // 
+            this.pnMenuBottom.Controls.Add(this.pnHistory);
+            this.pnMenuBottom.Controls.Add(this.pnStatistical);
+            this.pnMenuBottom.Controls.Add(this.pnMessages);
+            this.pnMenuBottom.Controls.Add(this.pnServices);
+            this.pnMenuBottom.Controls.Add(this.pnUsers);
+            this.pnMenuBottom.Controls.Add(this.pnSensors);
             this.pnMenuBottom.Controls.Add(this.pbClock);
             this.pnMenuBottom.Controls.Add(this.lbTime);
             this.pnMenuBottom.Controls.Add(this.btnHistory);
@@ -194,9 +206,10 @@
             this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistory.Location = new System.Drawing.Point(656, 0);
             this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnHistory.Size = new System.Drawing.Size(176, 59);
             this.btnHistory.TabIndex = 10;
-            this.btnHistory.Text = "Nhật ký, lịch sử";
+            this.btnHistory.Text = "   Nhật ký, lịch sử";
             this.btnHistory.UseVisualStyleBackColor = true;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
@@ -209,9 +222,10 @@
             this.btnStatistical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStatistical.Location = new System.Drawing.Point(524, 0);
             this.btnStatistical.Name = "btnStatistical";
+            this.btnStatistical.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnStatistical.Size = new System.Drawing.Size(132, 59);
             this.btnStatistical.TabIndex = 9;
-            this.btnStatistical.Text = "Thống kê";
+            this.btnStatistical.Text = "   Thống kê";
             this.btnStatistical.UseVisualStyleBackColor = true;
             this.btnStatistical.Click += new System.EventHandler(this.btnStatistical_Click);
             // 
@@ -224,9 +238,10 @@
             this.btnMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMessage.Location = new System.Drawing.Point(392, 0);
             this.btnMessage.Name = "btnMessage";
+            this.btnMessage.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnMessage.Size = new System.Drawing.Size(132, 59);
             this.btnMessage.TabIndex = 8;
-            this.btnMessage.Text = "Tin nhắn";
+            this.btnMessage.Text = "  Tin nhắn";
             this.btnMessage.UseVisualStyleBackColor = true;
             this.btnMessage.Click += new System.EventHandler(this.btnMessage_Click);
             // 
@@ -239,9 +254,10 @@
             this.btnServices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnServices.Location = new System.Drawing.Point(260, 0);
             this.btnServices.Name = "btnServices";
+            this.btnServices.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnServices.Size = new System.Drawing.Size(132, 59);
             this.btnServices.TabIndex = 7;
-            this.btnServices.Text = "Dịch vụ";
+            this.btnServices.Text = "   Dịch vụ";
             this.btnServices.UseVisualStyleBackColor = true;
             this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
             // 
@@ -254,9 +270,10 @@
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccount.Location = new System.Drawing.Point(128, 0);
             this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAccount.Size = new System.Drawing.Size(132, 59);
             this.btnAccount.TabIndex = 6;
-            this.btnAccount.Text = "Tài khoản";
+            this.btnAccount.Text = "   Tài khoản";
             this.btnAccount.UseVisualStyleBackColor = true;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
@@ -269,9 +286,10 @@
             this.btnSensor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSensor.Location = new System.Drawing.Point(0, 0);
             this.btnSensor.Name = "btnSensor";
+            this.btnSensor.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnSensor.Size = new System.Drawing.Size(128, 59);
             this.btnSensor.TabIndex = 4;
-            this.btnSensor.Text = "Máy trạm";
+            this.btnSensor.Text = "     Máy trạm";
             this.btnSensor.UseVisualStyleBackColor = true;
             this.btnSensor.Click += new System.EventHandler(this.btnSensor_Click);
             // 
@@ -288,6 +306,54 @@
             // 
             this.timerTimeNow.Enabled = true;
             this.timerTimeNow.Tick += new System.EventHandler(this.timerTimeNow_Tick);
+            // 
+            // pnSensors
+            // 
+            this.pnSensors.BackColor = System.Drawing.Color.IndianRed;
+            this.pnSensors.Location = new System.Drawing.Point(2, 54);
+            this.pnSensors.Name = "pnSensors";
+            this.pnSensors.Size = new System.Drawing.Size(126, 5);
+            this.pnSensors.TabIndex = 0;
+            // 
+            // pnUsers
+            // 
+            this.pnUsers.BackColor = System.Drawing.Color.IndianRed;
+            this.pnUsers.Location = new System.Drawing.Point(132, 54);
+            this.pnUsers.Name = "pnUsers";
+            this.pnUsers.Size = new System.Drawing.Size(128, 5);
+            this.pnUsers.TabIndex = 1;
+            // 
+            // pnServices
+            // 
+            this.pnServices.BackColor = System.Drawing.Color.IndianRed;
+            this.pnServices.Location = new System.Drawing.Point(264, 54);
+            this.pnServices.Name = "pnServices";
+            this.pnServices.Size = new System.Drawing.Size(128, 5);
+            this.pnServices.TabIndex = 2;
+            // 
+            // pnMessages
+            // 
+            this.pnMessages.BackColor = System.Drawing.Color.IndianRed;
+            this.pnMessages.Location = new System.Drawing.Point(396, 54);
+            this.pnMessages.Name = "pnMessages";
+            this.pnMessages.Size = new System.Drawing.Size(128, 5);
+            this.pnMessages.TabIndex = 3;
+            // 
+            // pnStatistical
+            // 
+            this.pnStatistical.BackColor = System.Drawing.Color.IndianRed;
+            this.pnStatistical.Location = new System.Drawing.Point(528, 54);
+            this.pnStatistical.Name = "pnStatistical";
+            this.pnStatistical.Size = new System.Drawing.Size(128, 5);
+            this.pnStatistical.TabIndex = 4;
+            // 
+            // pnHistory
+            // 
+            this.pnHistory.BackColor = System.Drawing.Color.IndianRed;
+            this.pnHistory.Location = new System.Drawing.Point(660, 54);
+            this.pnHistory.Name = "pnHistory";
+            this.pnHistory.Size = new System.Drawing.Size(172, 5);
+            this.pnHistory.TabIndex = 5;
             // 
             // FrmMain
             // 
@@ -333,6 +399,12 @@
         private System.Windows.Forms.Timer timerTimeNow;
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.PictureBox pbClock;
+        private System.Windows.Forms.Panel pnHistory;
+        private System.Windows.Forms.Panel pnStatistical;
+        private System.Windows.Forms.Panel pnMessages;
+        private System.Windows.Forms.Panel pnServices;
+        private System.Windows.Forms.Panel pnUsers;
+        private System.Windows.Forms.Panel pnSensors;
     }
 }
 

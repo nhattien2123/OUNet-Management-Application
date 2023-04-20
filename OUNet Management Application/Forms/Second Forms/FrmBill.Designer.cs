@@ -115,6 +115,7 @@
             // 
             // dgvBill
             // 
+            this.dgvBill.BackgroundColor = System.Drawing.Color.White;
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBill.Location = new System.Drawing.Point(11, 100);
             this.dgvBill.Name = "dgvBill";
