@@ -76,7 +76,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.Color.IndianRed;
+            this.btnSearch.ForeColor = System.Drawing.Color.Turquoise;
             this.btnSearch.Image = global::OUNet_Management_Application.Properties.Resources.Search_Icon_White;
             this.btnSearch.Location = new System.Drawing.Point(897, 8);
             this.btnSearch.Name = "btnSearch";
@@ -106,6 +106,7 @@
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(200, 22);
             this.dtpFrom.TabIndex = 8;
+            this.dtpFrom.Value = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             // 
             // txtSearch
             // 
@@ -124,12 +125,14 @@
             this.cbServiceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbServiceType.FormattingEnabled = true;
             this.cbServiceType.Items.AddRange(new object[] {
+            "Toàn bộ",
             "Nạp tiền",
             "Ăn uống"});
             this.cbServiceType.Location = new System.Drawing.Point(18, 15);
             this.cbServiceType.Name = "cbServiceType";
             this.cbServiceType.Size = new System.Drawing.Size(134, 28);
             this.cbServiceType.TabIndex = 6;
+            this.cbServiceType.SelectedIndexChanged += new System.EventHandler(this.cbServiceType_SelectedIndexChanged);
             // 
             // FrmHistory
             // 

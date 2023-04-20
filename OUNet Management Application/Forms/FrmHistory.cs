@@ -17,6 +17,10 @@ namespace OUNet_Management_Application.Forms
         Second_Forms.FrmBill frmBill;
         List<History_DTO> data;
         List<History_DTO> dataFilter = new List<History_DTO>();
+        long unixTimeStart;
+        long unixTimeEnd;
+        DateTimeOffset dateTimeOffsetStart;
+        DateTimeOffset dateTimeOffsetEnd;
 
         public FrmHistory()
         {
@@ -59,11 +63,18 @@ namespace OUNet_Management_Application.Forms
             else
             {
                 dataFilter = new List<History_DTO>();
+                dateTimeOffsetStart = new DateTimeOffset(dtpFrom.Value);
+                dateTimeOffsetEnd = new DateTimeOffset(dtpTo.Value);
+                unixTimeStart = dateTimeOffsetStart.ToUnixTimeSeconds();
+                unixTimeEnd = dateTimeOffsetEnd.ToUnixTimeSeconds();
+
                 foreach (DTO.History_DTO item in data)
                 {
-                    if (item.Description.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
+                    DateTimeOffset dateTimeOffsetHistory = new DateTimeOffset(item.Time);
+                    long unixTimeHistory = dateTimeOffsetHistory.ToUnixTimeSeconds();
+                    if (item.Description.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()) && unixTimeHistory >= unixTimeStart && unixTimeHistory <= unixTimeEnd)
                     {
-                        dataFilter.Add(item);
+                            dataFilter.Add(item);
                     }
                 }
             }
@@ -72,7 +83,29 @@ namespace OUNet_Management_Application.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            dataFilter = new List<DTO.History_DTO>();
+            dateTimeOffsetStart = new DateTimeOffset(dtpFrom.Value);
+            dateTimeOffsetEnd = new DateTimeOffset(dtpTo.Value);
+            unixTimeStart = dateTimeOffsetStart.ToUnixTimeSeconds();
+            unixTimeEnd = dateTimeOffsetEnd.ToUnixTimeSeconds();
 
+            foreach (DTO.History_DTO item in data)
+            {
+                DateTimeOffset dateTimeOffsetHistory = new DateTimeOffset(item.Time);
+                long unixTimeHistory = dateTimeOffsetHistory.ToUnixTimeSeconds();
+                Bill_DTO bill = BUS.Bill_BUS.SearchBillsForFilter_BUS(item.HistoryID);
+
+                if (item.Description.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()) && unixTimeHistory >= unixTimeStart && unixTimeHistory <= unixTimeEnd)
+                {
+                    if (cbServiceType.SelectedIndex == 0)
+                        dataFilter.Add(item);
+                    if (cbServiceType.SelectedIndex == 1 && bill.ServiceID[0] == 'M')
+                        dataFilter.Add(item);
+                    if (cbServiceType.SelectedIndex == 2 && (bill.ServiceID[0] == 'F' || bill.ServiceID[0] == 'D'))
+                        dataFilter.Add(item);
+                }
+            }
+            LoadDataWithSearch();
         }
 
         private void dgvHistory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -95,10 +128,41 @@ namespace OUNet_Management_Application.Forms
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dataFilter = new List<DTO.History_DTO>();
+            dateTimeOffsetStart = new DateTimeOffset(dtpFrom.Value);
+            dateTimeOffsetEnd = new DateTimeOffset(dtpTo.Value);
+            unixTimeStart = dateTimeOffsetStart.ToUnixTimeSeconds();
+            unixTimeEnd = dateTimeOffsetEnd.ToUnixTimeSeconds();
+
             foreach (DTO.History_DTO item in data)
-                if (item.Description.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()))
-                    dataFilter.Add(item);
+            {
+                DateTimeOffset dateTimeOffsetHistory = new DateTimeOffset(item.Time);
+                long unixTimeHistory = dateTimeOffsetHistory.ToUnixTimeSeconds();
+                Bill_DTO bill = BUS.Bill_BUS.SearchBillsForFilter_BUS(item.HistoryID);
+
+                if (item.Description.Trim().ToLower().Contains(txtSearch.Text.Trim().ToLower()) && unixTimeHistory >= unixTimeStart && unixTimeHistory <= unixTimeEnd)
+                {
+                    if (cbServiceType.SelectedIndex == 0)
+                        dataFilter.Add(item);
+                    if (cbServiceType.SelectedIndex == 1 && bill.ServiceID[0] == 'M')
+                        dataFilter.Add(item);
+                    if (cbServiceType.SelectedIndex == 2 && (bill.ServiceID[0] == 'F' || bill.ServiceID[0] == 'D'))
+                        dataFilter.Add(item);
+                }
+            }
             LoadDataWithSearch();
+        }
+
+        private void cbServiceType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //switch (cbServiceType.SelectedIndex)
+            //{
+            //    case 1:
+            //        foreach ()
+            //        BUS.Bill_BUS.SearchBills_BUS()
+            //        break;
+            //    case 2:
+            //        break;
+            //}
         }
     }
 }

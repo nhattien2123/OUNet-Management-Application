@@ -11,6 +11,11 @@ namespace BUS
 {
     public class Bill_BUS
     {
+        public static Bill_DTO SearchBillsForFilter_BUS(string HistoryID)
+        {
+            return DAO.Bill_DAO.SearchBillsForFilter(HistoryID);
+        }
+
         public static DataTable SearchBills_BUS(string HistoryID)
         {
             return DAO.Bill_DAO.SearchBills(HistoryID);
