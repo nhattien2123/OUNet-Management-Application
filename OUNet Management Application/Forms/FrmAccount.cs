@@ -35,6 +35,15 @@ namespace OUNet_Management_Application.Forms
             dgvUsers.Columns[11].Visible = false;
             dgvUsers.Columns[12].Visible = false;
             dgvUsers.Columns[13].Visible = false;
+            dgvUsers.Columns["UserID"].HeaderCell.Value = "Mã người dùng";
+            dgvUsers.Columns["Username"].HeaderCell.Value = "Tên người dùng";
+            dgvUsers.Columns["Tel"].HeaderCell.Value = "Số điện thoại";
+            dgvUsers.Columns["Address"].HeaderCell.Value = "Địa chỉ";
+            dgvUsers.Columns["Role"].HeaderCell.Value = "Vai trò";
+            dgvUsers.Columns["M_Account"].HeaderCell.Value = "Tài khoản chính";
+            dgvUsers.Columns["S_Account"].HeaderCell.Value = "Tài khoản phụ";
+            dgvUsers.Columns["LastAccess"].HeaderCell.Value = "Lần đăng nhập cuối cùng";
+            dgvUsers.Columns["Status"].HeaderCell.Value = "Trạng thái";
             dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 

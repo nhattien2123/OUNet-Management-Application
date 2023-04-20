@@ -33,11 +33,14 @@ namespace OUNet_Management_Application.Forms
             DataGridViewColumn colUsed = new DataGridViewTextBoxColumn();
             DataGridViewColumn colRemain = new DataGridViewTextBoxColumn();
             
-            colStatus.HeaderText = "Status";
-            colUser.HeaderText = "User";
-            colStart.HeaderText = "StartTime";
-            colUsed.HeaderText = "Used";
-            colRemain.HeaderText = "Remain";
+            colStatus.HeaderText = "Trạng thái";
+            colUser.HeaderText = "Người dùng";
+            colStart.HeaderText = "Bắt đầu";
+            colUsed.HeaderText = "Đã sử dụng";
+            colRemain.HeaderText = "Còn lại";
+            dgvSensors.Columns["SensorID"].HeaderCell.Value = "Mã máy";
+            dgvSensors.Columns["SensorName"].HeaderCell.Value = "Tên máy";
+            dgvSensors.Columns["AddressIP"].HeaderCell.Value = "Địa chỉ IP";
 
             colStatus.Name = "Status";
             colUser.Name = "User";

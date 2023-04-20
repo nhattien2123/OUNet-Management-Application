@@ -51,6 +51,10 @@ namespace OUNet_Management_Application.Forms.Second_Forms
             dgvBill.DataSource = BUS.Bill_BUS.SearchBills_BUS(this.HistoryID);
             dgvBill.Columns[0].Visible = false;
             dgvBill.Columns[1].Visible = false;
+            dgvBill.Columns["ServiceName"].HeaderCell.Value = "Tên dịch vụ";
+            dgvBill.Columns["Price"].HeaderCell.Value = "Giá bán";
+            dgvBill.Columns["Quantity"].HeaderCell.Value = "Số lượng";
+            dgvBill.Columns["Total"].HeaderCell.Value = "Tổng cộng";
             dgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             foreach (DataGridViewRow row in dgvBill.Rows)

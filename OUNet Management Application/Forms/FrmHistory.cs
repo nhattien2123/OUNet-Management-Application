@@ -33,6 +33,9 @@ namespace OUNet_Management_Application.Forms
                 dgvHistory.Columns[1].Visible = false;
                 dgvHistory.Columns[2].Visible = false;
                 dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvHistory.Columns["HistoryID"].HeaderCell.Value = "Mã lịch sử";
+                dgvHistory.Columns["Description"].HeaderCell.Value = "Mô tả";
+                dgvHistory.Columns["Time"].HeaderCell.Value = "Thời gian";
             }
             catch (Exception e)
             {
