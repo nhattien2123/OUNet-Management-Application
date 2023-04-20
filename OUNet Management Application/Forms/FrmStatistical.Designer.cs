@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbSum = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lbTo = new System.Windows.Forms.Label();
             this.lbFrom = new System.Windows.Forms.Label();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.lwDataList = new System.Windows.Forms.ListView();
@@ -42,8 +43,7 @@
             this.money = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -52,10 +52,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.chart1);
             this.panel1.Controls.Add(this.lbTo);
             this.panel1.Controls.Add(this.lbFrom);
-            this.panel1.Controls.Add(this.pbSearch);
             this.panel1.Controls.Add(this.dtpTo);
             this.panel1.Controls.Add(this.dtpFrom);
             this.panel1.Controls.Add(this.lwDataList);
@@ -65,32 +64,25 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // tableLayoutPanel1
+            // chart1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Silver;
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.lbSum, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 699);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1450, 47);
-            this.tableLayoutPanel1.TabIndex = 27;
-            // 
-            // lbSum
-            // 
-            this.lbSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSum.Location = new System.Drawing.Point(3, 0);
-            this.lbSum.Name = "lbSum";
-            this.lbSum.Size = new System.Drawing.Size(103, 24);
-            this.lbSum.TabIndex = 0;
-            this.lbSum.Text = "Tổng cộng";
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(429, 316);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "stat";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(660, 407);
+            this.chart1.TabIndex = 26;
+            this.chart1.Text = "chart1";
             // 
             // lbTo
             // 
@@ -116,20 +108,6 @@
             this.lbFrom.Text = "Từ:";
             this.lbFrom.Click += new System.EventHandler(this.lbFrom_Click);
             // 
-            // pbSearch
-            // 
-            this.pbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbSearch.BackColor = System.Drawing.Color.IndianRed;
-            this.pbSearch.Image = global::OUNet_Management_Application.Properties.Resources.Search_Icon;
-            this.pbSearch.Location = new System.Drawing.Point(1425, 13);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.pbSearch.Size = new System.Drawing.Size(41, 33);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbSearch.TabIndex = 23;
-            this.pbSearch.TabStop = false;
-            this.pbSearch.Click += new System.EventHandler(this.pbSearch_Click);
-            // 
             // dtpTo
             // 
             this.dtpTo.AllowDrop = true;
@@ -152,25 +130,27 @@
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(200, 22);
             this.dtpFrom.TabIndex = 21;
+            this.dtpFrom.Value = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // lwDataList
             // 
-            this.lwDataList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lwDataList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lwDataList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.time,
             this.service,
             this.money,
             this.sum});
+            this.lwDataList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lwDataList.HideSelection = false;
-            this.lwDataList.Location = new System.Drawing.Point(16, 52);
+            this.lwDataList.Location = new System.Drawing.Point(16, 58);
             this.lwDataList.Name = "lwDataList";
-            this.lwDataList.Size = new System.Drawing.Size(1450, 630);
+            this.lwDataList.Size = new System.Drawing.Size(1450, 73);
             this.lwDataList.TabIndex = 13;
             this.lwDataList.UseCompatibleStateImageBehavior = false;
             this.lwDataList.View = System.Windows.Forms.View.Details;
+            this.lwDataList.SizeChanged += new System.EventHandler(this.lwDataList_SizeChanged);
             // 
             // time
             // 
@@ -202,10 +182,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmStatistical";
             this.Text = "FrmStatistical";
+            this.Load += new System.EventHandler(this.FrmStatistical_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,15 +195,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView lwDataList;
         private System.Windows.Forms.ColumnHeader time;
-        private System.Windows.Forms.Label lbTo;
         private System.Windows.Forms.Label lbFrom;
-        private System.Windows.Forms.PictureBox pbSearch;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.ColumnHeader service;
         private System.Windows.Forms.ColumnHeader money;
         private System.Windows.Forms.ColumnHeader sum;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lbSum;
+        private System.Windows.Forms.Label lbTo;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
