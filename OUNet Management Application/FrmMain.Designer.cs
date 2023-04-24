@@ -32,31 +32,31 @@
             this.pnHeader = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.lbUsername = new System.Windows.Forms.Label();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnMenuBottom = new System.Windows.Forms.Panel();
-            this.pbClock = new System.Windows.Forms.PictureBox();
+            this.pnHistory = new System.Windows.Forms.Panel();
+            this.pnStatistical = new System.Windows.Forms.Panel();
+            this.pnMessages = new System.Windows.Forms.Panel();
+            this.pnServices = new System.Windows.Forms.Panel();
+            this.pnUsers = new System.Windows.Forms.Panel();
+            this.pnSensors = new System.Windows.Forms.Panel();
             this.lbTime = new System.Windows.Forms.Label();
+            this.pnForm = new System.Windows.Forms.Panel();
+            this.timerTimeNow = new System.Windows.Forms.Timer(this.components);
+            this.pbClock = new System.Windows.Forms.PictureBox();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnStatistical = new System.Windows.Forms.Button();
             this.btnMessage = new System.Windows.Forms.Button();
             this.btnServices = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnSensor = new System.Windows.Forms.Button();
-            this.pnForm = new System.Windows.Forms.Panel();
-            this.timerTimeNow = new System.Windows.Forms.Timer(this.components);
-            this.pnSensors = new System.Windows.Forms.Panel();
-            this.pnUsers = new System.Windows.Forms.Panel();
-            this.pnServices = new System.Windows.Forms.Panel();
-            this.pnMessages = new System.Windows.Forms.Panel();
-            this.pnStatistical = new System.Windows.Forms.Panel();
-            this.pnHistory = new System.Windows.Forms.Panel();
+            this.btnMaximize = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnMenuBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbClock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnHeader
@@ -103,30 +103,6 @@
             this.lbUsername.Size = new System.Drawing.Size(48, 16);
             this.lbUsername.TabIndex = 4;
             this.lbUsername.Text = "Name";
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Image = global::OUNet_Management_Application.Properties.Resources.Rectangle_Icon;
-            this.btnMaximize.Location = new System.Drawing.Point(1412, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(35, 30);
-            this.btnMaximize.TabIndex = 3;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Image = global::OUNet_Management_Application.Properties.Resources.OU_white_logo;
-            this.pbLogo.Location = new System.Drawing.Point(3, 1);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(35, 35);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
             // 
             // label1
             // 
@@ -175,16 +151,53 @@
             this.pnMenuBottom.Size = new System.Drawing.Size(1500, 59);
             this.pnMenuBottom.TabIndex = 3;
             // 
-            // pbClock
+            // pnHistory
             // 
-            this.pbClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbClock.Image = global::OUNet_Management_Application.Properties.Resources.Time_Icon;
-            this.pbClock.Location = new System.Drawing.Point(1246, 28);
-            this.pbClock.Name = "pbClock";
-            this.pbClock.Size = new System.Drawing.Size(25, 25);
-            this.pbClock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbClock.TabIndex = 12;
-            this.pbClock.TabStop = false;
+            this.pnHistory.BackColor = System.Drawing.Color.IndianRed;
+            this.pnHistory.Location = new System.Drawing.Point(660, 54);
+            this.pnHistory.Name = "pnHistory";
+            this.pnHistory.Size = new System.Drawing.Size(172, 5);
+            this.pnHistory.TabIndex = 5;
+            // 
+            // pnStatistical
+            // 
+            this.pnStatistical.BackColor = System.Drawing.Color.IndianRed;
+            this.pnStatistical.Location = new System.Drawing.Point(528, 54);
+            this.pnStatistical.Name = "pnStatistical";
+            this.pnStatistical.Size = new System.Drawing.Size(128, 5);
+            this.pnStatistical.TabIndex = 4;
+            // 
+            // pnMessages
+            // 
+            this.pnMessages.BackColor = System.Drawing.Color.IndianRed;
+            this.pnMessages.Location = new System.Drawing.Point(396, 54);
+            this.pnMessages.Name = "pnMessages";
+            this.pnMessages.Size = new System.Drawing.Size(128, 5);
+            this.pnMessages.TabIndex = 3;
+            // 
+            // pnServices
+            // 
+            this.pnServices.BackColor = System.Drawing.Color.IndianRed;
+            this.pnServices.Location = new System.Drawing.Point(264, 54);
+            this.pnServices.Name = "pnServices";
+            this.pnServices.Size = new System.Drawing.Size(128, 5);
+            this.pnServices.TabIndex = 2;
+            // 
+            // pnUsers
+            // 
+            this.pnUsers.BackColor = System.Drawing.Color.IndianRed;
+            this.pnUsers.Location = new System.Drawing.Point(132, 54);
+            this.pnUsers.Name = "pnUsers";
+            this.pnUsers.Size = new System.Drawing.Size(128, 5);
+            this.pnUsers.TabIndex = 1;
+            // 
+            // pnSensors
+            // 
+            this.pnSensors.BackColor = System.Drawing.Color.IndianRed;
+            this.pnSensors.Location = new System.Drawing.Point(2, 54);
+            this.pnSensors.Name = "pnSensors";
+            this.pnSensors.Size = new System.Drawing.Size(126, 5);
+            this.pnSensors.TabIndex = 0;
             // 
             // lbTime
             // 
@@ -196,6 +209,32 @@
             this.lbTime.Size = new System.Drawing.Size(58, 20);
             this.lbTime.TabIndex = 11;
             this.lbTime.Text = "(Time)";
+            this.lbTime.Click += new System.EventHandler(this.lbTime_Click);
+            // 
+            // pnForm
+            // 
+            this.pnForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnForm.Location = new System.Drawing.Point(0, 98);
+            this.pnForm.Name = "pnForm";
+            this.pnForm.Size = new System.Drawing.Size(1500, 882);
+            this.pnForm.TabIndex = 4;
+            this.pnForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnForm_Paint);
+            // 
+            // timerTimeNow
+            // 
+            this.timerTimeNow.Enabled = true;
+            this.timerTimeNow.Tick += new System.EventHandler(this.timerTimeNow_Tick);
+            // 
+            // pbClock
+            // 
+            this.pbClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbClock.Image = global::OUNet_Management_Application.Properties.Resources.Time_Icon;
+            this.pbClock.Location = new System.Drawing.Point(1246, 28);
+            this.pbClock.Name = "pbClock";
+            this.pbClock.Size = new System.Drawing.Size(25, 25);
+            this.pbClock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbClock.TabIndex = 12;
+            this.pbClock.TabStop = false;
             // 
             // btnHistory
             // 
@@ -293,67 +332,29 @@
             this.btnSensor.UseVisualStyleBackColor = true;
             this.btnSensor.Click += new System.EventHandler(this.btnSensor_Click);
             // 
-            // pnForm
+            // btnMaximize
             // 
-            this.pnForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnForm.Location = new System.Drawing.Point(0, 98);
-            this.pnForm.Name = "pnForm";
-            this.pnForm.Size = new System.Drawing.Size(1500, 882);
-            this.pnForm.TabIndex = 4;
-            this.pnForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnForm_Paint);
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.ForeColor = System.Drawing.Color.White;
+            this.btnMaximize.Image = global::OUNet_Management_Application.Properties.Resources.Rectangle_Icon;
+            this.btnMaximize.Location = new System.Drawing.Point(1412, 3);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(35, 30);
+            this.btnMaximize.TabIndex = 3;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
-            // timerTimeNow
+            // pbLogo
             // 
-            this.timerTimeNow.Enabled = true;
-            this.timerTimeNow.Tick += new System.EventHandler(this.timerTimeNow_Tick);
-            // 
-            // pnSensors
-            // 
-            this.pnSensors.BackColor = System.Drawing.Color.IndianRed;
-            this.pnSensors.Location = new System.Drawing.Point(2, 54);
-            this.pnSensors.Name = "pnSensors";
-            this.pnSensors.Size = new System.Drawing.Size(126, 5);
-            this.pnSensors.TabIndex = 0;
-            // 
-            // pnUsers
-            // 
-            this.pnUsers.BackColor = System.Drawing.Color.IndianRed;
-            this.pnUsers.Location = new System.Drawing.Point(132, 54);
-            this.pnUsers.Name = "pnUsers";
-            this.pnUsers.Size = new System.Drawing.Size(128, 5);
-            this.pnUsers.TabIndex = 1;
-            // 
-            // pnServices
-            // 
-            this.pnServices.BackColor = System.Drawing.Color.IndianRed;
-            this.pnServices.Location = new System.Drawing.Point(264, 54);
-            this.pnServices.Name = "pnServices";
-            this.pnServices.Size = new System.Drawing.Size(128, 5);
-            this.pnServices.TabIndex = 2;
-            // 
-            // pnMessages
-            // 
-            this.pnMessages.BackColor = System.Drawing.Color.IndianRed;
-            this.pnMessages.Location = new System.Drawing.Point(396, 54);
-            this.pnMessages.Name = "pnMessages";
-            this.pnMessages.Size = new System.Drawing.Size(128, 5);
-            this.pnMessages.TabIndex = 3;
-            // 
-            // pnStatistical
-            // 
-            this.pnStatistical.BackColor = System.Drawing.Color.IndianRed;
-            this.pnStatistical.Location = new System.Drawing.Point(528, 54);
-            this.pnStatistical.Name = "pnStatistical";
-            this.pnStatistical.Size = new System.Drawing.Size(128, 5);
-            this.pnStatistical.TabIndex = 4;
-            // 
-            // pnHistory
-            // 
-            this.pnHistory.BackColor = System.Drawing.Color.IndianRed;
-            this.pnHistory.Location = new System.Drawing.Point(660, 54);
-            this.pnHistory.Name = "pnHistory";
-            this.pnHistory.Size = new System.Drawing.Size(172, 5);
-            this.pnHistory.TabIndex = 5;
+            this.pbLogo.Image = global::OUNet_Management_Application.Properties.Resources.OU_white_logo;
+            this.pbLogo.Location = new System.Drawing.Point(3, 1);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(35, 35);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // FrmMain
             // 
@@ -371,10 +372,10 @@
             this.Load += new System.EventHandler(this.FrmOUNET_Load);
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnMenuBottom.ResumeLayout(false);
             this.pnMenuBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbClock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

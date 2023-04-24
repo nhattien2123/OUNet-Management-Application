@@ -11,8 +11,8 @@ namespace DTO
 {
     public class OrderService_DTO
     {
-        [NotMapped]
         #region CacBienCuaProperty
+        [NotMapped]
         string _ServiceID;
         string _ServiceName;
 

@@ -30,6 +30,7 @@ namespace OUNet_Management_Application
             if (pnComplete.Width >= pnFullComplete.Width)
             {
                 timerComplete.Stop();
+                    this.Close();
                 if (user.Role == "Admin")
                 {
                     frmMain = new FrmMain(user);
@@ -40,7 +41,7 @@ namespace OUNet_Management_Application
                     frmMainUser = new FrmMainUser(user);
                     frmMainUser.Show();
                 }
-                this.Close();
+                
             }
         }
 

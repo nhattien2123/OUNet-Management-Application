@@ -288,5 +288,10 @@ namespace OUNet_Management_Application.Forms
                 btnSend.PerformClick();
             }
         }
+
+        private void pnHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

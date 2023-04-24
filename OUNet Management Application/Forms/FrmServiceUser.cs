@@ -13,7 +13,7 @@ using OUNet_Management_Application.Forms.Second_Forms;
 
 namespace OUNet_Management_Application.Forms
 {
-    public partial class FrmServices : Form
+    public partial class FrmServiceUser : Form
     {
         private Users_DTO user;
         private List<DTO.Services_DTO> data;
@@ -22,7 +22,7 @@ namespace OUNet_Management_Application.Forms
         private string TYPE_SERVICE = "D";
 
 
-        public FrmServices(Users_DTO user)
+        public FrmServiceUser(Users_DTO user)
         {
             this.user = user;
             InitializeComponent();
@@ -178,36 +178,6 @@ namespace OUNet_Management_Application.Forms
             lbPay.Text = sum.ToString() + " đ";
         }
 
-        private void dgvService_MouseClick(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                if (e.Button == MouseButtons.Right)
-                {
-                    int currRow = dgvService.HitTest(e.X, e.Y).RowIndex;
-
-                    if (currRow >= 0)
-                    {
-                        DataGridViewRow selectedRow = dgvService.Rows[currRow];
-                        string id = selectedRow.Cells[0].Value.ToString().Trim();
-                        string title = selectedRow.Cells[1].Value.ToString();
-                        string price = selectedRow.Cells[2].Value.ToString();
-                        string fileName = selectedRow.Cells[3].Value.ToString();
-                        string quantity = selectedRow.Cells[4].Value.ToString();
-
-                        var frmDetailService = new FrmDetailService(fileName, title, quantity, price, id);
-                        frmDetailService.ShowDialog();
-                        LoadDataWithSearch();
-                    }
-
-
-                }
-            }
-            catch (Exception er) {
-                MessageBox.Show(er.Message);
-            }
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.orderList.Clear();
@@ -224,17 +194,22 @@ namespace OUNet_Management_Application.Forms
         {
             try
             {
-                if (user.Role == "Admin")
+                if (user.Role == "User")
                 {
-                    string res = BUS.Services_BUS.PayBillService(orderList, user.UserID, user.UserID, txtNote.Text.Trim());
-                    if (res == "True")
+                    try
                     {
-                        this.orderList.Clear();
-                        this.txtNote.Text = "";
-                        LoadListView();
-                        MessageBox.Show("Thanh toán thành công!");
+                        if (FrmMainUser._client.IsConnected)
+                        {
+                            string txt = BUS.Services_BUS.BillDFFromUser(orderList, user.UserID, user.Tel, txtNote.Text.Trim(), Environment.MachineName);
+                            FrmMainUser._client.Send(txt);
+                            orderList.Clear();
+                            LoadListView();
+                            MessageBox.Show("Order thành công!");
+                        }
                     }
-                    else MessageBox.Show("Thanh toán thất bại!");
+                    catch { 
+                    
+                    }
                 }
             }
             catch (Exception errr)
@@ -253,6 +228,11 @@ namespace OUNet_Management_Application.Forms
         {
             this.TYPE_SERVICE = "D";
             LoadDataWithSearch();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void dgvService_CellContentClick(object sender, DataGridViewCellEventArgs e)
