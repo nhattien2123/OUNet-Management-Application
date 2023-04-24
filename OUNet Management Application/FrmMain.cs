@@ -1,4 +1,5 @@
 ﻿using DTO;
+using BUS;
 using OUNet_Management_Application.Forms;
 using SuperSimpleTcp;
 using System;
@@ -11,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 
 namespace OUNet_Management_Application
 {
@@ -24,6 +27,11 @@ namespace OUNet_Management_Application
         FrmMessage frmMessage;
         private bool isShowMessage = false;
 
+        public static List<DTO.ServiceSensor_DTO> orderListDF = new List<DTO.ServiceSensor_DTO>();
+        public static List<DTO.ServiceSensor_DTO> orderListM = new List<DTO.ServiceSensor_DTO>();
+
+
+
         public FrmMain(Users_DTO user)
         {
             this.user = user;
@@ -31,7 +39,6 @@ namespace OUNet_Management_Application
             pnHeader.MouseDown += pnHeader_MouseDown;
             pnHeader.MouseUp += pnHeader_MouseUp;
             pnHeader.MouseMove += pnHeader_MouseMove;
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -44,7 +51,7 @@ namespace OUNet_Management_Application
             lbUsername.Text = "(" + user.Username + ")";
             HiddenPanelButton();
             pnSensors.Visible = true;
-            OpenChildForm(new Forms.FrmSensor(), sender);
+            OpenChildForm(new Forms.FrmSensor(user), sender);
             this.WindowState = FormWindowState.Maximized;
             frmMessage = new FrmMessage(user);
             frmMessage.Show();
@@ -84,7 +91,7 @@ namespace OUNet_Management_Application
                 frmMessage.Hide();
                 isShowMessage = false;
             }
-            OpenChildForm(new Forms.FrmSensor(), sender);
+            OpenChildForm(new Forms.FrmSensor(user), sender);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -203,6 +210,11 @@ namespace OUNet_Management_Application
         }
 
         private void pnHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbTime_Click(object sender, EventArgs e)
         {
 
         }

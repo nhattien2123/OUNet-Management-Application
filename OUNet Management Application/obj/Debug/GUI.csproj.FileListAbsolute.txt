@@ -156,3 +156,5 @@ D:\Workspace\C#\Code\LTCSDL-GK\OUNet Management Application\obj\Debug\GUI.csproj
 D:\Workspace\C#\Code\LTCSDL-GK\OUNet Management Application\obj\Debug\GUI.csproj.CopyComplete
 D:\Workspace\C#\Code\LTCSDL-GK\OUNet Management Application\obj\Debug\OUNet Management Application.exe
 D:\Workspace\C#\Code\LTCSDL-GK\OUNet Management Application\obj\Debug\OUNet Management Application.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmServiceUser.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmMServices.resources

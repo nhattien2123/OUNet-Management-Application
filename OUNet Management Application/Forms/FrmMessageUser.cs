@@ -135,14 +135,7 @@ namespace OUNet_Management_Application.Forms
                     txtInfo.Text += $@"{BUS.Users_BUS.CheckAccount_BUS(nameserver).Username}: {messageReceived}{Environment.NewLine}";
                 });
 
-                //Messages_DTO message = new Messages_DTO();
-                //message.MessageID = "M" + Guid.NewGuid().ToString();
-                //message.Content = messageReceived;
-                //message.Time = DateTime.Now;
-                //message.UserID = user.UserID;
-                //message.AdminID = BUS.Users_BUS.CheckAccount_BUS(nameserver).UserID;
-                //message.UserSend = message.AdminID;
-                //BUS.Messages_BUS.AddMessage_BUS(message);
+               
             }
 
             
@@ -185,6 +178,11 @@ namespace OUNet_Management_Application.Forms
             {
                 btnSend.PerformClick();
             }
+        }
+
+        private void pnHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

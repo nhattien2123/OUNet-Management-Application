@@ -49,5 +49,38 @@ namespace DAO
             string sqlcmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); INSERT INTO History(UserID, AdminID, Description, Time) VALUES(N'{userID}', N'{adminID}', N'{description}', @currDate); INSERT INTO Bill(ServiceID, Quantity, Total, HistoryID) VALUES{insert}; BEGIN TRANSACTION {update} COMMIT";
             return ProcessingDAO.RunNonQuerySQL(sqlcmd);
         }
+
+        public static string BillDFFromUser(List<DTO.OrderService_DTO> orderList, string userID, string userPhone, string description, string sName)
+        {
+            string txt = $"Order*U>{userID}&{userPhone}*D>{description}*S>{sName}*";
+            foreach (DTO.OrderService_DTO item in orderList)
+            {
+                txt += $"DF-{item.ServiceID}-{item.ServiceName}-{item.ServiceQuantity}-{item.ServicePrice};";
+            }
+           
+            return txt;
+        }
+
+        public static string BillMFromUser(Services_DTO moneyItem, string userID, string userPhone, string sName)
+        {
+            string txt = $"Order*U>{userID}&{userPhone}*D>string*S>{sName}*M-{moneyItem.ServiceID.Trim()}-{moneyItem.ServiceName}-{moneyItem.Price};";
+            return txt;
+        }
+
+        public static List<Services_DTO> GetListMoney()
+        {
+            List<Services_DTO> ListMoney = new List<Services_DTO>();
+            DataTable dt = ProcessingDAO.RunQuerySQL($"Select * from Services where ServiceID LIKE 'M%'");
+            Services_DTO services;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                services = new Services_DTO();
+                services.ServiceID = dt.Rows[i]["ServiceID"].ToString();
+                services.ServiceName = dt.Rows[i]["ServiceName"].ToString();
+                services.Price = int.Parse(dt.Rows[i]["Price"].ToString());
+                ListMoney.Add(services);
+            }
+            return ListMoney;
+        }
     }
 }

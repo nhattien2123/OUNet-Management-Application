@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bill_DTO.cs" />
+    <Compile Include="ServiceSensor_DTO.cs" />
     <Compile Include="DetailService_DTO.cs" />
     <Compile Include="History_DTO.cs" />
     <Compile Include="Messages_DTO.cs" />

@@ -119,5 +119,10 @@ namespace OUNet_Management_Application.Forms
         {
             SearchData();
         }
+
+        private void pnAccount_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

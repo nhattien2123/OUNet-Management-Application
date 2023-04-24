@@ -63,6 +63,7 @@
             this.pnAccount.Name = "pnAccount";
             this.pnAccount.Size = new System.Drawing.Size(1478, 759);
             this.pnAccount.TabIndex = 0;
+            this.pnAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.pnAccount_Paint);
             // 
             // cbColName
             // 

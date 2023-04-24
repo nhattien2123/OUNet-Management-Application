@@ -98,6 +98,18 @@
     <Compile Include="Forms\FrmServices.Designer.cs">
       <DependentUpon>FrmServices.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmServiceUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmServiceUser.Designer.cs">
+      <DependentUpon>FrmServiceUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMServices.Designer.cs">
+      <DependentUpon>FrmMServices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmStatistical.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +217,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmServices.resx">
       <DependentUpon>FrmServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmServiceUser.resx">
+      <DependentUpon>FrmServiceUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMServices.resx">
+      <DependentUpon>FrmMServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmStatistical.resx">
       <DependentUpon>FrmStatistical.cs</DependentUpon>

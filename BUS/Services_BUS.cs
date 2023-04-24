@@ -23,5 +23,21 @@ namespace BUS
         {
             return DAO.Services_DAO.PayBillService(orderList, userID, adminID, description);
         }
+
+        public static string BillDFFromUser(List<DTO.OrderService_DTO> orderList, string userID, string userPhone, string description, string sName)
+        {
+            return DAO.Services_DAO.BillDFFromUser(orderList, userID, userPhone, description, sName);
+
+        }
+
+        public static string BillMFromUser(DTO.Services_DTO moneyItem, string userID, string userPhone, string sName)
+        {
+            return DAO.Services_DAO.BillMFromUser(moneyItem, userID, userPhone, sName);
+        }
+
+        public static List<Services_DTO> GetListMoney()
+        {
+            return DAO.Services_DAO.GetListMoney();
+        }
     }
 }

@@ -87,6 +87,7 @@
             this.pnHeader.Name = "pnHeader";
             this.pnHeader.Size = new System.Drawing.Size(495, 39);
             this.pnHeader.TabIndex = 1;
+            this.pnHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnHeader_Paint);
             this.pnHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnHeader_MouseDown);
             this.pnHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnHeader_MouseMove);
             this.pnHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnHeader_MouseUp);
@@ -101,6 +102,7 @@
             this.lbUsername.Size = new System.Drawing.Size(48, 16);
             this.lbUsername.TabIndex = 4;
             this.lbUsername.Text = "Name";
+            this.lbUsername.Click += new System.EventHandler(this.lbUsername_Click);
             // 
             // pbLogo
             // 
@@ -156,6 +158,7 @@
             this.pnDetailUser.Name = "pnDetailUser";
             this.pnDetailUser.Size = new System.Drawing.Size(472, 232);
             this.pnDetailUser.TabIndex = 2;
+            this.pnDetailUser.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDetailUser_Paint);
             // 
             // txtCombo
             // 
@@ -246,6 +249,7 @@
             this.txtSecondAccount.ReadOnly = true;
             this.txtSecondAccount.Size = new System.Drawing.Size(230, 27);
             this.txtSecondAccount.TabIndex = 3;
+            this.txtSecondAccount.TextChanged += new System.EventHandler(this.txtSecondAccount_TextChanged);
             // 
             // lbSecondAccount
             // 
@@ -266,6 +270,7 @@
             this.txtMainAccount.ReadOnly = true;
             this.txtMainAccount.Size = new System.Drawing.Size(230, 27);
             this.txtMainAccount.TabIndex = 1;
+            this.txtMainAccount.TextChanged += new System.EventHandler(this.txtMainAccount_TextChanged);
             // 
             // lbMainAccount
             // 
@@ -342,6 +347,7 @@
             this.pbRecharge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRecharge.TabIndex = 18;
             this.pbRecharge.TabStop = false;
+            this.pbRecharge.Click += new System.EventHandler(this.pbRecharge_Click);
             // 
             // pbCombo
             // 
@@ -364,6 +370,7 @@
             this.pbServices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbServices.TabIndex = 16;
             this.pbServices.TabStop = false;
+            this.pbServices.Click += new System.EventHandler(this.pbServices_Click);
             // 
             // lbLogOut
             // 

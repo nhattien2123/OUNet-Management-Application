@@ -23,7 +23,7 @@ namespace OUNet_Management_Application
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             txtUsername.Text = "0774435339";
-            txtPassword.Text = "ounetadmin";
+            txtPassword.Text = "ounetuser";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
