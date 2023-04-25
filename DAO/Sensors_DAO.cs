@@ -26,13 +26,12 @@ namespace DAO
                 Boolean isTimeEndNull = String.IsNullOrEmpty(dt.Rows[i]["TimeEnd"].ToString());
                 if (isTimeEndNull)
                 {
-                    sensor.Utel = "- - -";
-                    sensor.TimeStart = "- - -";
-                    
-                }
-                else {
                     sensor.Utel = dt.Rows[i]["Tel"].ToString();
                     sensor.TimeStart = dt.Rows[i]["TimeStart"].ToString().Trim();
+                }
+                else {
+                    sensor.Utel = "- - -";
+                    sensor.TimeStart = "- - -";
                 }
                 listSensors.Add(sensor);
             }

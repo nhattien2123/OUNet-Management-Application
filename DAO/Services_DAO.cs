@@ -46,14 +46,14 @@ namespace DAO
                 update += $"UPDATE DetailService set Quantity = Quantity - {item.ServiceQuantity} where ServiceId = N'{item.ServiceID}';";
             }
             insert = insert.Substring(0, insert.Length - 2);
-            string sqlcmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); INSERT INTO History(UserID, AdminID, Description, Time) VALUES(N'{userID}', N'{adminID}', N'{description}', @currDate); INSERT INTO Bill(ServiceID, Quantity, Total, HistoryID) VALUES{insert}; BEGIN TRANSACTION {update} COMMIT";
+            string sqlcmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); INSERT INTO History(UserID, AdminID, Description, Time, Status) VALUES(N'{userID}', N'{adminID}', N'{description}', @currDate, 1); INSERT INTO Bill(ServiceID, Quantity, Total, HistoryID) VALUES{insert}; BEGIN TRANSACTION {update} COMMIT";
             return ProcessingDAO.RunNonQuerySQL(sqlcmd);
         }
 
         public static string PayBillMService(List<DTO.OrderService_DTO> orderList, string userID, string adminID)
         {
             
-            string sqlcmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); DECLARE @Price float; DECLARE @Bonus float; SELECT @Price = s.Price, @Bonus = ISNULL(v.Bonus, 0) FROM Services AS s LEFT JOIN Voucher AS v ON s.ServiceID = v.ServiceID where s.ServiceID = N'{orderList[0].ServiceID}' INSERT INTO History(UserID, AdminID, Time) VALUES(N'{userID}', N'{adminID}', @currDate); INSERT INTO Bill(ServiceID, Quantity, Total, HistoryID) VALUES(N'{orderList[0].ServiceID}', 1, {orderList[0].ServicePrice}, @@IDENTITY); BEGIN TRANSACTION UPDATE Users set M_Account = M_Account + @Price, S_Account = S_Account + @Bonus where Users.UserID = N'{userID}' COMMIT";
+            string sqlcmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); DECLARE @Price float; DECLARE @Bonus float; SELECT @Price = s.Price, @Bonus = ISNULL(v.Bonus, 0) FROM Services AS s LEFT JOIN Voucher AS v ON s.ServiceID = v.ServiceID where s.ServiceID = N'{orderList[0].ServiceID}' INSERT INTO History(UserID, AdminID, Time, Status) VALUES(N'{userID}', N'{adminID}', @currDate, 1); INSERT INTO Bill(ServiceID, Quantity, Total, HistoryID) VALUES(N'{orderList[0].ServiceID}', 1, {orderList[0].ServicePrice}, @@IDENTITY); BEGIN TRANSACTION UPDATE Users set M_Account = M_Account + @Price, S_Account = S_Account + @Bonus where Users.UserID = N'{userID}' COMMIT";
             return ProcessingDAO.RunNonQuerySQL(sqlcmd);
         }
 

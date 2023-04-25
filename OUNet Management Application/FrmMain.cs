@@ -30,7 +30,11 @@ namespace OUNet_Management_Application
         public static List<DTO.ServiceSensor_DTO> orderListDF = new List<DTO.ServiceSensor_DTO>();
         public static List<DTO.ServiceSensor_DTO> orderListM = new List<DTO.ServiceSensor_DTO>();
 
+        public static string IPLocal = "127.0.0.1";
+        public static string PORTSensor = "9999";
 
+        public static int PRICEPERHOUR = 10000;
+        public static float PRICEPERMIN = 167;
 
         public FrmMain(Users_DTO user)
         {

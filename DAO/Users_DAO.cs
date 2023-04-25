@@ -168,5 +168,47 @@ namespace DAO
             }
             return user;
         }
+
+        public static string SubMoneyFromUser(float money, string userID, Boolean subMoney)
+        {
+            if (!subMoney)
+            { 
+                string getMUser = $"SELECT M_Account FROM Users where Users.UserID = N'{userID}'";
+                DataTable dt = DAO.ProcessingDAO.RunQuerySQL(getMUser);
+                float dataMUser = float.Parse(dt.Rows[0]["M_Account"].ToString());
+                if (dataMUser >= money)
+                {
+                    string sqlUpdate = $"UPDATE Users SET M_Account = M_Account - {money} Where UserID = N'{userID}'";
+                    return DAO.ProcessingDAO.RunNonQuerySQL(sqlUpdate);
+                }
+            }
+
+            if (subMoney)
+            {
+                string getSMUser = $"SELECT S_Account FROM Users where Users.UserID = N'{userID}'";
+                string getMMUser = $"SELECT M_Account FROM Users where Users.UserID = N'{userID}'";
+                DataTable dtDF = DAO.ProcessingDAO.RunQuerySQL(getSMUser);
+                DataTable dtM = DAO.ProcessingDAO.RunQuerySQL(getMMUser);
+                float dataSMUser = float.Parse(dtDF.Rows[0]["S_Account"].ToString());
+                float dataMMUser = float.Parse(dtM.Rows[0]["M_Account"].ToString());
+                if (dataSMUser >= money)
+                {
+                    string sqlUpdate = $"UPDATE Users SET S_Account = S_Account - {money} Where UserID = N'{userID}'";
+                    return DAO.ProcessingDAO.RunNonQuerySQL(sqlUpdate);
+                }
+                if (dataSMUser < money && dataMMUser >= money)
+                {
+                    string sqlUpdate = $"UPDATE Users SET M_Account = M_Account - {money} Where UserID = N'{userID}'";
+                    return DAO.ProcessingDAO.RunNonQuerySQL(sqlUpdate);
+                }
+            }
+            return "Fail";
+        }
+
+        public static string AddMoneyFromUser(int money, string userID)
+        {
+            string sqlUpdate = $"UPDATE Users SET M_Account = M_Account + {float.Parse(money.ToString())} Where UserID = N'{userID}'";
+            return DAO.ProcessingDAO.RunNonQuerySQL(sqlUpdate);
+        }
     }
 }

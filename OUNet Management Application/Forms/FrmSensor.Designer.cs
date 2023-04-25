@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnSensors = new System.Windows.Forms.Panel();
             this.dgvSensors = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             this.lbRechargeCount = new System.Windows.Forms.Label();
             this.lbRecharge = new System.Windows.Forms.Label();
             this.pbRecharge = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnSensors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSensors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSensor)).BeginInit();
@@ -302,6 +304,11 @@
             this.pbRecharge.TabIndex = 0;
             this.pbRecharge.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            // 
             // FrmSensor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,5 +360,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Timer timer1;
     }
 }

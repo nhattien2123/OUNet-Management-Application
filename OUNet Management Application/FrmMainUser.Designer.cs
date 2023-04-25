@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnHeader = new System.Windows.Forms.Panel();
             this.lbUsername = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
@@ -62,6 +63,7 @@
             this.lbChangePassword = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
             this.pbChangePassword = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnDetailUser.SuspendLayout();
@@ -163,6 +165,7 @@
             // txtCombo
             // 
             this.txtCombo.BackColor = System.Drawing.Color.LightGray;
+            this.txtCombo.Enabled = false;
             this.txtCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCombo.Location = new System.Drawing.Point(214, 180);
             this.txtCombo.Name = "txtCombo";
@@ -466,6 +469,12 @@
             this.pbChangePassword.TabStop = false;
             this.pbChangePassword.Click += new System.EventHandler(this.pbChangePassword_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmMainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -539,5 +548,6 @@
         private System.Windows.Forms.PictureBox pbCombo;
         private System.Windows.Forms.PictureBox pbServices;
         private System.Windows.Forms.PictureBox pbChangePassword;
+        private System.Windows.Forms.Timer timer1;
     }
 }

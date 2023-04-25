@@ -86,7 +86,17 @@ namespace OUNet_Management_Application.Forms.Second_Forms
             if (dr == DialogResult.Yes)
             {
                 if (isDF)
+                {
                     FrmMain.orderListDF = FrmMain.orderListDF.Where(order => order.ID != serviceSensor.ID).ToList();
+                    int sum = 0;
+                    foreach (DTO.OrderService_DTO item in serviceSensor.OrderService)
+                    {
+                        sum += item.ServiceTotal;
+                    }
+                    string txt = BUS.Users_BUS.AddMoneyFromUser(sum, serviceSensor.UserID);
+                    MessageBox.Show(txt);
+                }
+                    
                 if (!isDF)
                     FrmMain.orderListM = FrmMain.orderListM.Where(order => order.ID != serviceSensor.ID).ToList();
             }
