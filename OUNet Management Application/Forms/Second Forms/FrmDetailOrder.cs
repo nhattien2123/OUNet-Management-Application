@@ -150,7 +150,6 @@ namespace OUNet_Management_Application.Forms.Second_Forms
                     if (!isDF)
                     {
                         string res = BUS.Services_BUS.PayBillMService(serviceSensor.OrderService, serviceSensor.UserID, user.UserID);
-                        MessageBox.Show(res);
                         if (res == "True")
                         {
                             FrmMain.orderListM = FrmMain.orderListM.Where(order => order.ID != serviceSensor.ID).ToList();

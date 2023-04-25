@@ -48,6 +48,7 @@ namespace OUNet_Management_Application.Forms.Second_Forms
 
         private void FrmBill_Load(object sender, EventArgs e)
         {
+
             dgvBill.DataSource = BUS.Bill_BUS.SearchBills_BUS(this.HistoryID);
             dgvBill.Columns[0].Visible = false;
             dgvBill.Columns[1].Visible = false;
@@ -64,6 +65,8 @@ namespace OUNet_Management_Application.Forms.Second_Forms
             }
 
             lbTotal.Text = total.ToString() + "đ";
+
+            lbTime.Text = Time.ToString();
         }
 
         private void pnHeader_MouseDown(object sender, MouseEventArgs e)

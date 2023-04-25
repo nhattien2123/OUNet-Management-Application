@@ -132,7 +132,8 @@
             this.cbServiceType.Name = "cbServiceType";
             this.cbServiceType.Size = new System.Drawing.Size(134, 28);
             this.cbServiceType.TabIndex = 6;
-            this.cbServiceType.SelectedIndexChanged += new System.EventHandler(this.cbServiceType_SelectedIndexChanged);
+            
+            this.cbServiceType.SelectedValueChanged += new System.EventHandler(this.cbServiceType_SelectedValueChanged);
             // 
             // FrmHistory
             // 

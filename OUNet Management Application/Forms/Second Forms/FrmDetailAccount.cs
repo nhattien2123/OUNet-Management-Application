@@ -28,6 +28,8 @@ namespace OUNet_Management_Application.Forms.Second_Forms
         private string Sex;
         private string HomeTown;
         private DateTime BirthDay;
+        private List<DTO.Services_DTO> listCb = new List<Services_DTO>();
+
         public FrmDetailAccount(string UserID, string Username, string Tel, string Address, string Role, float M_Account, float S_Account, DateTime LastAccess, bool Status, string Nation, string Sex, string HomeTown, DateTime BirthDay)
         {
             this.UserID = UserID;
@@ -73,6 +75,14 @@ namespace OUNet_Management_Application.Forms.Second_Forms
             {
                 lbStatusVal.Text = "Đã kích hoạt";
             } else { lbStatusVal.Text = "Chưa kích hoạt"; }
+
+            listCb = BUS.Services_BUS.GetListMoney();
+            foreach (DTO.Services_DTO item in listCb)
+            {
+                string bonus = item.ServiceQuantity == "- - -" ? "0" : item.ServiceQuantity;
+                comboBox1.Items.Add($"{item.Price}đ (+{bonus}đ)");
+            }
+            comboBox1.SelectedIndex = 0;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -161,6 +171,30 @@ namespace OUNet_Management_Application.Forms.Second_Forms
                 Close();
             }
             else MessageBox.Show("Bạn không được phép xoá Admin!");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMoney_Click(object sender, EventArgs e)
+        {
+            int idx = comboBox1.SelectedIndex;
+            if (idx != -1)
+            {
+                DTO.OrderService_DTO orderServiceM_DTO = new DTO.OrderService_DTO()
+                {
+                    ServiceID = listCb[idx].ServiceID,
+                    ServiceName = listCb[idx].ServiceName,
+                    ServicePrice = int.Parse(listCb[idx].Price.ToString()),
+                };
+                List<DTO.OrderService_DTO> list = new List<OrderService_DTO>();
+                list.Add(orderServiceM_DTO);
+                string res = BUS.Services_BUS.PayBillMService(list, this.UserID, FrmAccount.user.UserID);
+                MessageBox.Show(res);
+            }
+
         }
     }
 }

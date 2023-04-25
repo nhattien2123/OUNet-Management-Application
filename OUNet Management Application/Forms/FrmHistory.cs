@@ -152,9 +152,9 @@ namespace OUNet_Management_Application.Forms
             LoadDataWithSearch();
         }
 
-        private void cbServiceType_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbServiceType_SelectedValueChanged(object sender, EventArgs e)
         {
-           
+            
         }
     }
 }

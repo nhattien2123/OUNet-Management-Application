@@ -107,7 +107,7 @@ namespace OUNet_Management_Application
                 frmMessage.Hide();
                 isShowMessage = false;
             }
-            OpenChildForm(new Forms.FrmAccount(), sender);
+            OpenChildForm(new Forms.FrmAccount(user), sender);
         }
 
         private void btnServices_Click(object sender, EventArgs e)

@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnBackground = new System.Windows.Forms.Panel();
+            this.cbMoney = new System.Windows.Forms.Panel();
+            this.btnResetPassword = new System.Windows.Forms.Button();
             this.rdFemale = new System.Windows.Forms.RadioButton();
             this.rdMale = new System.Windows.Forms.RadioButton();
             this.lbLastAccessVal = new System.Windows.Forms.Label();
@@ -62,51 +63,68 @@
             this.lbIDUser = new System.Windows.Forms.Label();
             this.lbDetail = new System.Windows.Forms.Label();
             this.pbBackground2 = new System.Windows.Forms.Panel();
-            this.btnResetPassword = new System.Windows.Forms.Button();
-            this.pnBackground.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnMoney = new System.Windows.Forms.Button();
+            this.cbMoney.SuspendLayout();
+            this.pbBackground2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnBackground
+            // cbMoney
             // 
-            this.pnBackground.BackColor = System.Drawing.Color.White;
-            this.pnBackground.Controls.Add(this.btnResetPassword);
-            this.pnBackground.Controls.Add(this.rdFemale);
-            this.pnBackground.Controls.Add(this.rdMale);
-            this.pnBackground.Controls.Add(this.lbLastAccessVal);
-            this.pnBackground.Controls.Add(this.lbLastAccess);
-            this.pnBackground.Controls.Add(this.btnClose);
-            this.pnBackground.Controls.Add(this.lbRoleVal);
-            this.pnBackground.Controls.Add(this.btnConfirm);
-            this.pnBackground.Controls.Add(this.dtpBirthDay);
-            this.pnBackground.Controls.Add(this.txtHomeTown);
-            this.pnBackground.Controls.Add(this.txtNation);
-            this.pnBackground.Controls.Add(this.lbHomeTown);
-            this.pnBackground.Controls.Add(this.lbBirthDay);
-            this.pnBackground.Controls.Add(this.lbCountry);
-            this.pnBackground.Controls.Add(this.lbSex);
-            this.pnBackground.Controls.Add(this.btnDelete);
-            this.pnBackground.Controls.Add(this.btnEdit);
-            this.pnBackground.Controls.Add(this.lbSecondAccountVal);
-            this.pnBackground.Controls.Add(this.lbMainAccountVal);
-            this.pnBackground.Controls.Add(this.lbStatusVal);
-            this.pnBackground.Controls.Add(this.txtAddress);
-            this.pnBackground.Controls.Add(this.txtTelephone);
-            this.pnBackground.Controls.Add(this.txtUsername);
-            this.pnBackground.Controls.Add(this.txtIDUser);
-            this.pnBackground.Controls.Add(this.lbStatus);
-            this.pnBackground.Controls.Add(this.lbSecondAccount);
-            this.pnBackground.Controls.Add(this.lbMainAccount);
-            this.pnBackground.Controls.Add(this.lbRole);
-            this.pnBackground.Controls.Add(this.lbAddress);
-            this.pnBackground.Controls.Add(this.lbTelephone);
-            this.pnBackground.Controls.Add(this.lbName);
-            this.pnBackground.Controls.Add(this.lbIDUser);
-            this.pnBackground.Controls.Add(this.lbDetail);
-            this.pnBackground.Controls.Add(this.pbBackground2);
-            this.pnBackground.Location = new System.Drawing.Point(12, 12);
-            this.pnBackground.Name = "pnBackground";
-            this.pnBackground.Size = new System.Drawing.Size(1478, 759);
-            this.pnBackground.TabIndex = 0;
+            this.cbMoney.BackColor = System.Drawing.Color.White;
+            this.cbMoney.Controls.Add(this.btnResetPassword);
+            this.cbMoney.Controls.Add(this.rdFemale);
+            this.cbMoney.Controls.Add(this.rdMale);
+            this.cbMoney.Controls.Add(this.lbLastAccessVal);
+            this.cbMoney.Controls.Add(this.lbLastAccess);
+            this.cbMoney.Controls.Add(this.btnClose);
+            this.cbMoney.Controls.Add(this.lbRoleVal);
+            this.cbMoney.Controls.Add(this.btnConfirm);
+            this.cbMoney.Controls.Add(this.dtpBirthDay);
+            this.cbMoney.Controls.Add(this.txtHomeTown);
+            this.cbMoney.Controls.Add(this.txtNation);
+            this.cbMoney.Controls.Add(this.lbHomeTown);
+            this.cbMoney.Controls.Add(this.lbBirthDay);
+            this.cbMoney.Controls.Add(this.lbCountry);
+            this.cbMoney.Controls.Add(this.lbSex);
+            this.cbMoney.Controls.Add(this.btnDelete);
+            this.cbMoney.Controls.Add(this.btnEdit);
+            this.cbMoney.Controls.Add(this.lbSecondAccountVal);
+            this.cbMoney.Controls.Add(this.lbMainAccountVal);
+            this.cbMoney.Controls.Add(this.lbStatusVal);
+            this.cbMoney.Controls.Add(this.txtAddress);
+            this.cbMoney.Controls.Add(this.txtTelephone);
+            this.cbMoney.Controls.Add(this.txtUsername);
+            this.cbMoney.Controls.Add(this.txtIDUser);
+            this.cbMoney.Controls.Add(this.lbStatus);
+            this.cbMoney.Controls.Add(this.lbSecondAccount);
+            this.cbMoney.Controls.Add(this.lbMainAccount);
+            this.cbMoney.Controls.Add(this.lbRole);
+            this.cbMoney.Controls.Add(this.lbAddress);
+            this.cbMoney.Controls.Add(this.lbTelephone);
+            this.cbMoney.Controls.Add(this.lbName);
+            this.cbMoney.Controls.Add(this.lbIDUser);
+            this.cbMoney.Controls.Add(this.lbDetail);
+            this.cbMoney.Controls.Add(this.pbBackground2);
+            this.cbMoney.Location = new System.Drawing.Point(12, 12);
+            this.cbMoney.Name = "cbMoney";
+            this.cbMoney.Size = new System.Drawing.Size(1478, 759);
+            this.cbMoney.TabIndex = 0;
+            // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.BackColor = System.Drawing.Color.Turquoise;
+            this.btnResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPassword.Location = new System.Drawing.Point(618, 659);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(180, 59);
+            this.btnResetPassword.TabIndex = 40;
+            this.btnResetPassword.Text = "Reset mật khẩu";
+            this.btnResetPassword.UseVisualStyleBackColor = false;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // rdFemale
             // 
@@ -450,24 +468,47 @@
             // pbBackground2
             // 
             this.pbBackground2.BackColor = System.Drawing.Color.Tomato;
+            this.pbBackground2.Controls.Add(this.btnMoney);
+            this.pbBackground2.Controls.Add(this.comboBox1);
+            this.pbBackground2.Controls.Add(this.pictureBox1);
             this.pbBackground2.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbBackground2.Location = new System.Drawing.Point(0, 0);
             this.pbBackground2.Name = "pbBackground2";
             this.pbBackground2.Size = new System.Drawing.Size(441, 759);
             this.pbBackground2.TabIndex = 29;
             // 
-            // btnResetPassword
+            // pictureBox1
             // 
-            this.btnResetPassword.BackColor = System.Drawing.Color.Turquoise;
-            this.btnResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPassword.Location = new System.Drawing.Point(618, 659);
-            this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Size = new System.Drawing.Size(180, 59);
-            this.btnResetPassword.TabIndex = 40;
-            this.btnResetPassword.Text = "Reset mật khẩu";
-            this.btnResetPassword.UseVisualStyleBackColor = false;
-            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
+            this.pictureBox1.Image = global::OUNet_Management_Application.Properties.Resources.Admin_Male_2;
+            this.pictureBox1.Location = new System.Drawing.Point(118, 106);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(209, 219);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(54, 362);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(335, 24);
+            this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // btnMoney
+            // 
+            this.btnMoney.BackColor = System.Drawing.Color.Lime;
+            this.btnMoney.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoney.Location = new System.Drawing.Point(130, 420);
+            this.btnMoney.Name = "btnMoney";
+            this.btnMoney.Size = new System.Drawing.Size(180, 59);
+            this.btnMoney.TabIndex = 31;
+            this.btnMoney.Text = "Nạp tiền";
+            this.btnMoney.UseVisualStyleBackColor = false;
+            this.btnMoney.Click += new System.EventHandler(this.btnMoney_Click);
             // 
             // FrmDetailAccount
             // 
@@ -475,21 +516,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1502, 783);
-            this.Controls.Add(this.pnBackground);
+            this.Controls.Add(this.cbMoney);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDetailAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDetailAccount";
             this.Load += new System.EventHandler(this.FrmDetailAccount_Load);
-            this.pnBackground.ResumeLayout(false);
-            this.pnBackground.PerformLayout();
+            this.cbMoney.ResumeLayout(false);
+            this.cbMoney.PerformLayout();
+            this.pbBackground2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnBackground;
+        private System.Windows.Forms.Panel cbMoney;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lbSecondAccountVal;
@@ -524,5 +567,8 @@
         private System.Windows.Forms.RadioButton rdFemale;
         private System.Windows.Forms.RadioButton rdMale;
         private System.Windows.Forms.Button btnResetPassword;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnMoney;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
