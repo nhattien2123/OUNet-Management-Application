@@ -88,12 +88,18 @@ namespace OUNet_Management_Application.Forms
                         string IP = data[3];
                         if (!String.IsNullOrEmpty(namePC) && !String.IsNullOrEmpty(IP) && !String.IsNullOrEmpty(userID))
                         {
-                            string flag = BUS.Sensors_BUS.FindAndCreateSensor(userID, namePC, IP);
-
+                            BUS.Sensors_BUS.FindAndCreateSensor(userID, namePC, IP);
                         }
                         break;
                     case "ClientDisconnected":
-                        MessageBox.Show($"{data[0]} {data[1]} {data[2]}");
+                        string userIDDis = data[1];
+                        string namePCDis = data[2];
+                        string IPDis = data[3];
+                        if (!String.IsNullOrEmpty(namePCDis) && !String.IsNullOrEmpty(IPDis) && !String.IsNullOrEmpty(userIDDis))
+                        {
+                            string flag = BUS.Sensors_BUS.FindAndCreateSensor(userID, namePC, IP);
+
+                        }
                         break;
                     case "Order":
                         string userIDOrder = data[1].Split('>')[1].Split('&')[0];
@@ -104,7 +110,7 @@ namespace OUNet_Management_Application.Forms
                         string[] orderDataList = orderD.Split(';');
 
                         List<DTO.OrderService_DTO> orderDF = new List<DTO.OrderService_DTO>();
-                        DTO.OrderService_DTO orderService_DTO_M = new DTO.OrderService_DTO();
+                        List<DTO.OrderService_DTO> orderM = new List<DTO.OrderService_DTO>();
                         foreach (string order in orderDataList)
                         {
                             if (!String.IsNullOrEmpty(order))
@@ -114,22 +120,26 @@ namespace OUNet_Management_Application.Forms
                                 if (orderArr[0] == "DF")
                                 {
                                     this.flagDF = true;
-                                    DTO.OrderService_DTO orderService_DTO = new DTO.OrderService_DTO()
+                                    DTO.OrderService_DTO orderServiceDF_DTO = new DTO.OrderService_DTO()
                                     {
                                         ServiceID = orderArr[1],
                                         ServiceName = orderArr[2],
                                         ServiceQuantity = int.Parse(orderArr[3]),
                                         ServicePrice = int.Parse(orderArr[4]),
                                     };
-                                    orderDF.Add(orderService_DTO);
+                                    orderDF.Add(orderServiceDF_DTO);
                                 }
 
                                 if (orderArr[0] == "M")
                                 {
                                     this.flagM = true;
-                                    orderService_DTO_M.ServiceID = orderArr[1];
-                                    orderService_DTO_M.ServiceName = orderArr[2];
-                                    orderService_DTO_M.ServicePrice = int.Parse(orderArr[3]);
+                                    DTO.OrderService_DTO orderServiceM_DTO = new DTO.OrderService_DTO()
+                                    {
+                                        ServiceID = orderArr[1],
+                                        ServiceName = orderArr[2],
+                                        ServicePrice = int.Parse(orderArr[3]),
+                                    };
+                                    orderM.Add(orderServiceM_DTO);
                                 }
                             }
                         }
@@ -157,7 +167,7 @@ namespace OUNet_Management_Application.Forms
                                 UserID = userIDOrder,
                                 NamePCOrder = namePCOrder,
                                 UserPhone = userPhone,
-                                Price = orderService_DTO_M.ServicePrice,
+                                OrderService = orderM,
                                 Time = DateTime.Now,
                                 ID = Guid.NewGuid().ToString(),
                             };
@@ -191,7 +201,7 @@ namespace OUNet_Management_Application.Forms
 
             foreach (DTO.ServiceSensor_DTO item2 in FrmMain.orderListM)
             {
-                serviceM.Rows.Add(item2.NamePCOrder, item2.Time, item2.Price);
+                serviceM.Rows.Add(item2.NamePCOrder, item2.Time, item2.OrderService[0].ServicePrice);
             }
 
             lbWaitingServiceCount.Text = FrmMain.orderListDF.Count.ToString();
@@ -209,8 +219,6 @@ namespace OUNet_Management_Application.Forms
             {
                 column.Width = serviceDF.Width / serviceDF.Columns.Count;
             }
-
-
         }
 
         private void lbWaitingServiceCount_Click(object sender, EventArgs e)
@@ -233,7 +241,7 @@ namespace OUNet_Management_Application.Forms
             int index = e.RowIndex;
             if (index > -1)
             {
-                FrmDetailOrder frmDetailOrderDF = new FrmDetailOrder(FrmMain.orderListDF[index], user);
+                FrmDetailOrder frmDetailOrderDF = new FrmDetailOrder(FrmMain.orderListDF[index], user, false);
                 frmDetailOrderDF.ShowDialog();
                 LoadList();
             }
@@ -249,7 +257,7 @@ namespace OUNet_Management_Application.Forms
             int index = e.RowIndex;
             if (index > -1)
             {
-                FrmDetailOrder frmDetailOrderM = new FrmDetailOrder(FrmMain.orderListM[index], user);
+                FrmDetailOrder frmDetailOrderM = new FrmDetailOrder(FrmMain.orderListM[index], user, true);
                 frmDetailOrderM.ShowDialog();
                 LoadList();
             }

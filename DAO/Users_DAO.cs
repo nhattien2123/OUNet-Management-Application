@@ -119,8 +119,8 @@ namespace DAO
                 user.Tel = dt.Rows[0]["Tel"].ToString();
                 user.Address = dt.Rows[0]["Address"].ToString();
                 user.Role = dt.Rows[0]["Role"].ToString();
-                user.M_Account = float.Parse(dt.Rows[0]["M_Account"].ToString());
-                user.S_Account = float.Parse(dt.Rows[0]["S_Account"].ToString());
+                user.M_Account = String.IsNullOrEmpty(dt.Rows[0]["M_Account"].ToString()) ? 0 : float.Parse(dt.Rows[0]["M_Account"].ToString());
+                user.S_Account = String.IsNullOrEmpty(dt.Rows[0]["S_Account"].ToString()) ? 0 : float.Parse(dt.Rows[0]["S_Account"].ToString());
                 user.LastAccess = DateTime.Parse(dt.Rows[0]["LastAccess"].ToString());
                 user.Status = bool.Parse(dt.Rows[0]["Status"].ToString());
                 user.Nation = dt.Rows[0]["Nation"].ToString();

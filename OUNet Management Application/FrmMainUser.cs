@@ -146,9 +146,17 @@ namespace OUNet_Management_Application
             }
         }
 
+        private void Logout()
+        {
+            if (FrmMainUser._client.IsConnected)
+            {
+                FrmMainUser._client.Send($"ClientDisconnected*{user.UserID}*{Environment.MachineName}*{GetLocalIPv4(NetworkInterfaceType.Wireless80211)}");
+            }
+        }
+
         private void pbLogOut_Click(object sender, EventArgs e)
         {
-            _client.Disconnect();
+            Logout();
             Application.Exit();
         }
 
@@ -166,6 +174,7 @@ namespace OUNet_Management_Application
 
         private void FrmMainUser_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Logout();
             Application.Exit();
         }
 

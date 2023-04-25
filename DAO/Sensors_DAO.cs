@@ -62,5 +62,24 @@ namespace DAO
             return "fail";
 
         }
+
+        public static string FindAndLogoutSensor(string userID, string sName, string sIP)
+        {
+
+            string sqlcmd = $"select SensorID from Sensors where SensorName = N'{sName}' and AddressIP = N'{sIP}'";
+            DataTable dt = ProcessingDAO.RunQuerySQL(sqlcmd);
+
+            Boolean existed = dt?.Rows.Count >= 1 ? true : false;
+            if (existed)
+            {
+                string val = dt.Rows[0]["SensorID"].ToString();
+                {
+                    string sqlCmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); UPDATE Sensors SET Status = 1 Where SensorID = N'{val}'; INSERT INTO SensorsDetails (SensorID, UserID, TimeStart, TimeEnd) VALUES(N'{val}', N'{userID}', @currDate, null);";
+                    return ProcessingDAO.RunNonQuerySQL(sqlCmd);
+                };
+            }
+            return "fail";
+
+        }
     }
 }
