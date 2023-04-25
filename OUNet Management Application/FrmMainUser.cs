@@ -21,16 +21,19 @@ namespace OUNet_Management_Application
     {
         FrmMessageUser frmMessageUser;
         FrmChangePasswordUser frmChangePasswordUser;
-        Users_DTO user;
+        public static Users_DTO user;
         private bool isDragging = false;
         private Point lastCursor;
         private Point lastForm;
         public static SimpleTcpClient _client;
+        public DateTime timeLogin;
+        public int totalSec = 0;
 
-        public FrmMainUser(Users_DTO user)
+        public FrmMainUser(DTO.Users_DTO user)
         {
-            this.user = user;
             InitializeComponent();
+            timeLogin = DateTime.Now;
+            FrmMainUser.user = user;
             pnHeader.MouseDown += pnHeader_MouseDown;
             pnHeader.MouseUp += pnHeader_MouseUp;
             pnHeader.MouseMove += pnHeader_MouseMove;
@@ -45,9 +48,11 @@ namespace OUNet_Management_Application
             }
             catch
             {
+                
                 this.Owner.Close();
             }
-            finally { 
+            finally {
+                Logout();
                 Application.Exit();
             }
         }
@@ -81,10 +86,7 @@ namespace OUNet_Management_Application
             frmMessageUser.Show();
             frmMessageUser.Hide();
 
-            txtMainAccount.Text = user.M_Account.ToString();
-            txtSecondAccount.Text = user.S_Account.ToString();
-            txtPrice.Text = "10,000";
-            lbUsername.Text = "(" + user.Username + ")";
+            LoadData();
 
             try
             {
@@ -188,11 +190,43 @@ namespace OUNet_Management_Application
 
         }
 
+        private void LoadData()
+        {
+            try {
+                string phone = FrmMainUser.user.Tel;
+                FrmMainUser.user = BUS.Users_BUS.CheckAccount_BUS(phone);
+
+                txtMainAccount.Text = user.M_Account.ToString();
+                txtSecondAccount.Text = user.S_Account.ToString();
+                txtPrice.Text = $"{FrmMain.PRICEPERHOUR}";
+                lbUsername.Text = "(" + user.Username + ")";
+
+                DateTime now = DateTime.Now;
+                TimeSpan timeDiff = now.Subtract(timeLogin);
+                string hours = $"{(int)timeDiff.TotalHours}";
+                string minutes = $"{(int)timeDiff.TotalMinutes % 60}";
+                txtUsedTime.Text = $"{hours}:{minutes}";
+
+                float mainMoney = float.Parse(txtMainAccount.Text);
+                float subMoney = float.Parse(txtSecondAccount.Text);
+                float sumMoney = mainMoney + subMoney;
+
+                int remainInt = (int)sumMoney / FrmMain.PRICEPERHOUR;
+                float remainFloat = sumMoney / FrmMain.PRICEPERHOUR;
+                float remainMin = (((float)remainFloat - (float)remainInt) * 60);
+                txtTimeRemaining.Text = $"{remainInt}:{(int)remainMin}";
+            } 
+            catch (Exception e)
+                {
+                MessageBox.Show($"{e.Message}");
+            }
+        }
+
         private void pbServices_Click(object sender, EventArgs e)
         {
             FrmServiceUser frmSU = new FrmServiceUser(user);
-            frmSU.Owner = this;
-            frmSU.Show();
+            frmSU.ShowDialog();
+            LoadData();
         }
 
         private void txtMainAccount_TextChanged(object sender, EventArgs e)
@@ -215,6 +249,21 @@ namespace OUNet_Management_Application
             FrmMServices frmMService = new FrmMServices(user);
             frmMService.Owner = this;
             frmMService.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.totalSec += 1;
+            if (totalSec >= 5)
+            {
+                string txt = BUS.Users_BUS.SubMoneyFromUser(FrmMain.PRICEPERMIN, FrmMainUser.user.UserID, true);
+                if (txt.ToLower() == "true")
+                {
+                    LoadData();
+                    totalSec = 0;
+                }
+            }
+            
         }
     }
 }

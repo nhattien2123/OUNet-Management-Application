@@ -20,7 +20,7 @@ namespace OUNet_Management_Application.Forms
         private List<DTO.Services_DTO> dataFilter = new List<DTO.Services_DTO>();
         private List<DTO.OrderService_DTO> orderList = new List<DTO.OrderService_DTO>();
         private string TYPE_SERVICE = "D";
-
+        public int sum = 0;
 
         public FrmServiceUser(Users_DTO user)
         {
@@ -182,6 +182,7 @@ namespace OUNet_Management_Application.Forms
         {
             this.orderList.Clear();
             this.txtNote.Text = "";
+            this.sum = 0;
             LoadListView();
         }
 
@@ -198,17 +199,35 @@ namespace OUNet_Management_Application.Forms
                 {
                     try
                     {
+                        foreach (DTO.OrderService_DTO item in orderList)
+                        {
+                            sum += item.ServiceTotal;
+                        }
+                        if (sum > FrmMainUser.user.M_Account)
+                        {
+                            MessageBox.Show("Tài khoản chính không đủ!");
+                            return;
+                        }
                         if (FrmMainUser._client.IsConnected)
                         {
                             string txt = BUS.Services_BUS.BillDFFromUser(orderList, user.UserID, user.Tel, txtNote.Text.Trim(), Environment.MachineName);
-                            FrmMainUser._client.Send(txt);
-                            orderList.Clear();
-                            LoadListView();
-                            MessageBox.Show("Order thành công!");
+                            if (!String.IsNullOrEmpty(txt))
+                            {
+                                string txt2 = BUS.Users_BUS.SubMoneyFromUser(sum, FrmMainUser.user.UserID, false);
+                                if (txt2.ToLower() == "true")
+                                {
+                                    FrmMainUser.user.M_Account -= sum;
+                                }
+                                FrmMainUser._client.Send(txt);
+                                orderList.Clear();
+                                LoadListView();
+                                MessageBox.Show("Order thành công!");
+                                this.sum = 0;
+                            }
                         }
                     }
-                    catch { 
-                    
+                    catch {
+                        MessageBox.Show("Có lỗi xảy ra!");
                     }
                 }
             }

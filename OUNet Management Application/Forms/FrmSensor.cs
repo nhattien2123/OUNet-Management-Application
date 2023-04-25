@@ -31,7 +31,7 @@ namespace OUNet_Management_Application.Forms
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            dgvSensors.DataSource = Sensors_BUS.ListSensors_BUS();
+            LoadData();
         }
 
         private void LoadData()
@@ -44,7 +44,7 @@ namespace OUNet_Management_Application.Forms
             dgvSensors.Columns["Status"].HeaderCell.Value = "Trạng thái";
             dgvSensors.Columns["UTel"].HeaderCell.Value = "Số điện thoại";
             dgvSensors.Columns["TimeStart"].HeaderCell.Value = "Thời gian bắt đầu";
-            dgvSensors.Columns["TimePlayed"].HeaderCell.Value = "Đã dùng";
+            dgvSensors.Columns["TimePlayed"].Visible = false;
             dgvSensors.Columns["TimeEnd"].Visible = false;
 
             dgvSensors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -58,7 +58,7 @@ namespace OUNet_Management_Application.Forms
             {
                 if (FrmSensor._server == null)
                 {
-                    _server = new SimpleTcpServer("127.0.0.1:9999");
+                    _server = new SimpleTcpServer($"{FrmMain.IPLocal}:{FrmMain.PORTSensor}");
                     _server.Events.DataReceived += Events_DataReceived;
                     _server.Start();
                 }
@@ -89,6 +89,7 @@ namespace OUNet_Management_Application.Forms
                         if (!String.IsNullOrEmpty(namePC) && !String.IsNullOrEmpty(IP) && !String.IsNullOrEmpty(userID))
                         {
                             BUS.Sensors_BUS.FindAndCreateSensor(userID, namePC, IP);
+                            LoadData();
                         }
                         break;
                     case "ClientDisconnected":
@@ -98,6 +99,7 @@ namespace OUNet_Management_Application.Forms
                         if (!String.IsNullOrEmpty(namePCDis) && !String.IsNullOrEmpty(IPDis) && !String.IsNullOrEmpty(userIDDis))
                         {
                             BUS.Sensors_BUS.FindAndLogoutSensor(userIDDis, namePCDis, IPDis);
+                            LoadData();
                         }
                         break;
                     case "Order":
@@ -174,7 +176,7 @@ namespace OUNet_Management_Application.Forms
                             this.flagM = false;
                         }
 
-                        LoadList();
+                        LoadData();
                         break;
                     default:
                         MessageBox.Show($"{data[0]} {data[1]} {data[2]}");

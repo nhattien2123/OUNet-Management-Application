@@ -59,5 +59,15 @@ namespace BUS
         {
             return DAO.Users_DAO.DataTableUsers();
         }
+
+        public static string SubMoneyFromUser(float money, string userID, Boolean subMoney)
+        {
+            return DAO.Users_DAO.SubMoneyFromUser(money, userID,subMoney);
+        }
+
+        public static string AddMoneyFromUser(int money, string userID)
+        {
+            return DAO.Users_DAO.AddMoneyFromUser(money, userID);
+        }
     }
 }
