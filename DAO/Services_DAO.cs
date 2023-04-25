@@ -50,6 +50,13 @@ namespace DAO
             return ProcessingDAO.RunNonQuerySQL(sqlcmd);
         }
 
+        public static string PayBillMService(List<DTO.OrderService_DTO> orderList, string userID, string adminID)
+        {
+            
+            string sqlcmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); DECLARE @Price float; DECLARE @Bonus float; SELECT @Price = s.Price, @Bonus = ISNULL(v.Bonus, 0) FROM Services AS s LEFT JOIN Voucher AS v ON s.ServiceID = v.ServiceID where s.ServiceID = N'{orderList[0].ServiceID}' INSERT INTO History(UserID, AdminID, Time) VALUES(N'{userID}', N'{adminID}', @currDate); INSERT INTO Bill(ServiceID, Quantity, Total, HistoryID) VALUES(N'{orderList[0].ServiceID}', 1, {orderList[0].ServicePrice}, @@IDENTITY); BEGIN TRANSACTION UPDATE Users set M_Account = M_Account + @Price, S_Account = S_Account + @Bonus where Users.UserID = N'{userID}' COMMIT";
+            return ProcessingDAO.RunNonQuerySQL(sqlcmd);
+        }
+
         public static string BillDFFromUser(List<DTO.OrderService_DTO> orderList, string userID, string userPhone, string description, string sName)
         {
             string txt = $"Order*U>{userID}&{userPhone}*D>{description}*S>{sName}*";
@@ -70,7 +77,7 @@ namespace DAO
         public static List<Services_DTO> GetListMoney()
         {
             List<Services_DTO> ListMoney = new List<Services_DTO>();
-            DataTable dt = ProcessingDAO.RunQuerySQL($"Select * from Services where ServiceID LIKE 'M%'");
+            DataTable dt = ProcessingDAO.RunQuerySQL($"SELECT s.ServiceID, ServiceName, s.Price, v.Bonus FROM Services AS s LEFT JOIN Voucher AS v ON s.ServiceID = v.ServiceID where s.ServiceID LIKE 'M%'");
             Services_DTO services;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -78,6 +85,7 @@ namespace DAO
                 services.ServiceID = dt.Rows[i]["ServiceID"].ToString();
                 services.ServiceName = dt.Rows[i]["ServiceName"].ToString();
                 services.Price = int.Parse(dt.Rows[i]["Price"].ToString());
+                services.ServiceQuantity = String.IsNullOrEmpty(dt.Rows[i]["Bonus"].ToString()) ? "- - -" : dt.Rows[i]["Bonus"].ToString();
                 ListMoney.Add(services);
             }
             return ListMoney;

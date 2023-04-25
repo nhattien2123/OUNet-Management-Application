@@ -29,8 +29,14 @@ namespace OUNet_Management_Application.Forms
         {
             this.MList = BUS.Services_BUS.GetListMoney();
             dgvListM.DataSource = this.MList;
+
             dgvListM.Columns["ServiceImage"].Visible = false;
-            dgvListM.Columns["ServiceQuantity"].Visible = false;
+            dgvListM.Columns["ServiceID"].Visible = false;
+
+            dgvListM.Columns["ServiceImage"].HeaderCell.Value = "Tên dịch vụ";
+            dgvListM.Columns["Price"].HeaderCell.Value = "Giá";
+            dgvListM.Columns["ServiceQuantity"].HeaderCell.Value = "Khuyến mãi";
+
             dgvListM.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -59,6 +65,7 @@ namespace OUNet_Management_Application.Forms
                 {
                     string txt = BUS.Services_BUS.BillMFromUser(MList[idx], user.UserID, user.Tel, Environment.MachineName);
                     FrmMainUser._client.Send(txt);
+                    MessageBox.Show("Order thành công!");
                 }
             }
         }

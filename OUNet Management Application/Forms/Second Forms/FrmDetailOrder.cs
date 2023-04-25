@@ -59,6 +59,20 @@ namespace OUNet_Management_Application.Forms.Second_Forms
 
                 lbTotal.Text = $"{totalBill} đ";
             }
+            if (!isDF)
+            {
+                dgvDataBill.DataSource = serviceSensor.OrderService;
+                dgvDataBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                dgvDataBill.Columns["ServiceID"].Visible = false;
+                dgvDataBill.Columns["ServiceTotal"].Visible = false;
+                dgvDataBill.Columns["ServiceQuantity"].Visible = false;
+
+                dgvDataBill.Columns["ServiceName"].HeaderCell.Value = "Tên dịch vụ";
+                dgvDataBill.Columns["ServicePrice"].HeaderCell.Value = "Giá";
+
+                lbTotal.Text = $"{serviceSensor.OrderService[0].ServicePrice} đ";
+            }
         }
 
         private void pnHeader_Paint(object sender, PaintEventArgs e)
@@ -71,7 +85,10 @@ namespace OUNet_Management_Application.Forms.Second_Forms
             DialogResult dr = MessageBox.Show("Hành động này không thể hoàn tác!", "Bạn chắc chắn muốn huỷ?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
-                FrmMain.orderListDF = FrmMain.orderListDF.Where(order => order.ID != serviceSensor.ID).ToList();
+                if (isDF)
+                    FrmMain.orderListDF = FrmMain.orderListDF.Where(order => order.ID != serviceSensor.ID).ToList();
+                if (!isDF)
+                    FrmMain.orderListM = FrmMain.orderListM.Where(order => order.ID != serviceSensor.ID).ToList();
             }
             this.Close();
         }
@@ -110,13 +127,27 @@ namespace OUNet_Management_Application.Forms.Second_Forms
                 DialogResult dr = MessageBox.Show("Hành động này không thể hoàn tác!", "Bạn chắc chắn muốn hoàn tất hoá đơn?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
-                    string res = BUS.Services_BUS.PayBillService(serviceSensor.OrderService, serviceSensor.UserID, user.UserID, txtDes.Text.Trim());
-                    if (res == "True")
+                    if (isDF)
+                    { 
+                        string res = BUS.Services_BUS.PayBillService(serviceSensor.OrderService, serviceSensor.UserID, user.UserID, txtDes.Text.Trim());
+                        if (res == "True")
                         {
-                        FrmMain.orderListDF = FrmMain.orderListDF.Where(order => order.ID != serviceSensor.ID).ToList();    
+                            FrmMain.orderListDF = FrmMain.orderListDF.Where(order => order.ID != serviceSensor.ID).ToList();
                             MessageBox.Show("Thanh toán thành công!");
+                        } else MessageBox.Show("Thanh toán thất bại!");
+                    }
+
+                    if (!isDF)
+                    {
+                        string res = BUS.Services_BUS.PayBillMService(serviceSensor.OrderService, serviceSensor.UserID, user.UserID);
+                        MessageBox.Show(res);
+                        if (res == "True")
+                        {
+                            FrmMain.orderListM = FrmMain.orderListM.Where(order => order.ID != serviceSensor.ID).ToList();
+                            MessageBox.Show("Nạp tiền thành công!");
                         }
                         else MessageBox.Show("Thanh toán thất bại!");
+                    }
                 }
                 this.Close();
                 

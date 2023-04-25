@@ -71,7 +71,7 @@
             this.pnSensors.Controls.Add(this.pbSensor);
             this.pnSensors.Location = new System.Drawing.Point(12, 12);
             this.pnSensors.Name = "pnSensors";
-            this.pnSensors.Size = new System.Drawing.Size(1401, 922);
+            this.pnSensors.Size = new System.Drawing.Size(856, 610);
             this.pnSensors.TabIndex = 1;
             this.pnSensors.Paint += new System.Windows.Forms.PaintEventHandler(this.pnSensors_Paint);
             // 
@@ -82,12 +82,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSensors.BackgroundColor = System.Drawing.Color.White;
             this.dgvSensors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSensors.Location = new System.Drawing.Point(13, 74);
+            this.dgvSensors.Location = new System.Drawing.Point(15, 74);
             this.dgvSensors.Name = "dgvSensors";
             this.dgvSensors.ReadOnly = true;
             this.dgvSensors.RowHeadersWidth = 51;
             this.dgvSensors.RowTemplate.Height = 24;
-            this.dgvSensors.Size = new System.Drawing.Size(1373, 829);
+            this.dgvSensors.Size = new System.Drawing.Size(828, 517);
             this.dgvSensors.TabIndex = 6;
             this.dgvSensors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSensors_CellContentClick);
             // 
@@ -98,7 +98,7 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnRefresh.Image = global::OUNet_Management_Application.Properties.Resources.Refresh_Icon;
-            this.btnRefresh.Location = new System.Drawing.Point(1344, 21);
+            this.btnRefresh.Location = new System.Drawing.Point(801, 21);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(42, 38);
             this.btnRefresh.TabIndex = 4;
@@ -135,9 +135,9 @@
             this.pnWaitingService.Controls.Add(this.lbWaitingServiceCount);
             this.pnWaitingService.Controls.Add(this.pictureBox1);
             this.pnWaitingService.Controls.Add(this.lbWaitingService);
-            this.pnWaitingService.Location = new System.Drawing.Point(1419, 12);
+            this.pnWaitingService.Location = new System.Drawing.Point(874, 12);
             this.pnWaitingService.Name = "pnWaitingService";
-            this.pnWaitingService.Size = new System.Drawing.Size(447, 421);
+            this.pnWaitingService.Size = new System.Drawing.Size(447, 109);
             this.pnWaitingService.TabIndex = 2;
             // 
             // serviceDF
@@ -156,7 +156,7 @@
             this.serviceDF.ReadOnly = true;
             this.serviceDF.RowHeadersWidth = 51;
             this.serviceDF.RowTemplate.Height = 24;
-            this.serviceDF.Size = new System.Drawing.Size(435, 359);
+            this.serviceDF.Size = new System.Drawing.Size(435, 47);
             this.serviceDF.TabIndex = 9;
             this.serviceDF.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceDF_CellContentClick);
             this.serviceDF.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceDF_CellDoubleClick);
@@ -219,7 +219,7 @@
             this.pnRecharge.Controls.Add(this.lbRechargeCount);
             this.pnRecharge.Controls.Add(this.lbRecharge);
             this.pnRecharge.Controls.Add(this.pbRecharge);
-            this.pnRecharge.Location = new System.Drawing.Point(1419, 439);
+            this.pnRecharge.Location = new System.Drawing.Point(874, 127);
             this.pnRecharge.Name = "pnRecharge";
             this.pnRecharge.Size = new System.Drawing.Size(449, 495);
             this.pnRecharge.TabIndex = 3;
@@ -307,7 +307,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1878, 979);
+            this.ClientSize = new System.Drawing.Size(1333, 667);
             this.Controls.Add(this.pnRecharge);
             this.Controls.Add(this.pnWaitingService);
             this.Controls.Add(this.pnSensors);
