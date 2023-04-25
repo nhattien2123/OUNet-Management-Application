@@ -158,8 +158,20 @@ namespace OUNet_Management_Application
 
         private void pbLogOut_Click(object sender, EventArgs e)
         {
-            Logout();
-            Application.Exit();
+            try
+            {
+                this.Owner.Close();
+            }
+            catch
+            {
+
+                this.Owner.Close();
+            }
+            finally
+            {
+                Logout();
+                Application.Exit();
+            }
         }
 
         private void lbChangePassword_Click(object sender, EventArgs e)
