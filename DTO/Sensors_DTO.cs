@@ -64,18 +64,26 @@ namespace DTO
         public string TimePlayed
         {
             get {
-                if (!String.IsNullOrEmpty(_TimeStart))
+                try
                 {
-                    string time = _TimeStart;
-                    DateTime date = DateTime.ParseExact(time, "dd/MM/yyyy h:mm:ss tt", null);
-                    DateTime now = DateTime.Now;
-                    TimeSpan timeDiff = now.Subtract(date);
-                    string hours = $"{(int)timeDiff.TotalHours}";
-                    string minutes = $"{(int)timeDiff.TotalMinutes % 60}";
-                    return $"{hours}:{minutes}";
-                    
+                    if (!String.IsNullOrEmpty(_TimeStart))
+                    {
+                        string time = _TimeStart;
+
+                        DateTime date = DateTime.ParseExact(time, "dd/MM/yyyy h:mm:ss tt", null);
+                        DateTime now = DateTime.Now;
+                        TimeSpan timeDiff = now.Subtract(date);
+                        string hours = $"{(int)timeDiff.TotalHours}";
+                        string minutes = $"{(int)timeDiff.TotalMinutes % 60}";
+                        return $"{hours}:{minutes}";
+
+                    }
+                    return "- - -";
                 }
-                return _TimePlayed;
+                catch {
+                    return "- - -";
+                }
+               
             }
         }
 

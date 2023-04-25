@@ -97,8 +97,7 @@ namespace OUNet_Management_Application.Forms
                         string IPDis = data[3];
                         if (!String.IsNullOrEmpty(namePCDis) && !String.IsNullOrEmpty(IPDis) && !String.IsNullOrEmpty(userIDDis))
                         {
-                            string flag = BUS.Sensors_BUS.FindAndCreateSensor(userID, namePC, IP);
-
+                            BUS.Sensors_BUS.FindAndLogoutSensor(userIDDis, namePCDis, IPDis);
                         }
                         break;
                     case "Order":
