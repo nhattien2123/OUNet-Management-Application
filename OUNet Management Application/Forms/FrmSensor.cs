@@ -25,37 +25,19 @@ namespace OUNet_Management_Application.Forms
         {
             InitializeComponent();
             this.user = user;
-            serviceDF.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            serviceM.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            FrmMain.isSensorForm = true;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadData();
-        }
-
-        private void LoadData()
-        {
-            dgvSensors.DataSource = Sensors_BUS.ListSensors_BUS();
-
-            dgvSensors.Columns["SensorID"].HeaderCell.Value = "Mã máy";
-            dgvSensors.Columns["SensorName"].HeaderCell.Value = "Tên máy";
-            dgvSensors.Columns["AddressIP"].HeaderCell.Value = "IP";
-            dgvSensors.Columns["Status"].HeaderCell.Value = "Trạng thái";
-            dgvSensors.Columns["UTel"].HeaderCell.Value = "Số điện thoại";
-            dgvSensors.Columns["TimeStart"].HeaderCell.Value = "Thời gian bắt đầu";
-            dgvSensors.Columns["TimePlayed"].Visible = false;
-            dgvSensors.Columns["TimeEnd"].Visible = false;
-
-            dgvSensors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             LoadList();
         }
 
         private void FrmSensor_Load(object sender, EventArgs e)
         {
-            LoadData();
             try
             {
+                LoadList();
                 if (FrmSensor._server == null)
                 {
                     _server = new SimpleTcpServer($"{FrmMain.IPLocal}:{FrmMain.PORTSensor}");
@@ -65,7 +47,7 @@ namespace OUNet_Management_Application.Forms
             }
             catch (Exception err)
             {
-                MessageBox.Show($"{err.Message}");
+                MessageBox.Show($"1{err.Message}");
             }
         }
 
@@ -89,7 +71,10 @@ namespace OUNet_Management_Application.Forms
                         if (!String.IsNullOrEmpty(namePC) && !String.IsNullOrEmpty(IP) && !String.IsNullOrEmpty(userID))
                         {
                             BUS.Sensors_BUS.FindAndCreateSensor(userID, namePC, IP);
-                            LoadData();
+                            if (FrmMain.isSensorForm)
+                            {
+                                LoadList();
+                            }
                         }
                         break;
                     case "ClientDisconnected":
@@ -98,8 +83,12 @@ namespace OUNet_Management_Application.Forms
                         string IPDis = data[3];
                         if (!String.IsNullOrEmpty(namePCDis) && !String.IsNullOrEmpty(IPDis) && !String.IsNullOrEmpty(userIDDis))
                         {
-                            BUS.Sensors_BUS.FindAndLogoutSensor(userIDDis, namePCDis, IPDis);
-                            LoadData();
+                            string txt = BUS.Sensors_BUS.FindAndLogoutSensor(userIDDis, namePCDis, IPDis);
+                            if (txt.ToLower() == "true")
+                            { 
+                                if (FrmMain.isSensorForm)
+                                { LoadList(); }
+                            }
                         }
                         break;
                     case "Order":
@@ -112,6 +101,7 @@ namespace OUNet_Management_Application.Forms
 
                         List<DTO.OrderService_DTO> orderDF = new List<DTO.OrderService_DTO>();
                         List<DTO.OrderService_DTO> orderM = new List<DTO.OrderService_DTO>();
+
                         foreach (string order in orderDataList)
                         {
                             if (!String.IsNullOrEmpty(order))
@@ -176,37 +166,77 @@ namespace OUNet_Management_Application.Forms
                             this.flagM = false;
                         }
 
-                        LoadData();
+                        if (FrmMain.isSensorForm)
+                            LoadList();
                         break;
                     default:
                         MessageBox.Show($"{data[0]} {data[1]} {data[2]}");
                         break;
                 }
             }
-            catch (Exception err)
+            catch
             {
-                MessageBox.Show($"{err.Message}");
+            }
+            finally
+            {
             }
 
         }
 
         private void LoadList()
         {
-            serviceDF.Rows.Clear();
-            serviceM.Rows.Clear();
-
-            foreach (DTO.ServiceSensor_DTO item in FrmMain.orderListDF)
+            try
             {
-                serviceDF.Rows.Add(item.NamePCOrder, item.Time);
-            }
+                serviceDF.Columns.Clear();
+                serviceDF.Rows.Clear();
+                serviceM.Columns.Clear();
+                serviceM.Rows.Clear();
+                dgvSensors.Columns.Clear();
+                dgvSensors.Rows.Clear();
 
-            foreach (DTO.ServiceSensor_DTO item2 in FrmMain.orderListM)
+                serviceDF.Columns.Add("Col1DF", "Máy trạm");
+                serviceDF.Columns.Add("Col2DF", "Thời gian");
+
+                serviceM.Columns.Add("Col1M", "Máy trạm");
+                serviceM.Columns.Add("Col2M", "Người dùng");
+                serviceM.Columns.Add("Col3M", "Mức nạp");
+
+                dgvSensors.Columns.Add("Col1S", "Mã máy trạm");
+                dgvSensors.Columns.Add("Col2S", "Tên máy trạm");
+                dgvSensors.Columns.Add("Col3S", "IP");
+                dgvSensors.Columns.Add("Col4S", "Trạng thái");
+                dgvSensors.Columns.Add("Col5S", "Người dùng");
+                dgvSensors.Columns.Add("Col6S", "Thời gian bắt đầu");
+
+                FrmMain.sensorList = Sensors_BUS.ListSensors_BUS();
+
+                dgvSensors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                serviceDF.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                serviceM.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                foreach (DTO.Sensors_DTO item in FrmMain.sensorList)
+                {
+                    dgvSensors.Rows.Add(item.SensorID, item.SensorName, item.AddressIP, item.Status, item.Utel, item.TimeStart);
+                }
+
+                foreach (DTO.ServiceSensor_DTO item in FrmMain.orderListDF)
+                {
+                    serviceDF.Rows.Add(item.NamePCOrder, item.Time);
+                }
+
+                foreach (DTO.ServiceSensor_DTO item2 in FrmMain.orderListM)
+                {
+                    serviceM.Rows.Add(item2.NamePCOrder, item2.UserPhone, item2.OrderService[0].ServicePrice);
+                }
+
+                lbWaitingServiceCount.Text = FrmMain.orderListDF.Count.ToString();
+                lbRechargeCount.Text = FrmMain.orderListM.Count.ToString();
+            }
+            catch (Exception er)
             {
-                serviceM.Rows.Add(item2.NamePCOrder, item2.Time, item2.OrderService[0].ServicePrice);
+                MessageBox.Show(er.Message);
             }
-
-            lbWaitingServiceCount.Text = FrmMain.orderListDF.Count.ToString();
-            lbRechargeCount.Text = FrmMain.orderListM.Count.ToString();
+            
         }
         private void dgvSensors_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

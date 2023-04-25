@@ -37,6 +37,8 @@
             this.dgvBill = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
@@ -147,11 +149,35 @@
             this.lbTotal.Text = "(?)";
             this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.Lime;
+            this.lbTime.Location = new System.Drawing.Point(132, 512);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(37, 25);
+            this.lbTime.TabIndex = 18;
+            this.lbTime.Text = "(?)";
+            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(27, 512);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 25);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Thời gian:";
+            // 
             // FrmBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 626);
+            this.Controls.Add(this.lbTime);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvBill);
@@ -183,5 +209,7 @@
         private System.Windows.Forms.DataGridView dgvBill;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Label label5;
     }
 }

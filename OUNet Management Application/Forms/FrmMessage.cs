@@ -199,7 +199,7 @@ namespace OUNet_Management_Application.Forms
 
             try
             {
-                _server = new SimpleTcpServer("127.0.0.1:9000");
+                _server = new SimpleTcpServer($"{FrmMain.IPLocal}:{FrmMain.PORTMess}");
                 _server.Events.ClientConnected += Events_ClientConnected;
                 _server.Events.ClientDisconnected += Events_ClientDisconnected;
                 _server.Events.DataReceived += Events_DataReceived;

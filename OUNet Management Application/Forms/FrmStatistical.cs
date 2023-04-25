@@ -15,6 +15,7 @@ namespace OUNet_Management_Application.Forms
         public FrmStatistical()
         {
             InitializeComponent();
+            FrmMain.isSensorForm = false;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -49,8 +50,8 @@ namespace OUNet_Management_Application.Forms
 
         private void LoadStat()
         {
-            string timeStart = dtpFrom.Value.ToString("yyyy-MM-dd HH:mm:ss.fff");
-            string timeEnd = dtpTo.Value.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            string timeStart = dtpFrom.Value.ToString("yyyy-MM-dd HH:mm");
+            string timeEnd = dtpTo.Value.ToString("yyyy-MM-dd HH:mm");
 
             string time = $"{timeStart} - {timeEnd}";
             int serviceDF = int.Parse(BUS.Stat_BUS.TotalDFService(timeStart, timeEnd));

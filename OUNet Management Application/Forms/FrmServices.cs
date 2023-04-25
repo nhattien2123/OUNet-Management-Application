@@ -26,6 +26,7 @@ namespace OUNet_Management_Application.Forms
         {
             this.user = user;
             InitializeComponent();
+            FrmMain.isSensorForm = false;
         }
 
         public void LoadData()

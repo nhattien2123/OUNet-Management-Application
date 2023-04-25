@@ -16,10 +16,13 @@ namespace OUNet_Management_Application.Forms
     {
         FrmAddUser frmAddUser;
         FrmDetailAccount frmDetailAccount;
+        public static DTO.Users_DTO user;
 
-        public FrmAccount()
+        public FrmAccount(DTO.Users_DTO user)
         {
+            FrmAccount.user = user;
             InitializeComponent();
+            FrmMain.isSensorForm = false;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)

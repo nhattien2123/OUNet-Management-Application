@@ -26,12 +26,15 @@ namespace OUNet_Management_Application
         private Point lastForm;
         FrmMessage frmMessage;
         private bool isShowMessage = false;
+        public static bool isSensorForm = false;
 
         public static List<DTO.ServiceSensor_DTO> orderListDF = new List<DTO.ServiceSensor_DTO>();
         public static List<DTO.ServiceSensor_DTO> orderListM = new List<DTO.ServiceSensor_DTO>();
+        public static List<DTO.Sensors_DTO> sensorList = new List<DTO.Sensors_DTO>();
 
         public static string IPLocal = "127.0.0.1";
         public static string PORTSensor = "9999";
+        public static string PORTMess = "9000";
 
         public static int PRICEPERHOUR = 10000;
         public static float PRICEPERMIN = 167;
@@ -107,7 +110,7 @@ namespace OUNet_Management_Application
                 frmMessage.Hide();
                 isShowMessage = false;
             }
-            OpenChildForm(new Forms.FrmAccount(), sender);
+            OpenChildForm(new Forms.FrmAccount(user), sender);
         }
 
         private void btnServices_Click(object sender, EventArgs e)
@@ -126,6 +129,7 @@ namespace OUNet_Management_Application
         {
             //OpenChildForm(new Forms.FrmMessage(user), sender);
             HiddenPanelButton();
+            FrmMain.isSensorForm = false;
             pnMessages.Visible = true;
             isShowMessage = true;
             frmMessage.Show();

@@ -31,21 +31,22 @@
             this.components = new System.ComponentModel.Container();
             this.pnSensors = new System.Windows.Forms.Panel();
             this.dgvSensors = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.lbSensor = new System.Windows.Forms.Label();
             this.pbSensor = new System.Windows.Forms.PictureBox();
             this.pnWaitingService = new System.Windows.Forms.Panel();
             this.serviceDF = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbWaitingServiceCount = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbWaitingService = new System.Windows.Forms.Label();
             this.pnRecharge = new System.Windows.Forms.Panel();
             this.serviceM = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbRechargeCount = new System.Windows.Forms.Label();
             this.lbRecharge = new System.Windows.Forms.Label();
             this.pbRecharge = new System.Windows.Forms.PictureBox();
@@ -79,11 +80,20 @@
             // 
             // dgvSensors
             // 
+            this.dgvSensors.AllowUserToAddRows = false;
+            this.dgvSensors.AllowUserToDeleteRows = false;
             this.dgvSensors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSensors.BackgroundColor = System.Drawing.Color.White;
             this.dgvSensors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSensors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9});
             this.dgvSensors.Location = new System.Drawing.Point(15, 74);
             this.dgvSensors.Name = "dgvSensors";
             this.dgvSensors.ReadOnly = true;
@@ -92,6 +102,54 @@
             this.dgvSensors.Size = new System.Drawing.Size(828, 517);
             this.dgvSensors.TabIndex = 6;
             this.dgvSensors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSensors_CellContentClick);
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Mã máy";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Tên máy trạm";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "IP";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Trạng thái";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Người dùng";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 125;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Thời gian bắt đầu";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 125;
             // 
             // btnRefresh
             // 
@@ -150,9 +208,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.serviceDF.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.serviceDF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.serviceDF.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
             this.serviceDF.Location = new System.Drawing.Point(6, 49);
             this.serviceDF.Name = "serviceDF";
             this.serviceDF.ReadOnly = true;
@@ -162,22 +217,6 @@
             this.serviceDF.TabIndex = 9;
             this.serviceDF.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceDF_CellContentClick);
             this.serviceDF.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceDF_CellDoubleClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tên máy";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Thời gian";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
             // 
             // lbWaitingServiceCount
             // 
@@ -234,10 +273,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.serviceM.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.serviceM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.serviceM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.Column3});
             this.serviceM.Location = new System.Drawing.Point(7, 52);
             this.serviceM.Name = "serviceM";
             this.serviceM.ReadOnly = true;
@@ -246,30 +281,6 @@
             this.serviceM.Size = new System.Drawing.Size(435, 424);
             this.serviceM.TabIndex = 10;
             this.serviceM.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceM_CellDoubleClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Tên máy";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Người dùng";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Mức nạp";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
             // 
             // lbRechargeCount
             // 
@@ -354,12 +365,13 @@
         private System.Windows.Forms.Label lbRecharge;
         private System.Windows.Forms.DataGridView dgvSensors;
         private System.Windows.Forms.DataGridView serviceDF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridView serviceM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

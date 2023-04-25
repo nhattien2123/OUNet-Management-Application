@@ -48,12 +48,11 @@ namespace OUNet_Management_Application
             }
             catch
             {
-                
                 this.Owner.Close();
             }
             finally {
                 Logout();
-                Application.Exit();
+                this.Close();
             }
         }
 
@@ -90,7 +89,7 @@ namespace OUNet_Management_Application
 
             try
             {
-                _client = new SimpleTcpClient("127.0.0.1:9999");
+                _client = new SimpleTcpClient($"{FrmMain.IPLocal}:{FrmMain.PORTSensor}");
                 _client.Connect();
 
                 if (FrmMainUser._client.IsConnected)
@@ -150,16 +149,31 @@ namespace OUNet_Management_Application
 
         private void Logout()
         {
-            if (FrmMainUser._client.IsConnected)
+            try
             {
-                FrmMainUser._client.Send($"ClientDisconnected*{user.UserID}*{Environment.MachineName}*{GetLocalIPv4(NetworkInterfaceType.Wireless80211)}");
+                if (FrmMainUser._client.IsConnected)
+                {
+                    FrmMainUser._client.Send($"ClientDisconnected*{user.UserID}*{Environment.MachineName}*{GetLocalIPv4(NetworkInterfaceType.Wireless80211)}");
+                }
             }
+            catch { }
         }
 
         private void pbLogOut_Click(object sender, EventArgs e)
         {
-            Logout();
-            Application.Exit();
+            try
+            {
+                this.Owner.Close();
+            }
+            catch
+            {
+                this.Owner.Close();
+            }
+            finally
+            {
+                Logout();
+                this.Close();
+            }
         }
 
         private void lbChangePassword_Click(object sender, EventArgs e)
