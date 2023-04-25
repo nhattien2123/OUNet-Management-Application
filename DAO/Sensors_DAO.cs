@@ -15,24 +15,24 @@ namespace DAO
         public static List<Sensors_DTO> ListSensors()
         {
             List<Sensors_DTO> listSensors = new List<Sensors_DTO>();
-            DataTable dt = ProcessingDAO.RunQuerySQL($"SELECT s.SensorID, s.SensorName, s.AddressIP, s.Status, u.Tel, MAX(sd.TimeStart) AS TimeStart, sd.TimeEnd FROM Sensors s LEFT JOIN SensorsDetails sd ON s.SensorID = sd.SensorID LEFT JOIN Users u ON sd.UserID = u.UserID GROUP BY s.SensorID, s.SensorName, s.AddressIP, s.Status, u.Tel, sd.TimeEnd ORDER BY s.SensorID");
+            DataTable dt = ProcessingDAO.RunQuerySQL($"SELECT ds.SensorID, SensorName, AddressIP, Sensors.Status, Tel, ds.TimeStart, ds.TimeEnd FROM SensorsDetails ds INNER JOIN(SELECT SensorID, MAX(TimeStart) AS MaxTimeStart FROM SensorsDetails WHERE SensorID IN(SELECT SensorID from Sensors) GROUP BY SensorID) ds_max ON ds.SensorID = ds_max.SensorID AND ds.TimeStart = ds_max.MaxTimeStart LEFT JOIN Users ON Users.UserID = ds.UserID LEFT JOIN Sensors ON Sensors.SensorID = ds.SensorID order by SensorID");
             Sensors_DTO sensor;
             for (int i = 0; i < dt.Rows.Count; i++) {
                 sensor = new Sensors_DTO();
                 sensor.SensorID = dt.Rows[i]["SensorID"].ToString();
                 sensor.SensorName = dt.Rows[i]["SensorName"].ToString();
                 sensor.AddressIP = dt.Rows[i]["AddressIP"].ToString();
-                sensor.Status = dt.Rows[i]["Status"].ToString() == "1" ? "- - -" : "Đang hoạt động";
-                if (!String.IsNullOrEmpty(dt.Rows[i]["TimeEnd"].ToString()) && String.IsNullOrEmpty(dt.Rows[i]["TimeStart"].ToString()))
+                sensor.Status = Boolean.Parse(dt.Rows[i]["Status"].ToString()) == false ? "- - -" : "Đang hoạt động";
+                Boolean isTimeEndNull = String.IsNullOrEmpty(dt.Rows[i]["TimeEnd"].ToString());
+                if (isTimeEndNull)
                 {
                     sensor.Utel = "- - -";
                     sensor.TimeStart = "- - -";
-                   
+                    
                 }
                 else {
                     sensor.Utel = dt.Rows[i]["Tel"].ToString();
                     sensor.TimeStart = dt.Rows[i]["TimeStart"].ToString().Trim();
-                    
                 }
                 listSensors.Add(sensor);
             }
@@ -74,7 +74,7 @@ namespace DAO
             {
                 string val = dt.Rows[0]["SensorID"].ToString();
                 {
-                    string sqlCmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); UPDATE Sensors SET Status = 1 Where SensorID = N'{val}'; INSERT INTO SensorsDetails (SensorID, UserID, TimeStart, TimeEnd) VALUES(N'{val}', N'{userID}', @currDate, null);";
+                    string sqlCmd = $"DECLARE @currDate DATETIME; SET @currDate = GETDATE(); UPDATE Sensors SET Status = 0 Where SensorID = {val}; UPDATE SensorsDetails SET TimeEnd = @currDate FROM (SELECT TOP 1 SensorDetailID FROM SensorsDetails WHERE SensorID = {val} ORDER BY TimeStart DESC) as a WHERE SensorsDetails.SensorDetailID = a.SensorDetailID";
                     return ProcessingDAO.RunNonQuerySQL(sqlCmd);
                 };
             }

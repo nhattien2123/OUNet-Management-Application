@@ -13,6 +13,11 @@ namespace BUS
         {
             return DAO.Sensors_DAO.FindAndCreateSensor(userID, sName, sIP);
         }
+
+        public static string FindAndLogoutSensor(string userID, string sName, string sIP)
+        {
+            return DAO.Sensors_DAO.FindAndLogoutSensor(userID, sName, sIP);
+        }
         public static List<Sensors_DTO> ListSensors_BUS()
         {
             return DAO.Sensors_DAO.ListSensors();
