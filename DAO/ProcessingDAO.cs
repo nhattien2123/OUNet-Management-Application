@@ -11,8 +11,8 @@ namespace DAO
     public class ProcessingDAO
     {
         // Chuỗi kết nối
-        public static string cnnStr = @"Data Source=ounet.database.windows.net; Initial Catalog=OUNET; User ID=ousqladmin;Password=Ounetadmin123";
-        //public static string cnnStr = @"Data Source=.; Initial Catalog=OUNET; Integrated Security=True";
+        //public static string cnnStr = @"Data Source=ounet.database.windows.net; Initial Catalog=OUNET; User ID=ousqladmin;Password=Ounetadmin123";
+        public static string cnnStr = @"Data Source=.; Initial Catalog=OUNET; Integrated Security=True";
         // Hàm chạy lệnh SQL lấy dữ liệu - loại Data Query
         public static DataTable RunQuerySQL(string sqlCmd)
         {

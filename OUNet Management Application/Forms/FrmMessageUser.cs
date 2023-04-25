@@ -90,7 +90,7 @@ namespace OUNet_Management_Application.Forms
 
             try
             {
-                _client = new SimpleTcpClient("127.0.0.1:9000");
+                _client = new SimpleTcpClient($"{FrmMain.IPLocal}:{FrmMain.PORTMess}");
                 _client.Events.Connected += Events_Connected;
                 _client.Events.Disconnected += Events_Disconnected;
                 _client.Events.DataReceived += Events_DataReceived;
@@ -181,6 +181,11 @@ namespace OUNet_Management_Application.Forms
         }
 
         private void pnHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

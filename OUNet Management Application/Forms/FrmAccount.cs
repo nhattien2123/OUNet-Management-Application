@@ -22,6 +22,7 @@ namespace OUNet_Management_Application.Forms
         {
             FrmAccount.user = user;
             InitializeComponent();
+            FrmMain.isSensorForm = false;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)

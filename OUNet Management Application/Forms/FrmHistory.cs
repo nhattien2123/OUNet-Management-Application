@@ -25,6 +25,7 @@ namespace OUNet_Management_Application.Forms
         public FrmHistory()
         {
             InitializeComponent();
+            FrmMain.isSensorForm = false;
         }
 
         private void LoadDataWithSearch()

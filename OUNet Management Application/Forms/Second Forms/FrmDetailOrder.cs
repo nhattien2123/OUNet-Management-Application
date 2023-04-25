@@ -94,7 +94,6 @@ namespace OUNet_Management_Application.Forms.Second_Forms
                         sum += item.ServiceTotal;
                     }
                     string txt = BUS.Users_BUS.AddMoneyFromUser(sum, serviceSensor.UserID);
-                    MessageBox.Show(txt);
                 }
                     
                 if (!isDF)
