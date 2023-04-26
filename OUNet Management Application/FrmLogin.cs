@@ -37,9 +37,13 @@ namespace OUNet_Management_Application
             {
                 if (!String.IsNullOrEmpty(user.Tel))
                 {
-                    frmLoading = new FrmLoading(user);
-                    frmLoading.Show();
-                    this.Hide();
+                    if (user.Status)
+                    {
+                        frmLoading = new FrmLoading(user);
+                        frmLoading.Show();
+                        this.Hide();
+                    }
+                    else MessageBox.Show("Tài khoản đã bị khoá! Vui lòng liên hệ với Admin để mở khoá!");
                 }
                 else MessageBox.Show("Không tìm thấy tài khoản hoặc mật khẩu!");
             }

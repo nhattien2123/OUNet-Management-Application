@@ -25,9 +25,9 @@ namespace BUS
             return DAO.Users_DAO.EditUser(user, UserID);
         }
 
-        public static string DeleteUser_BUS(Users_DTO user)
+        public static string ChangeStatusUser_BUS(Users_DTO user)
         {
-            return DAO.Users_DAO.DeleteUser(user);
+            return DAO.Users_DAO.ChangeStatusUser(user);
         }
 
         public static string ChangePassword_BUS(Users_DTO user)

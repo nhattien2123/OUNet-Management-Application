@@ -107,6 +107,10 @@ namespace OUNet_Management_Application.Forms.Second_Forms
                 String.IsNullOrEmpty(txtAddress.Text) || String.IsNullOrEmpty(txtNation.Text) ||
                 String.IsNullOrEmpty(txtHomeTown.Text))
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+            else if (frmConfirm.BirthDay.Year < (DateTime.Now.Year - 16))
+                MessageBox.Show("Ngày sinh không hợp lệ!");
+            else if (frmConfirm.Telephone.Length > 11)
+                MessageBox.Show("Số điện thoại không hợp lệ!");
             else
             {
                 frmConfirm = new FrmConfirm();
@@ -166,7 +170,7 @@ namespace OUNet_Management_Application.Forms.Second_Forms
                 user.HomeTown = HomeTown;
                 user.BirthDay = BirthDay;
 
-                BUS.Users_BUS.DeleteUser_BUS(user);
+                BUS.Users_BUS.ChangeStatusUser_BUS(user);
                 MessageBox.Show("Đã xoá thành công!");
                 Close();
             }

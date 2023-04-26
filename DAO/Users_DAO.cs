@@ -65,9 +65,9 @@ namespace DAO
         }
 
         // Hàm xoá thông tin người dùng
-        public static string DeleteUser(Users_DTO user)
+        public static string ChangeStatusUser(Users_DTO user)
         {
-            string sqlcmd = string.Format("DELETE FROM dbo.Users WHERE UserID = '{0}';", user.UserID);
+            string sqlcmd = string.Format("UPDATE dbo.Users SET Status = 0 WHERE UserID = '{0}';", user.UserID);
             return ProcessingDAO.RunNonQuerySQL(sqlcmd);
         }
 

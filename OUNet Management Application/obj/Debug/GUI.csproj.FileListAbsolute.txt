@@ -158,3 +158,10 @@ D:\Workspace\C#\Code\LTCSDL-GK\OUNet Management Application\obj\Debug\OUNet Mana
 D:\Workspace\C#\Code\LTCSDL-GK\OUNet Management Application\obj\Debug\OUNet Management Application.pdb
 D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmServiceUser.resources
 D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmMServices.resources
+D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\bin\Debug\zxing.dll
+D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\bin\Debug\zxing.presentation.dll
+D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\bin\Debug\zxing.xml
+D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\bin\Debug\zxing.presentation.xml
+D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmServiceUser.resources
+D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.FrmMServices.resources
+D:\Working\C++\source-file-C#\OUNet-Management-Application\OUNet Management Application\obj\Debug\OUNet_Management_Application.Forms.Second_Forms.FrmMomo.resources

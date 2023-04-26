@@ -44,9 +44,13 @@ namespace OUNet_Management_Application.Forms.Second_Forms
 
             if (String.IsNullOrEmpty(user.Username) || String.IsNullOrEmpty(user.Tel) ||
                 String.IsNullOrEmpty(user.Password) || String.IsNullOrEmpty(user.Address) ||
-                String.IsNullOrEmpty(user.Nation) || String.IsNullOrEmpty(user.Sex) || 
+                String.IsNullOrEmpty(user.Nation) || String.IsNullOrEmpty(user.Sex) ||
                 String.IsNullOrEmpty(user.HomeTown) || String.IsNullOrEmpty(user.BirthDay.ToString()))
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+            else if (user.BirthDay.Year < (DateTime.Now.Year - 16))
+                MessageBox.Show("Ngày sinh không hợp lệ!");
+            else if (user.Tel.Length > 11)
+                MessageBox.Show("Số điện thoại không hợp lệ!");
             else
             {
                 BUS.Users_BUS.AddUser_BUS(user);
