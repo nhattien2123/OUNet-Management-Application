@@ -1,0 +1,47 @@
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\OUNet Management Application.exe.config
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\OUNet Management Application.exe
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\OUNet Management Application.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\BUS.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\DAO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\DTO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\SuperSimpleTcp.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\BUS.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\DAO.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\DAO.dll.config
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\DTO.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\GUI.csproj.AssemblyReference.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\GUI.csproj.SuggestedBindingRedirects.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmAccount.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmConfirm.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmHistory.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmMessage.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmMessageUser.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmSensor.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmServices.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmServiceUser.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmMServices.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.FrmStatistical.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.Second_Forms.FrmAddUser.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.Second_Forms.FrmBill.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.Second_Forms.FrmChangePasswordUser.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.Second_Forms.FrmDetailAccount.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.Second_Forms.FrmDetailOrder.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.Second_Forms.FrmDetailService.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.FrmLoading.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.FrmLogin.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.FrmMain.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.FrmMainUser.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.MessageControl.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Properties.Resources.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.SecondMessageControl.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.UserControlMessage.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\GUI.csproj.GenerateResource.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\GUI.csproj.CoreCompileInputs.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\GUI.csproj.CopyComplete
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet Management Application.exe
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet Management Application.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\obj\Release\OUNet_Management_Application.Forms.Second_Forms.FrmMomo.resources
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\zxing.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\zxing.presentation.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\zxing.xml
+D:\Workspace\C#\Code\OUNet-Management-Application\OUNet Management Application\bin\Release\zxing.presentation.xml

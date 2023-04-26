@@ -1,0 +1,12 @@
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\bin\Release\BUS.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\bin\Release\BUS.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\bin\Release\DAO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\bin\Release\DTO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\bin\Release\DAO.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\bin\Release\DAO.dll.config
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\bin\Release\DTO.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\obj\Release\BUS.csproj.AssemblyReference.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\obj\Release\BUS.csproj.CoreCompileInputs.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\obj\Release\BUS.csproj.CopyComplete
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\obj\Release\BUS.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\BUS\obj\Release\BUS.pdb
