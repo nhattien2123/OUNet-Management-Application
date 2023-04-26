@@ -1,0 +1,14 @@
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Release\DAO.dll.config
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Release\DAO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Release\DAO.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Release\DTO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Release\EntityFramework.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Release\EntityFramework.SqlServer.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Release\DTO.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Release\EntityFramework.xml
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\bin\Release\EntityFramework.SqlServer.xml
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Release\DAO.csproj.AssemblyReference.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Release\DAO.csproj.CoreCompileInputs.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Release\DAO.csproj.CopyComplete
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Release\DAO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DAO\obj\Release\DAO.pdb

@@ -268,7 +268,7 @@ namespace OUNet_Management_Application
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.totalSec += 1;
-            if (totalSec >= 5)
+            if (totalSec >= 60)
             {
                 string txt = BUS.Users_BUS.SubMoneyFromUser(FrmMain.PRICEPERMIN, FrmMainUser.user.UserID, true);
                 if (txt.ToLower() == "true")

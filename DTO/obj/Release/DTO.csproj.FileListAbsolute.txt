@@ -1,0 +1,6 @@
+D:\Workspace\C#\Code\OUNet-Management-Application\DTO\bin\Release\DTO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DTO\bin\Release\DTO.pdb
+D:\Workspace\C#\Code\OUNet-Management-Application\DTO\obj\Release\DTO.csproj.AssemblyReference.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\DTO\obj\Release\DTO.csproj.CoreCompileInputs.cache
+D:\Workspace\C#\Code\OUNet-Management-Application\DTO\obj\Release\DTO.dll
+D:\Workspace\C#\Code\OUNet-Management-Application\DTO\obj\Release\DTO.pdb

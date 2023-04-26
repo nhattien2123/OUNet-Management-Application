@@ -61,6 +61,12 @@ namespace OUNet_Management_Application.Forms
             DialogResult dr = MessageBox.Show($"Bạn chắc chắn muốn nạp tiền với mệnh giá {MList[idx].Price} ?", "Thông báo!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes)
             {
+                DialogResult momo = MessageBox.Show($"Bạn có muốn thanh toán qua momo?", "Thông báo!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                if (momo == DialogResult.Yes)
+                {
+                    FrmMomo frmMomo = new FrmMomo(MList[idx].Price.ToString());
+                    frmMomo.ShowDialog();
+                }
                 if (FrmMainUser._client.IsConnected)
                 {
                     string txt = BUS.Services_BUS.BillMFromUser(MList[idx], user.UserID, user.Tel, Environment.MachineName);
